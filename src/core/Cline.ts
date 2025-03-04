@@ -66,7 +66,7 @@ import { insertGroups } from "./diff/insert-groups"
 import { EXPERIMENT_IDS, experiments as Experiments, ExperimentId } from "../shared/experiments"
 
 const cwd =
-	vscode.workspace.workspaceFolders?.map((folder) => folder.uri.fsPath).at(0) ?? path.join(os.homedir(), "Desktop") // may or may not exist but fs checking existence would immediately ask for permission which would be bad UX, need to come up with a better solution
+	vscode.workspace.workspaceFolders?.map((folder) => folder.uri.fsPath).at(0) ?? path.join(os.homedir(), "Desktop") // 工作目录可能存在也可能不存在，但fs检查存在性会立即请求权限，这会导致不好的用户体验，需要想出更好的解决方案
 
 type ToolResponse = string | Array<Anthropic.TextBlockParam | Anthropic.ImageBlockParam>
 type UserContent = Array<Anthropic.Messages.ContentBlockParam>
@@ -114,11 +114,11 @@ export class Cline {
 	private lastApiRequestTime?: number
 	isInitialized = false
 
-	// checkpoints
+	// 检查点
 	enableCheckpoints: boolean = false
 	private checkpointService?: ShadowCheckpointService
 
-	// streaming
+	// 流式处理
 	isWaitingForFirstChunk = false
 	isStreaming = false
 	private currentStreamingContentIndex = 0
@@ -145,7 +145,7 @@ export class Cline {
 		startTask = true,
 	}: ClineOptions) {
 		if (startTask && !task && !images && !historyItem) {
-			throw new Error("Either historyItem or task/images must be provided")
+			throw new Error("必须提供historyItem或task/images中的一个")
 		}
 
 		this.taskId = historyItem ? historyItem.id : crypto.randomUUID()
@@ -162,7 +162,7 @@ export class Cline {
 		this.diffViewProvider = new DiffViewProvider(cwd)
 		this.enableCheckpoints = enableCheckpoints ?? false
 
-		// Initialize diffStrategy based on current state
+		// 根据当前状态初始化diffStrategy
 		this.updateDiffStrategy(Experiments.isEnabled(experiments ?? {}, EXPERIMENT_IDS.DIFF_STRATEGY))
 
 		if (startTask) {
@@ -171,7 +171,7 @@ export class Cline {
 			} else if (historyItem) {
 				this.resumeTaskFromHistory()
 			} else {
-				throw new Error("Either historyItem or task/images must be provided")
+				throw new Error("必须提供historyItem或task/images中的一个")
 			}
 		}
 	}
@@ -186,15 +186,15 @@ export class Cline {
 		} else if (historyItem) {
 			promise = instance.resumeTaskFromHistory()
 		} else {
-			throw new Error("Either historyItem or task/images must be provided")
+			throw new Error("必须提供historyItem或task/images中的一个")
 		}
 
 		return [instance, promise]
 	}
 
-	// Add method to update diffStrategy
+	// 添加更新diffStrategy的方法
 	async updateDiffStrategy(experimentalDiffStrategy?: boolean) {
-		// If not provided, get from current state
+		// 如果未提供，从当前状态获取
 		if (experimentalDiffStrategy === undefined) {
 			const { experiments: stateExperimental } = (await this.providerRef.deref()?.getState()) ?? {}
 			experimentalDiffStrategy = stateExperimental?.[EXPERIMENT_IDS.DIFF_STRATEGY] ?? false

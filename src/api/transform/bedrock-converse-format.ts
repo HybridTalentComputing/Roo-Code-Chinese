@@ -4,11 +4,11 @@ import { ConversationRole, Message, ContentBlock } from "@aws-sdk/client-bedrock
 import { MessageContent } from "../../shared/api"
 
 /**
- * Convert Anthropic messages to Bedrock Converse format
+ * 将 Anthropic 消息转换为 Bedrock Converse 格式
  */
 export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Messages.MessageParam[]): Message[] {
 	return anthropicMessages.map((anthropicMessage) => {
-		// Map Anthropic roles to Bedrock roles
+		// 将 Anthropic 角色映射到 Bedrock 角色
 		const role: ConversationRole = anthropicMessage.role === "assistant" ? "assistant" : "user"
 
 		if (typeof anthropicMessage.content === "string") {
@@ -22,7 +22,7 @@ export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Me
 			}
 		}
 
-		// Process complex content types
+		// 处理复杂内容类型
 		const content = anthropicMessage.content.map((block) => {
 			const messageBlock = block as MessageContent & {
 				id?: string
@@ -38,7 +38,7 @@ export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Me
 			}
 
 			if (messageBlock.type === "image" && messageBlock.source) {
-				// Convert base64 string to byte array if needed
+				// 如果需要，将 base64 字符串转换为字节数组
 				let byteArray: Uint8Array
 				if (typeof messageBlock.source.data === "string") {
 					const binaryString = atob(messageBlock.source.data)
@@ -50,10 +50,10 @@ export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Me
 					byteArray = messageBlock.source.data
 				}
 
-				// Extract format from media_type (e.g., "image/jpeg" -> "jpeg")
+				// 从 media_type 中提取格式（例如，"image/jpeg" -> "jpeg"）
 				const format = messageBlock.source.media_type.split("/")[1]
 				if (!["png", "jpeg", "gif", "webp"].includes(format)) {
-					throw new Error(`Unsupported image format: ${format}`)
+					throw new Error(`不支持的图片格式: ${format}`)
 				}
 
 				return {
@@ -67,7 +67,7 @@ export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Me
 			}
 
 			if (messageBlock.type === "tool_use") {
-				// Convert tool use to XML format
+				// 将工具使用转换为 XML 格式
 				const toolParams = Object.entries(messageBlock.input || {})
 					.map(([key, value]) => `<${key}>\n${value}\n</${key}>`)
 					.join("\n")
@@ -82,7 +82,7 @@ export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Me
 			}
 
 			if (messageBlock.type === "tool_result") {
-				// First try to use content if available
+				// 如果有可用的 content，优先使用
 				if (messageBlock.content && Array.isArray(messageBlock.content)) {
 					return {
 						toolResult: {
@@ -95,7 +95,7 @@ export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Me
 					} as ContentBlock
 				}
 
-				// Fall back to output handling if content is not available
+				// 如果 content 不可用，回退到处理 output
 				if (messageBlock.output && typeof messageBlock.output === "string") {
 					return {
 						toolResult: {
@@ -109,7 +109,7 @@ export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Me
 						},
 					} as ContentBlock
 				}
-				// Handle array of content blocks if output is an array
+				// 如果 output 是数组，处理内容块数组
 				if (Array.isArray(messageBlock.output)) {
 					return {
 						toolResult: {
@@ -118,9 +118,9 @@ export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Me
 								if (typeof part === "object" && "text" in part) {
 									return { text: part.text }
 								}
-								// Skip images in tool results as they're handled separately
+								// 跳过工具结果中的图片，因为它们会被单独处理
 								if (typeof part === "object" && "type" in part && part.type === "image") {
-									return { text: "(see following message for image)" }
+									return { text: "(请查看下一条消息中的图片)" }
 								}
 								return { text: String(part) }
 							}),
@@ -129,7 +129,7 @@ export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Me
 					} as ContentBlock
 				}
 
-				// Default case
+				// 默认情况
 				return {
 					toolResult: {
 						toolUseId: messageBlock.tool_use_id || "",
@@ -155,15 +155,15 @@ export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Me
 
 				return {
 					video: {
-						format: "mp4", // Default to mp4, adjust based on actual format if needed
+						format: "mp4", // 默认使用 mp4，根据实际格式调整
 						source: videoContent,
 					},
 				} as ContentBlock
 			}
 
-			// Default case for unknown block types
+			// 未知块类型的默认处理
 			return {
-				text: "[Unknown Block Type]",
+				text: "[未知块类型]",
 			} as ContentBlock
 		})
 

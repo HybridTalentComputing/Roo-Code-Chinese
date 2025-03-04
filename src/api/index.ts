@@ -29,12 +29,12 @@ export interface ApiHandler {
 	getModel(): { id: string; info: ModelInfo }
 
 	/**
-	 * Counts tokens for content blocks
-	 * All providers extend BaseProvider which provides a default tiktoken implementation,
-	 * but they can override this to use their native token counting endpoints
+	 * 计算内容块的令牌数
+	 * 所有提供者都继承自 BaseProvider，它提供了默认的 tiktoken 实现，
+	 * 但它们可以重写此方法以使用其原生的令牌计数端点
 	 *
-	 * @param content The content to count tokens for
-	 * @returns A promise resolving to the token count
+	 * @param content 需要计算令牌数的内容
+	 * @returns 返回一个解析为令牌数的 Promise
 	 */
 	countTokens(content: Array<Anthropic.Messages.ContentBlockParam>): Promise<number>
 }

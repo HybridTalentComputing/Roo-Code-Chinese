@@ -1,7 +1,7 @@
 {
 	"name": "roo-cline",
-	"displayName": "Roo Code (prev. Roo Cline)",
-	"description": "A whole dev team of AI agents in your editor.",
+	"displayName": "Roo Code (原名 Roo Cline)",
+	"description": "在您的编辑器中拥有一个完整的AI开发团队。",
 	"publisher": "RooVeterinaryInc",
 	"version": "3.7.12",
 	"icon": "assets/icons/rocket.png",
@@ -71,88 +71,88 @@
 		"commands": [
 			{
 				"command": "roo-cline.plusButtonClicked",
-				"title": "New Task",
+				"title": "新建任务",
 				"icon": "$(add)"
 			},
 			{
 				"command": "roo-cline.mcpButtonClicked",
-				"title": "MCP Servers",
+				"title": "MCP 服务器",
 				"icon": "$(server)"
 			},
 			{
 				"command": "roo-cline.promptsButtonClicked",
-				"title": "Prompts",
+				"title": "提示词",
 				"icon": "$(notebook)"
 			},
 			{
 				"command": "roo-cline.historyButtonClicked",
-				"title": "History",
+				"title": "历史记录",
 				"icon": "$(history)"
 			},
 			{
 				"command": "roo-cline.popoutButtonClicked",
-				"title": "Open in Editor",
+				"title": "在编辑器中打开",
 				"icon": "$(link-external)"
 			},
 			{
 				"command": "roo-cline.settingsButtonClicked",
-				"title": "Settings",
+				"title": "设置",
 				"icon": "$(settings-gear)"
 			},
 			{
 				"command": "roo-cline.helpButtonClicked",
-				"title": "Documentation",
+				"title": "文档",
 				"icon": "$(question)"
 			},
 			{
 				"command": "roo-cline.openInNewTab",
-				"title": "Open In New Tab",
+				"title": "在新标签页中打开",
 				"category": "Roo Code"
 			},
 			{
 				"command": "roo-cline.explainCode",
-				"title": "Roo Code: Explain Code",
+				"title": "Roo Code: 解释代码",
 				"category": "Roo Code"
 			},
 			{
 				"command": "roo-cline.fixCode",
-				"title": "Roo Code: Fix Code",
+				"title": "Roo Code: 修复代码",
 				"category": "Roo Code"
 			},
 			{
 				"command": "roo-cline.improveCode",
-				"title": "Roo Code: Improve Code",
+				"title": "Roo Code: 改进代码",
 				"category": "Roo Code"
 			},
 			{
 				"command": "roo-cline.addToContext",
-				"title": "Roo Code: Add To Context",
+				"title": "Roo Code: 添加到上下文",
 				"category": "Roo Code"
 			},
 			{
 				"command": "roo-cline.terminalAddToContext",
-				"title": "Roo Code: Add Terminal Content to Context",
-				"category": "Terminal"
+				"title": "Roo Code: 添加终端内容到上下文",
+				"category": "终端"
 			},
 			{
 				"command": "roo-cline.terminalFixCommand",
-				"title": "Roo Code: Fix This Command",
-				"category": "Terminal"
+				"title": "Roo Code: 修复此命令",
+				"category": "终端"
 			},
 			{
 				"command": "roo-cline.terminalExplainCommand",
-				"title": "Roo Code: Explain This Command",
-				"category": "Terminal"
+				"title": "Roo Code: 解释此命令",
+				"category": "终端"
 			},
 			{
 				"command": "roo-cline.terminalFixCommandInCurrentTask",
-				"title": "Roo Code: Fix This Command (Current Task)",
-				"category": "Terminal"
+				"title": "Roo Code: 修复此命令（当前任务）",
+				"category": "终端"
 			},
 			{
 				"command": "roo-cline.terminalExplainCommandInCurrentTask",
-				"title": "Roo Code: Explain This Command (Current Task)",
-				"category": "Terminal"
+				"title": "Roo Code: 解释此命令（当前任务）",
+				"category": "终端"
 			}
 		],
 		"menus": {
@@ -254,21 +254,21 @@
 						"git diff",
 						"git show"
 					],
-					"description": "Commands that can be auto-executed when 'Always approve execute operations' is enabled"
+					"description": "当启用\"始终批准执行操作\"时可以自动执行的命令"
 				},
 				"roo-cline.vsCodeLmModelSelector": {
 					"type": "object",
 					"properties": {
 						"vendor": {
 							"type": "string",
-							"description": "The vendor of the language model (e.g. copilot)"
+							"description": "语言模型供应商（例如 copilot）"
 						},
 						"family": {
 							"type": "string",
-							"description": "The family of the language model (e.g. gpt-4)"
+							"description": "语言模型系列（例如 gpt-4）"
 						}
 					},
-					"description": "Settings for VSCode Language Model API"
+					"description": "VSCode 语言模型 API 设置"
 				}
 			}
 		}

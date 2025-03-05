@@ -309,7 +309,7 @@ const ApiOptions = ({
 							<VSCodeLink
 								href="https://console.anthropic.com/settings/keys"
 								style={{ display: "inline", fontSize: "inherit" }}>
-								您可以在此处注册获取DeepSeek API密钥。
+								您可以在此处注册获取Anthropic API密钥。
 							</VSCodeLink>
 						)}
 					</p>

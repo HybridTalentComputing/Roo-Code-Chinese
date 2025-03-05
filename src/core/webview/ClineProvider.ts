@@ -970,7 +970,7 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 							)
 						} catch (error) {
 							this.outputChannel.appendLine(
-								`Failed to toggle auto-approve for tool ${message.toolName}: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
+								`工具 ${message.toolName} 自动批准切换失败：${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
 							)
 						}
 						break
@@ -980,7 +980,7 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 							await this.mcpHub?.toggleServerDisabled(message.serverName!, message.disabled!)
 						} catch (error) {
 							this.outputChannel.appendLine(
-								`Failed to toggle MCP server ${message.serverName}: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
+								`MCP服务器 ${message.serverName} 切换失败：${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
 							)
 						}
 						break

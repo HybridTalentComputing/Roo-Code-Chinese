@@ -256,7 +256,7 @@ const TaskHeader: React.FC<TaskHeaderProps> = ({
 											backgroundColor: "var(--vscode-badge-background)",
 										}}
 										onClick={() => setIsTextExpanded(!isTextExpanded)}>
-										See more
+										查看更多
 									</div>
 								</div>
 							)}
@@ -413,7 +413,7 @@ const TaskActions = ({ item }: { item: HistoryItem | undefined }) => {
 const ContextWindowProgress = ({ contextWindow, contextTokens }: { contextWindow: number; contextTokens: number }) => (
 	<>
 		<div className="flex items-center gap-1 flex-shrink-0">
-			<span className="font-bold">Context Window:</span>
+			<span className="font-bold">上下文窗口:</span>
 		</div>
 		<div className="flex items-center gap-2 flex-1 whitespace-nowrap">
 			<div>{formatLargeNumber(contextTokens)}</div>

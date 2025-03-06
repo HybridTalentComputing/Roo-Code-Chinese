@@ -38,8 +38,8 @@ export class OpenRouterHandler extends BaseProvider implements SingleCompletionH
 		const apiKey = this.options.openRouterApiKey ?? "not-provided"
 
 		const defaultHeaders = {
-			"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
-			"X-Title": "Roo Code",
+			"HTTP-Referer": "https://github.com/HybridTalentComputing/Roo-Code-Chinese",
+			"X-Title": "Roo Code Chinese",
 		}
 
 		this.client = new OpenAI({ baseURL, apiKey, defaultHeaders })

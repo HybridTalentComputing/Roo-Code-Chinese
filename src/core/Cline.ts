@@ -918,27 +918,27 @@ export class Cline {
 			rateLimitDelay = Math.ceil(Math.max(0, rateLimit * 1000 - timeSinceLastRequest) / 1000)
 		}
 
-		// Only show rate limiting message if we're not retrying. If retrying, we'll include the delay there.
+		// 仅在不重试时显示速率限制消息。如果正在重试，我们会在重试时包含延迟信息。
 		if (rateLimitDelay > 0 && retryAttempt === 0) {
-			// Show countdown timer
+			// 显示倒计时
 			for (let i = rateLimitDelay; i > 0; i--) {
-				const delayMessage = `Rate limiting for ${i} seconds...`
+				const delayMessage = `速率限制中，还剩 ${i} 秒...`
 				await this.say("api_req_retry_delayed", delayMessage, undefined, true)
 				await delay(1000)
 			}
 		}
 
-		// Update last request time before making the request
+		// 在发出请求前更新最后请求时间
 		this.lastApiRequestTime = Date.now()
 
 		if (mcpEnabled ?? true) {
 			mcpHub = this.providerRef.deref()?.getMcpHub()
 			if (!mcpHub) {
-				throw new Error("MCP hub not available")
+				throw new Error("MCP中心不可用")
 			}
-			// Wait for MCP servers to be connected before generating system prompt
+			// 在生成系统提示之前等待MCP服务器连接
 			await pWaitFor(() => mcpHub!.isConnecting !== true, { timeout: 10_000 }).catch(() => {
-				console.error("MCP servers failed to connect in time")
+				console.error("MCP服务器连接超时")
 			})
 		}
 

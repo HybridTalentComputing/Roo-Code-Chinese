@@ -671,7 +671,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 					)}
 					<div style={{ marginBottom: "16px" }}>
 						<div className="flex justify-between items-center mb-1">
-							<div className="font-bold">Role Definition</div>
+							<div className="font-bold">角色定义</div>
 							{!findModeBySlug(mode, customModes) && (
 								<VSCodeButton
 									appearance="icon"
@@ -751,7 +751,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 						{/* Show tools for all modes */}
 						<div className="mb-4">
 							<div className="flex justify-between items-center mb-1">
-								<div className="font-bold">Available Tools</div>
+								<div className="font-bold">可用工具</div>
 								{findModeBySlug(mode, customModes) && (
 									<VSCodeButton
 										appearance="icon"
@@ -764,7 +764,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 							</div>
 							{!findModeBySlug(mode, customModes) && (
 								<div className="text-sm text-vscode-descriptionForeground mb-2">
-									Tools for built-in modes cannot be modified
+									内置模式的工具不能被修改
 								</div>
 							)}
 							{isToolsEditMode && findModeBySlug(mode, customModes) ? (
@@ -928,7 +928,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								}}>
 								.clinerules-{getCurrentMode()?.slug || "code"}
 							</span>{" "}
-							in your workspace.
+							在你的工作区。
 						</div>
 					</div>
 				</div>
@@ -951,7 +951,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								}
 							}}
 							data-testid="preview-prompt-button">
-							Preview System Prompt
+							预览系统提示词
 						</VSCodeButton>
 						<VSCodeButton
 							appearance="icon"
@@ -978,7 +978,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 							aria-expanded={isSystemPromptDisclosureOpen}>
 							<span
 								className={`codicon codicon-${isSystemPromptDisclosureOpen ? "chevron-down" : "chevron-right"} mr-1`}></span>
-							<span>Advanced: Override System Prompt</span>
+							<span>高级：覆盖系统提示词</span>
 						</button>
 
 						{isSystemPromptDisclosureOpen && (
@@ -1000,10 +1000,9 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 											},
 										})
 									}}>
-									.roo/system-prompt-{getCurrentMode()?.slug || "code"}
+									在您的工作区中的 .roo/system-prompt-{getCurrentMode()?.slug || "code"}
 								</span>{" "}
-								in your workspace. This is a very advanced feature that bypasses built-in safeguards and
-								consistency checks (especially around tool usage), so be careful!
+								文件。这是一个高级功能，会绕过内置的安全保护和一致性检查（特别是在工具使用方面），请谨慎使用！
 							</div>
 						)}
 					</div>
@@ -1015,7 +1014,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 						paddingBottom: "60px",
 						borderBottom: "1px solid var(--vscode-input-border)",
 					}}>
-					<h3 style={{ color: "var(--vscode-foreground)", marginBottom: "12px" }}>Support Prompts</h3>
+					<h3 style={{ color: "var(--vscode-foreground)", marginBottom: "12px" }}>辅助提示词</h3>
 					<div
 						style={{
 							display: "flex",
@@ -1203,9 +1202,9 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								}}>
 								<span className="codicon codicon-close"></span>
 							</VSCodeButton>
-							<h2 style={{ margin: "0 0 16px" }}>Create New Mode</h2>
+							<h2 style={{ margin: "0 0 16px" }}>创建新模式</h2>
 							<div style={{ marginBottom: "16px" }}>
-								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>Name</div>
+								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>名称</div>
 								<VSCodeTextField
 									value={newModeName}
 									onChange={(e: Event | React.FormEvent<HTMLElement>) => {
@@ -1221,7 +1220,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								)}
 							</div>
 							<div style={{ marginBottom: "16px" }}>
-								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>Slug</div>
+								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>标识符</div>
 								<VSCodeTextField
 									value={newModeSlug}
 									onChange={(e: Event | React.FormEvent<HTMLElement>) => {
@@ -1305,7 +1304,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								)}
 							</div>
 							<div style={{ marginBottom: "16px" }}>
-								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>Available Tools</div>
+								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>可用工具</div>
 								<div
 									style={{
 										fontSize: "13px",

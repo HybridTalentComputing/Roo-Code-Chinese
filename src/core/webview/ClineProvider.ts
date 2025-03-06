@@ -50,23 +50,24 @@ import { getNonce } from "./getNonce"
 import { getUri } from "./getUri"
 
 /**
+ * 参考实现：
  * https://github.com/microsoft/vscode-webview-ui-toolkit-samples/blob/main/default/weather-webview/src/providers/WeatherViewProvider.ts
  * https://github.com/KumarVariable/vscode-extension-sidebar-html/blob/master/src/customSidebarViewProvider.ts
  */
 
 export class ClineProvider implements vscode.WebviewViewProvider {
-	public static readonly sideBarId = "roo-cline.SidebarProvider" // used in package.json as the view's id. This value cannot be changed due to how vscode caches views based on their id, and updating the id would break existing instances of the extension.
-	public static readonly tabPanelId = "roo-cline.TabPanelProvider"
-	private static activeInstances: Set<ClineProvider> = new Set()
-	private disposables: vscode.Disposable[] = []
-	private view?: vscode.WebviewView | vscode.WebviewPanel
-	private isViewLaunched = false
-	private cline?: Cline
-	private workspaceTracker?: WorkspaceTracker
-	protected mcpHub?: McpHub // Change from private to protected
-	private latestAnnouncementId = "feb-27-2025-automatic-checkpoints" // update to some unique identifier when we add a new announcement
-	configManager: ConfigManager
-	customModesManager: CustomModesManager
+	public static readonly sideBarId = "roo-cline-chinese.SidebarProvider" // 在package.json中使用的视图ID。由于VSCode基于ID缓存视图的方式，此值不能更改，否则会破坏扩展的现有实例。
+	public static readonly tabPanelId = "roo-cline-chinese.TabPanelProvider"
+	private static activeInstances: Set<ClineProvider> = new Set() // 活动实例集合
+	private disposables: vscode.Disposable[] = [] // 可释放资源数组
+	private view?: vscode.WebviewView | vscode.WebviewPanel // 视图实例
+	private isViewLaunched = false // 视图是否已启动
+	private cline?: Cline // Cline实例
+	private workspaceTracker?: WorkspaceTracker // 工作区跟踪器
+	protected mcpHub?: McpHub // MCP中心实例（从private改为protected）
+	private latestAnnouncementId = "feb-27-2025-automatic-checkpoints" // 最新公告ID，添加新公告时需更新为唯一标识符
+	configManager: ConfigManager // 配置管理器
+	customModesManager: CustomModesManager // 自定义模式管理器
 
 	constructor(
 		readonly context: vscode.ExtensionContext,
@@ -96,12 +97,12 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 	- https://github.com/microsoft/vscode-extension-samples/blob/main/webview-sample/src/extension.ts
 	*/
 	async dispose() {
-		this.outputChannel.appendLine("Disposing ClineProvider...")
+		this.outputChannel.appendLine("正在释放ClineProvider...")
 		await this.clearTask()
-		this.outputChannel.appendLine("Cleared task")
+		this.outputChannel.appendLine("已清理任务")
 		if (this.view && "dispose" in this.view) {
 			this.view.dispose()
-			this.outputChannel.appendLine("Disposed webview")
+			this.outputChannel.appendLine("已释放webview")
 		}
 		while (this.disposables.length) {
 			const x = this.disposables.pop()
@@ -114,10 +115,10 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 		this.mcpHub?.dispose()
 		this.mcpHub = undefined
 		this.customModesManager?.dispose()
-		this.outputChannel.appendLine("Disposed all disposables")
+		this.outputChannel.appendLine("已释放所有可释放资源")
 		ClineProvider.activeInstances.delete(this)
 
-		// Unregister from McpServerManager
+		// 从McpServerManager中注销
 		McpServerManager.unregisterProvider(this)
 	}
 
@@ -128,15 +129,15 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 	public static async getInstance(): Promise<ClineProvider | undefined> {
 		let visibleProvider = ClineProvider.getVisibleInstance()
 
-		// If no visible provider, try to show the sidebar view
+		// 如果没有可见的provider，尝试显示侧边栏视图
 		if (!visibleProvider) {
-			await vscode.commands.executeCommand("roo-cline.SidebarProvider.focus")
-			// Wait briefly for the view to become visible
+			await vscode.commands.executeCommand("roo-cline-chinese.SidebarProvider.focus")
+			// 短暂等待视图变为可见
 			await delay(100)
 			visibleProvider = ClineProvider.getVisibleInstance()
 		}
 
-		// If still no visible provider, return
+		// 如果仍然没有可见的provider，返回
 		if (!visibleProvider) {
 			return
 		}
@@ -230,16 +231,16 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 	}
 
 	async resolveWebviewView(webviewView: vscode.WebviewView | vscode.WebviewPanel) {
-		this.outputChannel.appendLine("Resolving webview view")
+		this.outputChannel.appendLine("正在解析webview视图")
 		this.view = webviewView
 
-		// Initialize sound enabled state
+		// 初始化声音启用状态
 		this.getState().then(({ soundEnabled }) => {
 			setSoundEnabled(soundEnabled ?? false)
 		})
 
 		webviewView.webview.options = {
-			// Allow scripts in the webview
+			// 允许在webview中运行脚本
 			enableScripts: true,
 			localResourceRoots: [this.context.extensionUri],
 		}
@@ -249,18 +250,18 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 				? await this.getHMRHtmlContent(webviewView.webview)
 				: this.getHtmlContent(webviewView.webview)
 
-		// Sets up an event listener to listen for messages passed from the webview view context
-		// and executes code based on the message that is recieved
+		// 设置事件监听器以监听从webview视图上下文传递的消息
+		// 并根据接收到的消息执行代码
 		this.setWebviewMessageListener(webviewView.webview)
 
-		// Logs show up in bottom panel > Debug Console
-		//console.log("registering listener")
+		// 日志显示在底部面板 > 调试控制台
+		//console.log("注册监听器")
 
-		// Listen for when the panel becomes visible
+		// 监听面板变为可见时的事件
 		// https://github.com/microsoft/vscode-discussions/discussions/840
 		if ("onDidChangeViewState" in webviewView) {
-			// WebviewView and WebviewPanel have all the same properties except for this visibility listener
-			// panel
+			// WebviewView和WebviewPanel具有相同的属性，除了这个可见性监听器
+			// 面板
 			webviewView.onDidChangeViewState(
 				() => {
 					if (this.view?.visible) {
@@ -271,7 +272,7 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 				this.disposables,
 			)
 		} else if ("onDidChangeVisibility" in webviewView) {
-			// sidebar
+			// 侧边栏
 			webviewView.onDidChangeVisibility(
 				() => {
 					if (this.view?.visible) {
@@ -283,8 +284,8 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 			)
 		}
 
-		// Listen for when the view is disposed
-		// This happens when the user closes the view or when the view is closed programmatically
+		// 监听视图的销毁
+		// 当用户关闭视图或视图被程序关闭时会触发
 		webviewView.onDidDispose(
 			async () => {
 				await this.dispose()
@@ -293,11 +294,11 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 			this.disposables,
 		)
 
-		// Listen for when color changes
+		// 监听颜色主题变更
 		vscode.workspace.onDidChangeConfiguration(
 			async (e) => {
 				if (e && e.affectsConfiguration("workbench.colorTheme")) {
-					// Sends latest theme name to webview
+					// 向webview发送最新的主题名称
 					await this.postMessageToWebview({ type: "theme", text: JSON.stringify(await getTheme()) })
 				}
 			},
@@ -305,14 +306,16 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 			this.disposables,
 		)
 
-		// if the extension is starting a new session, clear previous task state
+		// 如果扩展正在启动新会话，清除之前的任务状态
 		this.clearTask()
 
-		this.outputChannel.appendLine("Webview view resolved")
+		this.outputChannel.appendLine("Webview视图已解析完成")
 	}
 
 	public async initClineWithTask(task?: string, images?: string[]) {
+		// 清除现有任务
 		await this.clearTask()
+		// 获取所需的状态配置
 		const {
 			apiConfiguration,
 			customModePrompts,
@@ -324,9 +327,12 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 			experiments,
 		} = await this.getState()
 
+		// 获取当前模式的提示
 		const modePrompt = customModePrompts?.[mode] as PromptComponent
+		// 合并全局指令和模式特定指令
 		const effectiveInstructions = [globalInstructions, modePrompt?.customInstructions].filter(Boolean).join("\n\n")
 
+		// 创建新的Cline实例
 		this.cline = new Cline({
 			provider: this,
 			apiConfiguration,
@@ -341,8 +347,10 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 	}
 
 	public async initClineWithHistoryItem(historyItem: HistoryItem) {
+		// 清除现有任务
 		await this.clearTask()
 
+		// 获取所需的状态配置
 		const {
 			apiConfiguration,
 			customModePrompts,
@@ -354,9 +362,12 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 			experiments,
 		} = await this.getState()
 
+		// 获取当前模式的提示
 		const modePrompt = customModePrompts?.[mode] as PromptComponent
+		// 合并全局指令和模式特定指令
 		const effectiveInstructions = [globalInstructions, modePrompt?.customInstructions].filter(Boolean).join("\n\n")
 
+		// 创建新的Cline实例
 		this.cline = new Cline({
 			provider: this,
 			apiConfiguration,
@@ -377,12 +388,12 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 		const localPort = "5173"
 		const localServerUrl = `localhost:${localPort}`
 
-		// Check if local dev server is running.
+		// 检查本地开发服务器是否运行
 		try {
 			await axios.get(`http://${localServerUrl}`)
 		} catch (error) {
 			vscode.window.showErrorMessage(
-				"Local development server is not running, HMR will not work. Please run 'npm run dev' before launching the extension to enable HMR.",
+				"本地开发服务器未运行，HMR将无法工作。请在启动扩展前运行'npm run dev'以启用HMR。",
 			)
 
 			return this.getHtmlContent(webview)
@@ -429,7 +440,7 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 					<meta http-equiv="Content-Security-Policy" content="${csp.join("; ")}">
 					<link rel="stylesheet" type="text/css" href="${stylesUri}">
 					<link href="${codiconsUri}" rel="stylesheet" />
-					<title>Roo Code</title>
+					<title>Roo Code Chinese</title>
 				</head>
 				<body>
 					<div id="root"></div>
@@ -504,7 +515,7 @@ export class ClineProvider implements vscode.WebviewViewProvider {
             <meta http-equiv="Content-Security-Policy" content="default-src 'none'; font-src ${webview.cspSource}; style-src ${webview.cspSource} 'unsafe-inline'; img-src ${webview.cspSource} data:; script-src 'nonce-${nonce}';">
             <link rel="stylesheet" type="text/css" href="${stylesUri}">
 			<link href="${codiconsUri}" rel="stylesheet" />
-            <title>Roo Code</title>
+            <title>Roo Code Chinese</title>
           </head>
           <body>
             <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -970,7 +981,7 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 							)
 						} catch (error) {
 							this.outputChannel.appendLine(
-								`Failed to toggle auto-approve for tool ${message.toolName}: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
+								`工具 ${message.toolName} 自动批准切换失败：${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
 							)
 						}
 						break
@@ -980,7 +991,7 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 							await this.mcpHub?.toggleServerDisabled(message.serverName!, message.disabled!)
 						} catch (error) {
 							this.outputChannel.appendLine(
-								`Failed to toggle MCP server ${message.serverName}: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
+								`MCP服务器 ${message.serverName} 切换失败：${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
 							)
 						}
 						break

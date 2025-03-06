@@ -131,7 +131,7 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 					vscode.postMessage(message)
 				} else {
 					const promptDescription =
-						"The 'Enhance Prompt' button helps improve your prompt by providing additional context, clarification, or rephrasing. Try typing a prompt in here and clicking the button again to see how it works."
+						"'增强提示'按钮通过提供额外的上下文、说明或重新措辞来帮助改进您的提示。在此处输入提示并再次点击按钮，即可体验此功能的效果。"
 					setInputValue(promptDescription)
 				}
 			}
@@ -922,9 +922,9 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 							) : (
 								<span
 									role="button"
-									aria-label="enhance prompt"
+									aria-label="增强提示"
 									data-testid="enhance-prompt-button"
-									title="Enhance prompt with additional context"
+									title="使用额外的上下文增强提示"
 									className={`input-icon-button ${
 										textAreaDisabled ? "disabled" : ""
 									} codicon codicon-sparkle`}
@@ -937,13 +937,13 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 							className={`input-icon-button ${
 								shouldDisableImages ? "disabled" : ""
 							} codicon codicon-device-camera`}
-							title="Add images to message"
+							title="向消息添加图片"
 							onClick={() => !shouldDisableImages && onSelectImages()}
 							style={{ fontSize: 16.5 }}
 						/>
 						<span
 							className={`input-icon-button ${textAreaDisabled ? "disabled" : ""} codicon codicon-send`}
-							title="Send message"
+							title="发送消息"
 							onClick={() => !textAreaDisabled && onSend()}
 							style={{ fontSize: 15 }}
 						/>

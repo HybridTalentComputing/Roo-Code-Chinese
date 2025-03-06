@@ -1,24 +1,24 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 
 /**
- * Convert complex content blocks to simple string content
+ * 将复杂的内容块转换为简单的字符串内容
  */
 export function convertToSimpleContent(content: Anthropic.Messages.MessageParam["content"]): string {
 	if (typeof content === "string") {
 		return content
 	}
 
-	// Extract text from content blocks
+	// 从内容块中提取文本
 	return content
 		.map((block) => {
 			if (block.type === "text") {
 				return block.text
 			}
 			if (block.type === "image") {
-				return `[Image: ${block.source.media_type}]`
+				return `[图片: ${block.source.media_type}]`
 			}
 			if (block.type === "tool_use") {
-				return `[Tool Use: ${block.name}]`
+				return `[工具使用: ${block.name}]`
 			}
 			if (block.type === "tool_result") {
 				if (typeof block.content === "string") {
@@ -31,7 +31,7 @@ export function convertToSimpleContent(content: Anthropic.Messages.MessageParam[
 								return part.text
 							}
 							if (part.type === "image") {
-								return `[Image: ${part.source.media_type}]`
+								return `[图片: ${part.source.media_type}]`
 							}
 							return ""
 						})
@@ -46,7 +46,7 @@ export function convertToSimpleContent(content: Anthropic.Messages.MessageParam[
 }
 
 /**
- * Convert Anthropic messages to simple format with string content
+ * 将Anthropic消息转换为带有字符串内容的简单格式
  */
 export function convertToSimpleMessages(
 	messages: Anthropic.Messages.MessageParam[],

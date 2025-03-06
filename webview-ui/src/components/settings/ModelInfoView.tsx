@@ -29,55 +29,54 @@ export const ModelInfoView = ({
 		),
 		<ModelInfoSupportsItem
 			isSupported={modelInfo.supportsImages ?? false}
-			supportsLabel="Supports images"
-			doesNotSupportLabel="Does not support images"
+			supportsLabel="支持图片"
+			doesNotSupportLabel="不支持图片"
 		/>,
 		<ModelInfoSupportsItem
 			isSupported={modelInfo.supportsComputerUse ?? false}
-			supportsLabel="Supports computer use"
-			doesNotSupportLabel="Does not support computer use"
+			supportsLabel="支持计算机使用"
+			doesNotSupportLabel="不支持计算机使用"
 		/>,
 		!isGemini && (
 			<ModelInfoSupportsItem
 				isSupported={modelInfo.supportsPromptCache}
-				supportsLabel="Supports prompt caching"
-				doesNotSupportLabel="Does not support prompt caching"
+				supportsLabel="支持提示缓存"
+				doesNotSupportLabel="不支持提示缓存"
 			/>
 		),
 		modelInfo.maxTokens !== undefined && modelInfo.maxTokens > 0 && (
 			<span key="maxTokens">
-				<span style={{ fontWeight: 500 }}>Max output:</span> {modelInfo.maxTokens?.toLocaleString()} tokens
+				<span style={{ fontWeight: 500 }}>最大输出：</span> {modelInfo.maxTokens?.toLocaleString()} tokens
 			</span>
 		),
 		modelInfo.inputPrice !== undefined && modelInfo.inputPrice > 0 && (
 			<span key="inputPrice">
-				<span style={{ fontWeight: 500 }}>Input price:</span> {formatPrice(modelInfo.inputPrice)}/million tokens
+				<span style={{ fontWeight: 500 }}>输入价格：</span> {formatPrice(modelInfo.inputPrice)}/百万tokens
 			</span>
 		),
 		modelInfo.supportsPromptCache && modelInfo.cacheWritesPrice && (
 			<span key="cacheWritesPrice">
-				<span style={{ fontWeight: 500 }}>Cache writes price:</span>{" "}
-				{formatPrice(modelInfo.cacheWritesPrice || 0)}/million tokens
+				<span style={{ fontWeight: 500 }}>缓存写入价格：</span> {formatPrice(modelInfo.cacheWritesPrice || 0)}
+				/百万tokens
 			</span>
 		),
 		modelInfo.supportsPromptCache && modelInfo.cacheReadsPrice && (
 			<span key="cacheReadsPrice">
-				<span style={{ fontWeight: 500 }}>Cache reads price:</span>{" "}
-				{formatPrice(modelInfo.cacheReadsPrice || 0)}/million tokens
+				<span style={{ fontWeight: 500 }}>缓存读取价格：</span> {formatPrice(modelInfo.cacheReadsPrice || 0)}
+				/百万tokens
 			</span>
 		),
 		modelInfo.outputPrice !== undefined && modelInfo.outputPrice > 0 && (
 			<span key="outputPrice">
-				<span style={{ fontWeight: 500 }}>Output price:</span> {formatPrice(modelInfo.outputPrice)}/million
-				tokens
+				<span style={{ fontWeight: 500 }}>输出价格：</span> {formatPrice(modelInfo.outputPrice)}/百万tokens
 			</span>
 		),
 		isGemini && (
 			<span key="geminiInfo" style={{ fontStyle: "italic" }}>
-				* Free up to {selectedModelId && selectedModelId.includes("flash") ? "15" : "2"} requests per minute.
-				After that, billing depends on prompt size.{" "}
+				* 每分钟免费使用{selectedModelId && selectedModelId.includes("flash") ? "15" : "2"}次请求。
+				超出后，费用取决于提示大小。{" "}
 				<VSCodeLink href="https://ai.google.dev/pricing" style={{ display: "inline", fontSize: "inherit" }}>
-					For more info, see pricing details.
+					查看更多价格详情
 				</VSCodeLink>
 			</span>
 		),

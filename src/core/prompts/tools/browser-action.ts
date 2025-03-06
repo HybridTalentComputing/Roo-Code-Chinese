@@ -5,46 +5,46 @@ export function getBrowserActionDescription(args: ToolArgs): string | undefined 
 		return undefined
 	}
 	return `## browser_action
-Description: Request to interact with a Puppeteer-controlled browser. Every action, except \`close\`, will be responded to with a screenshot of the browser's current state, along with any new console logs. You may only perform one browser action per message, and wait for the user's response including a screenshot and logs to determine the next action.
-- The sequence of actions **must always start with** launching the browser at a URL, and **must always end with** closing the browser. If you need to visit a new URL that is not possible to navigate to from the current webpage, you must first close the browser, then launch again at the new URL.
-- While the browser is active, only the \`browser_action\` tool can be used. No other tools should be called during this time. You may proceed to use other tools only after closing the browser. For example if you run into an error and need to fix a file, you must close the browser, then use other tools to make the necessary changes, then re-launch the browser to verify the result.
-- The browser window has a resolution of **${args.browserViewportSize}** pixels. When performing any click actions, ensure the coordinates are within this resolution range.
-- Before clicking on any elements such as icons, links, or buttons, you must consult the provided screenshot of the page to determine the coordinates of the element. The click should be targeted at the **center of the element**, not on its edges.
+Description: 请求与Puppeteer控制的浏览器进行交互。除了 \`close\` 操作外，每个操作都会返回浏览器当前状态的截图以及任何新的控制台日志。每条消息只能执行一个浏览器操作，并等待包含截图和日志的用户响应来确定下一步操作。
+- 操作序列**必须始终以**在URL上启动浏览器开始，并**必须以**关闭浏览器结束。如果需要访问当前网页无法导航到的新URL，必须先关闭浏览器，然后在新URL重新启动。
+- 当浏览器处于活动状态时，只能使用 \`browser_action\` 工具。在此期间不应调用其他工具。例如，如果遇到错误需要修复文件，必须先关闭浏览器，然后使用其他工具进行必要的更改，最后重新启动浏览器以验证结果。
+- 浏览器窗口分辨率为 **${args.browserViewportSize}** 像素。执行任何点击操作时，确保坐标在此分辨率范围内。
+- 在点击图标、链接或按钮等元素之前，必须查看页面的截图以确定元素的坐标。点击应该针对**元素的中心**，而不是边缘。
 Parameters:
-- action: (required) The action to perform. The available actions are:
-    * launch: Launch a new Puppeteer-controlled browser instance at the specified URL. This **must always be the first action**.
-        - Use with the \`url\` parameter to provide the URL.
-        - Ensure the URL is valid and includes the appropriate protocol (e.g. http://localhost:3000/page, file:///path/to/file.html, etc.)
-    * click: Click at a specific x,y coordinate.
-        - Use with the \`coordinate\` parameter to specify the location.
-        - Always click in the center of an element (icon, button, link, etc.) based on coordinates derived from a screenshot.
-    * type: Type a string of text on the keyboard. You might use this after clicking on a text field to input text.
-        - Use with the \`text\` parameter to provide the string to type.
-    * scroll_down: Scroll down the page by one page height.
-    * scroll_up: Scroll up the page by one page height.
-    * close: Close the Puppeteer-controlled browser instance. This **must always be the final browser action**.
-        - Example: \`<action>close</action>\`
-- url: (optional) Use this for providing the URL for the \`launch\` action.
-    * Example: <url>https://example.com</url>
-- coordinate: (optional) The X and Y coordinates for the \`click\` action. Coordinates should be within the **${args.browserViewportSize}** resolution.
-    * Example: <coordinate>450,300</coordinate>
-- text: (optional) Use this for providing the text for the \`type\` action.
-    * Example: <text>Hello, world!</text>
-Usage:
+- action: (必需) 要执行的操作。可用的操作有：
+    * launch: 在指定URL启动新的Puppeteer控制的浏览器实例。这**必须是第一个操作**。
+        - 使用 \`url\` 参数提供URL。
+        - 确保URL有效且包含适当的协议（例如 http://localhost:3000/page, file:///path/to/file.html 等）
+    * click: 在特定的x,y坐标处点击。
+        - 使用 \`coordinate\` 参数指定位置。
+        - 始终根据截图中的坐标点击元素（图标、按钮、链接等）的中心。
+    * type: 在键盘上输入文本字符串。可以在点击文本框后使用此操作输入文本。
+        - 使用 \`text\` 参数提供要输入的字符串。
+    * scroll_down: 向下滚动一个页面高度。
+    * scroll_up: 向上滚动一个页面高度。
+    * close: 关闭Puppeteer控制的浏览器实例。这**必须是最后一个浏览器操作**。
+        - 示例: \`<action>close</action>\`
+- url: (可选) 用于为 \`launch\` 操作提供URL。
+    * 示例: <url>https://example.com</url>
+- coordinate: (可选) \`click\` 操作的X和Y坐标。坐标必须在 **${args.browserViewportSize}** 分辨率范围内。
+    * 示例: <coordinate>450,300</coordinate>
+- text: (可选) 用于为 \`type\` 操作提供文本。
+    * 示例: <text>Hello, world!</text>
+使用方法:
 <browser_action>
-<action>Action to perform (e.g., launch, click, type, scroll_down, scroll_up, close)</action>
-<url>URL to launch the browser at (optional)</url>
-<coordinate>x,y coordinates (optional)</coordinate>
-<text>Text to type (optional)</text>
+<action>要执行的操作（如 launch, click, type, scroll_down, scroll_up, close）</action>
+<url>启动浏览器的URL（可选）</url>
+<coordinate>x,y坐标（可选）</coordinate>
+<text>要输入的文本（可选）</text>
 </browser_action>
 
-Example: Requesting to launch a browser at https://example.com
+示例：请求在 https://example.com 启动浏览器
 <browser_action>
 <action>launch</action>
 <url>https://example.com</url>
 </browser_action>
 
-Example: Requesting to click on the element at coordinates 450,300
+示例：请求点击坐标 450,300 处的元素
 <browser_action>
 <action>click</action>
 <coordinate>450,300</coordinate>

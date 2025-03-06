@@ -19,7 +19,7 @@ export type ApiProvider =
 
 export interface ApiHandlerOptions {
 	apiModelId?: string
-	apiKey?: string // anthropic
+	apiKey?: string // Anthropic
 	anthropicBaseUrl?: string
 	vsCodeLmModelSelector?: vscode.LanguageModelChatSelector
 	glamaModelId?: string
@@ -394,7 +394,7 @@ export const glamaDefaultModelInfo: ModelInfo = {
 	cacheWritesPrice: 3.75,
 	cacheReadsPrice: 0.3,
 	description:
-		"Claude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. It introduces a hybrid reasoning approach, allowing users to choose between rapid responses and extended, step-by-step processing for complex tasks. The model demonstrates notable improvements in coding, particularly in front-end development and full-stack updates, and excels in agentic workflows, where it can autonomously navigate multi-step processes. Claude 3.7 Sonnet maintains performance parity with its predecessor in standard mode while offering an extended reasoning mode for enhanced accuracy in math, coding, and instruction-following tasks. Read more at the [blog post here](https://www.anthropic.com/news/claude-3-7-sonnet)",
+		"Claude 3.7 Sonnet 是一个先进的大语言模型，具有增强的推理、编码和问题解决能力。它引入了混合推理方法，允许用户在快速响应和复杂任务的分步处理之间进行选择。该模型在编码方面表现出显著改进，特别是在前端开发和全栈更新方面，并且在需要自主导航多步骤流程的智能工作流程中表现出色。Claude 3.7 Sonnet 在标准模式下保持与其前代产品相当的性能，同时提供扩展推理模式，以提高数学、编码和指令执行任务的准确性。更多详情请参阅[博客文章](https://www.anthropic.com/news/claude-3-7-sonnet)",
 }
 
 // Requesty
@@ -411,7 +411,7 @@ export const requestyDefaultModelInfo: ModelInfo = {
 	cacheWritesPrice: 3.75,
 	cacheReadsPrice: 0.3,
 	description:
-		"Claude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. It introduces a hybrid reasoning approach, allowing users to choose between rapid responses and extended, step-by-step processing for complex tasks. The model demonstrates notable improvements in coding, particularly in front-end development and full-stack updates, and excels in agentic workflows, where it can autonomously navigate multi-step processes. Claude 3.7 Sonnet maintains performance parity with its predecessor in standard mode while offering an extended reasoning mode for enhanced accuracy in math, coding, and instruction-following tasks. Read more at the [blog post here](https://www.anthropic.com/news/claude-3-7-sonnet)",
+		"Claude 3.7 Sonnet 是一个先进的大语言模型，具有增强的推理、编码和问题解决能力。它引入了混合推理方法，允许用户在快速响应和复杂任务的分步处理之间进行选择。该模型在编码方面表现出显著改进，特别是在前端开发和全栈更新方面，并且在需要自主导航多步骤流程的智能工作流程中表现出色。Claude 3.7 Sonnet 在标准模式下保持与其前代产品相当的性能，同时提供扩展推理模式，以提高数学、编码和指令执行任务的准确性。更多详情请参阅[博客文章](https://www.anthropic.com/news/claude-3-7-sonnet)",
 }
 
 // OpenRouter
@@ -428,7 +428,7 @@ export const openRouterDefaultModelInfo: ModelInfo = {
 	cacheWritesPrice: 3.75,
 	cacheReadsPrice: 0.3,
 	description:
-		"Claude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. It introduces a hybrid reasoning approach, allowing users to choose between rapid responses and extended, step-by-step processing for complex tasks. The model demonstrates notable improvements in coding, particularly in front-end development and full-stack updates, and excels in agentic workflows, where it can autonomously navigate multi-step processes. Claude 3.7 Sonnet maintains performance parity with its predecessor in standard mode while offering an extended reasoning mode for enhanced accuracy in math, coding, and instruction-following tasks. Read more at the [blog post here](https://www.anthropic.com/news/claude-3-7-sonnet)",
+		"Claude 3.7 Sonnet 是一个先进的大语言模型，具有增强的推理、编码和问题解决能力。它引入了混合推理方法，允许用户在快速响应和复杂任务的分步处理之间进行选择。该模型在编码方面表现出显著改进，特别是在前端开发和全栈更新方面，并且在需要自主导航多步骤流程的智能工作流程中表现出色。Claude 3.7 Sonnet 在标准模式下保持与其前代产品相当的性能，同时提供扩展推理模式，以提高数学、编码和指令执行任务的准确性。更多详情请参阅[博客文章](https://www.anthropic.com/news/claude-3-7-sonnet)",
 }
 
 // Vertex AI
@@ -767,18 +767,18 @@ export const deepSeekModels = {
 		contextWindow: 64_000,
 		supportsImages: false,
 		supportsPromptCache: false,
-		inputPrice: 0.014, // $0.014 per million tokens
-		outputPrice: 0.28, // $0.28 per million tokens
-		description: `DeepSeek-V3 achieves a significant breakthrough in inference speed over previous models. It tops the leaderboard among open-source models and rivals the most advanced closed-source models globally.`,
+		inputPrice: 0.014, // 每百万令牌 $0.014
+		outputPrice: 0.28, // 每百万令牌 $0.28
+		description: `DeepSeek-V3 在推理速度上实现了重大突破。它在开源模型中名列前茅，并与全球最先进的闭源模型相媲美。`,
 	},
 	"deepseek-reasoner": {
 		maxTokens: 8192,
 		contextWindow: 64_000,
 		supportsImages: false,
 		supportsPromptCache: false,
-		inputPrice: 0.55, // $0.55 per million tokens
-		outputPrice: 2.19, // $2.19 per million tokens
-		description: `DeepSeek-R1 achieves performance comparable to OpenAI-o1 across math, code, and reasoning tasks.`,
+		inputPrice: 0.55, // 每百万令牌 $0.55
+		outputPrice: 2.19, // 每百万令牌 $2.19
+		description: `DeepSeek-R1 在数学、代码和推理任务方面达到了与 OpenAI-o1 相当的性能。`,
 	},
 } as const satisfies Record<string, ModelInfo>
 

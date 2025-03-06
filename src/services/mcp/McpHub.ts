@@ -65,19 +65,19 @@ export class McpHub {
 	}
 
 	getServers(): McpServer[] {
-		// Only return enabled servers
+		// 仅返回已启用的服务器
 		return this.connections.filter((conn) => !conn.server.disabled).map((conn) => conn.server)
 	}
 
 	getAllServers(): McpServer[] {
-		// Return all servers regardless of state
+		// 返回所有服务器，不考虑状态
 		return this.connections.map((conn) => conn.server)
 	}
 
 	async getMcpServersPath(): Promise<string> {
 		const provider = this.providerRef.deref()
 		if (!provider) {
-			throw new Error("Provider not available")
+			throw new Error("提供者不可用")
 		}
 		const mcpServersPath = await provider.ensureMcpServersDirectoryExists()
 		return mcpServersPath
@@ -86,7 +86,7 @@ export class McpHub {
 	async getMcpSettingsFilePath(): Promise<string> {
 		const provider = this.providerRef.deref()
 		if (!provider) {
-			throw new Error("Provider not available")
+			throw new Error("提供者不可用")
 		}
 		const mcpSettingsFilePath = path.join(
 			await provider.ensureSettingsDirectoryExists(),
@@ -112,8 +112,7 @@ export class McpHub {
 			vscode.workspace.onDidSaveTextDocument(async (document) => {
 				if (arePathsEqual(document.uri.fsPath, settingsPath)) {
 					const content = await fs.readFile(settingsPath, "utf-8")
-					const errorMessage =
-						"Invalid MCP settings format. Please ensure your settings follow the correct JSON format."
+					const errorMessage = "MCP设置格式无效。请确保您的设置遵循正确的JSON格式。"
 					let config: any
 					try {
 						config = JSON.parse(content)
@@ -155,7 +154,7 @@ export class McpHub {
 			// Each MCP server requires its own transport connection and has unique capabilities, configurations, and error handling. Having separate clients also allows proper scoping of resources/tools and independent server management like reconnection.
 			const client = new Client(
 				{
-					name: "Roo Code",
+					name: "Roo Code Chinese",
 					version: this.providerRef.deref()?.context.extension?.packageJSON?.version ?? "1.0.0",
 				},
 				{
@@ -192,15 +191,15 @@ export class McpHub {
 				await this.notifyWebviewOfServerChanges()
 			}
 
-			// If the config is invalid, show an error
+			// 如果配置无效，显示错误
 			if (!StdioConfigSchema.safeParse(config).success) {
-				console.error(`Invalid config for "${name}": missing or invalid parameters`)
+				console.error(`"${name}"的配置无效：缺少或无效的参数`)
 				const connection: McpConnection = {
 					server: {
 						name,
 						config: JSON.stringify(config),
 						status: "disconnected",
-						error: "Invalid config: missing or invalid parameters",
+						error: "配置无效：缺少或无效的参数",
 					},
 					client,
 					transport,
@@ -209,7 +208,7 @@ export class McpHub {
 				return
 			}
 
-			// valid schema
+			// 有效的配置
 			const parsedConfig = StdioConfigSchema.parse(config)
 			const connection: McpConnection = {
 				server: {
@@ -223,8 +222,9 @@ export class McpHub {
 			}
 			this.connections.push(connection)
 
-			// transport.stderr is only available after the process has been started. However we can't start it separately from the .connect() call because it also starts the transport. And we can't place this after the connect call since we need to capture the stderr stream before the connection is established, in order to capture errors during the connection process.
-			// As a workaround, we start the transport ourselves, and then monkey-patch the start method to no-op so that .connect() doesn't try to start it again.
+			// transport.stderr 只有在进程启动后才可用。但我们不能在 .connect() 调用之前单独启动它，因为它也会启动传输。
+			// 我们也不能将其放在连接调用之后，因为我们需要在建立连接之前捕获 stderr 流，以便捕获连接过程中的错误。
+			// 作为解决方案，我们自己启动传输，然后将 start 方法修改为空操作，这样 .connect() 就不会再次尝试启动它。
 			await transport.start()
 			const stderrStream = transport.stderr
 			if (stderrStream) {
@@ -233,9 +233,9 @@ export class McpHub {
 					console.error(`Server "${name}" stderr:`, errorOutput)
 					const connection = this.connections.find((conn) => conn.server.name === name)
 					if (connection) {
-						// NOTE: we do not set server status to "disconnected" because stderr logs do not necessarily mean the server crashed or disconnected, it could just be informational. In fact when the server first starts up, it immediately logs "<name> server running on stdio" to stderr.
+						// 注意：我们不将服务器状态设置为"disconnected"，因为 stderr 日志不一定意味着服务器崩溃或断开连接，它可能只是信息性的。实际上，当服务器首次启动时，它会立即将"<name> server running on stdio"记录到 stderr。
 						this.appendErrorMessage(connection, errorOutput)
-						// Only need to update webview right away if it's already disconnected
+						// 仅当已经断开连接时才需要立即更新 webview
 						if (connection.server.status === "disconnected") {
 							await this.notifyWebviewOfServerChanges()
 						}
@@ -246,17 +246,17 @@ export class McpHub {
 			}
 			transport.start = async () => {} // No-op now, .connect() won't fail
 
-			// Connect
+			// 连接
 			await client.connect(transport)
 			connection.server.status = "connected"
 			connection.server.error = ""
 
-			// Initial fetch of tools and resources
+			// 初始获取工具和资源列表
 			connection.server.tools = await this.fetchToolsList(name)
 			connection.server.resources = await this.fetchResourcesList(name)
 			connection.server.resourceTemplates = await this.fetchResourceTemplatesList(name)
 		} catch (error) {
-			// Update status with error
+			// 更新错误状态
 			const connection = this.connections.find((conn) => conn.server.name === name)
 			if (connection) {
 				connection.server.status = "disconnected"
@@ -340,7 +340,7 @@ export class McpHub {
 		const currentNames = new Set(this.connections.map((conn) => conn.server.name))
 		const newNames = new Set(Object.keys(newServers))
 
-		// Delete removed servers
+		// 删除已移除的服务器
 		for (const name of currentNames) {
 			if (!newNames.has(name)) {
 				await this.deleteConnection(name)
@@ -348,7 +348,7 @@ export class McpHub {
 			}
 		}
 
-		// Update or add servers
+		// 更新或添加服务器
 		for (const [name, config] of Object.entries(newServers)) {
 			const currentConnection = this.connections.find((conn) => conn.server.name === name)
 
@@ -371,7 +371,7 @@ export class McpHub {
 					console.error(`Failed to reconnect MCP server ${name}:`, error)
 				}
 			}
-			// If server exists with same config, do nothing
+			// 如果服务器配置相同，则不做任何操作
 		}
 		await this.notifyWebviewOfServerChanges()
 		this.isConnecting = false
@@ -380,7 +380,7 @@ export class McpHub {
 	private setupFileWatcher(name: string, config: any) {
 		const filePath = config.args?.find((arg: string) => arg.includes("build/index.js"))
 		if (filePath) {
-			// we use chokidar instead of onDidSaveTextDocument because it doesn't require the file to be open in the editor. The settings config is better suited for onDidSave since that will be manually updated by the user or Cline (and we want to detect save events, not every file change)
+			// 我们使用 chokidar 而不是 onDidSaveTextDocument，因为它不需要在编辑器中打开文件。设置配置更适合使用 onDidSave，因为它将由用户或 Cline 手动更新（我们希望检测保存事件，而不是每个文件更改）
 			const watcher = chokidar.watch(filePath, {
 				// persistent: true,
 				// ignoreInitial: true,
@@ -416,10 +416,10 @@ export class McpHub {
 			connection.server.status = "connecting"
 			connection.server.error = ""
 			await this.notifyWebviewOfServerChanges()
-			await delay(500) // artificial delay to show user that server is restarting
+			await delay(500) // 人为延迟，向用户显示服务器正在重启
 			try {
 				await this.deleteConnection(serverName)
-				// Try to connect again using existing config
+				// 尝试使用现有配置重新连接
 				await this.connectToServer(serverName, JSON.parse(config))
 				vscode.window.showInformationMessage(`${serverName} MCP server connected`)
 			} catch (error) {
@@ -433,7 +433,7 @@ export class McpHub {
 	}
 
 	private async notifyWebviewOfServerChanges(): Promise<void> {
-		// servers should always be sorted in the order they are defined in the settings file
+		// 服务器应该始终按照设置文件中定义的顺序排序
 		const settingsPath = await this.getMcpSettingsFilePath()
 		const content = await fs.readFile(settingsPath, "utf-8")
 		const config = JSON.parse(content)
@@ -455,7 +455,7 @@ export class McpHub {
 		try {
 			settingsPath = await this.getMcpSettingsFilePath()
 
-			// Ensure the settings file exists and is accessible
+			// 确保设置文件存在且可访问
 			try {
 				await fs.access(settingsPath)
 			} catch (error) {
@@ -465,7 +465,7 @@ export class McpHub {
 			const content = await fs.readFile(settingsPath, "utf-8")
 			const config = JSON.parse(content)
 
-			// Validate the config structure
+			// 验证配置结构
 			if (!config || typeof config !== "object") {
 				throw new Error("Invalid config structure")
 			}
@@ -475,20 +475,20 @@ export class McpHub {
 			}
 
 			if (config.mcpServers[serverName]) {
-				// Create a new server config object to ensure clean structure
+				// 创建新的服务器配置对象以确保结构清晰
 				const serverConfig = {
 					...config.mcpServers[serverName],
 					disabled,
 				}
 
-				// Ensure required fields exist
+				// 确保必需字段存在
 				if (!serverConfig.alwaysAllow) {
 					serverConfig.alwaysAllow = []
 				}
 
 				config.mcpServers[serverName] = serverConfig
 
-				// Write the entire config back
+				// 写回完整配置
 				const updatedConfig = {
 					mcpServers: config.mcpServers,
 				}
@@ -530,7 +530,7 @@ export class McpHub {
 		try {
 			settingsPath = await this.getMcpSettingsFilePath()
 
-			// Ensure the settings file exists and is accessible
+			// 确保设置文件存在且可访问
 			try {
 				await fs.access(settingsPath)
 			} catch (error) {
@@ -540,7 +540,7 @@ export class McpHub {
 			const content = await fs.readFile(settingsPath, "utf-8")
 			const config = JSON.parse(content)
 
-			// Validate the config structure
+			// 验证配置结构
 			if (!config || typeof config !== "object") {
 				throw new Error("Invalid config structure")
 			}
@@ -550,7 +550,7 @@ export class McpHub {
 			}
 
 			if (config.mcpServers[serverName]) {
-				// Create a new server config object to ensure clean structure
+				// 创建新的服务器配置对象以确保结构清晰
 				const serverConfig = {
 					...config.mcpServers[serverName],
 					timeout,
@@ -558,7 +558,7 @@ export class McpHub {
 
 				config.mcpServers[serverName] = serverConfig
 
-				// Write the entire config back
+				// 写回完整配置
 				const updatedConfig = {
 					mcpServers: config.mcpServers,
 				}
@@ -582,7 +582,7 @@ export class McpHub {
 		try {
 			const settingsPath = await this.getMcpSettingsFilePath()
 
-			// Ensure the settings file exists and is accessible
+			// 确保设置文件存在且可访问
 			try {
 				await fs.access(settingsPath)
 			} catch (error) {
@@ -592,7 +592,7 @@ export class McpHub {
 			const content = await fs.readFile(settingsPath, "utf-8")
 			const config = JSON.parse(content)
 
-			// Validate the config structure
+			// 验证配置结构
 			if (!config || typeof config !== "object") {
 				throw new Error("Invalid config structure")
 			}
@@ -605,7 +605,7 @@ export class McpHub {
 			if (config.mcpServers[serverName]) {
 				delete config.mcpServers[serverName]
 
-				// Write the entire config back
+				// 写回完整配置
 				const updatedConfig = {
 					mcpServers: config.mcpServers,
 				}

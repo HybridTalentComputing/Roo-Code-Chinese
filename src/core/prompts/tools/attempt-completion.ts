@@ -1,22 +1,22 @@
 export function getAttemptCompletionDescription(): string {
 	return `## attempt_completion
-Description: After each tool use, the user will respond with the result of that tool use, i.e. if it succeeded or failed, along with any reasons for failure. Once you've received the results of tool uses and can confirm that the task is complete, use this tool to present the result of your work to the user. Optionally you may provide a CLI command to showcase the result of your work. The user may respond with feedback if they are not satisfied with the result, which you can use to make improvements and try again.
-IMPORTANT NOTE: This tool CANNOT be used until you've confirmed from the user that any previous tool uses were successful. Failure to do so will result in code corruption and system failure. Before using this tool, you must ask yourself in <thinking></thinking> tags if you've confirmed from the user that any previous tool uses were successful. If not, then DO NOT use this tool.
+Description: 在每次使用工具后，用户会对工具使用的结果进行响应，即说明是成功还是失败，以及失败的原因。当你收到工具使用的结果并确认任务已完成后，使用此工具向用户展示你的工作成果。你可以选择性地提供一个CLI命令来展示你的工作成果。如果用户对结果不满意，他们可能会提供反馈，你可以据此进行改进并重试。
+IMPORTANT NOTE: 在确认用户已确认之前的所有工具使用都成功之前，不能使用此工具。如果不这样做会导致代码损坏和系统故障。在使用此工具之前，你必须在 <thinking></thinking> 标签中问自己是否已经从用户那里确认之前的所有工具使用都成功了。如果没有，那么不要使用此工具。
 Parameters:
-- result: (required) The result of the task. Formulate this result in a way that is final and does not require further input from the user. Don't end your result with questions or offers for further assistance.
-- command: (optional) A CLI command to execute to show a live demo of the result to the user. For example, use \`open index.html\` to display a created html website, or \`open localhost:3000\` to display a locally running development server. But DO NOT use commands like \`echo\` or \`cat\` that merely print text. This command should be valid for the current operating system. Ensure the command is properly formatted and does not contain any harmful instructions.
+- result: (必需) 任务的结果。以最终的方式表述结果，不需要用户进一步的输入。不要以问题或提供进一步帮助的方式结束你的结果。
+- command: (可选) 用于向用户展示结果实时演示的CLI命令。例如，使用 \`open index.html\` 来显示创建的html网站，或使用 \`open localhost:3000\` 来显示本地运行的开发服务器。但不要使用像 \`echo\` 或 \`cat\` 这样仅打印文本的命令。此命令应该对当前操作系统有效。确保命令格式正确且不包含任何有害指令。
 Usage:
 <attempt_completion>
 <result>
-Your final result description here
+在此处描述你的最终结果
 </result>
-<command>Command to demonstrate result (optional)</command>
+<command>用于演示结果的命令（可选）</command>
 </attempt_completion>
 
-Example: Requesting to attempt completion with a result and command
+Example: 请求尝试完成，包含结果和命令
 <attempt_completion>
 <result>
-I've updated the CSS
+我已更新了CSS
 </result>
 <command>open index.html</command>
 </attempt_completion>`

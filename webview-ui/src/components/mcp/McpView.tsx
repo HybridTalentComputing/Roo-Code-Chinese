@@ -58,17 +58,14 @@ const McpView = ({ onDone }: McpViewProps) => {
 						marginBottom: "10px",
 						marginTop: "5px",
 					}}>
-					The{" "}
 					<VSCodeLink href="https://github.com/modelcontextprotocol" style={{ display: "inline" }}>
-						Model Context Protocol
+						模型上下文协议
 					</VSCodeLink>{" "}
-					enables communication with locally running MCP servers that provide additional tools and resources
-					to extend Roo's capabilities. You can use{" "}
+					可以与本地运行的MCP服务器进行通信，提供额外的工具和资源来扩展Roo的功能。你可以使用{" "}
 					<VSCodeLink href="https://github.com/modelcontextprotocol/servers" style={{ display: "inline" }}>
-						community-made servers
+						社区制作的服务器
 					</VSCodeLink>{" "}
-					or ask Roo to create new tools specific to your workflow (e.g., "add a tool that gets the latest npm
-					docs").
+					或者让Roo创建特定于你工作流程的新工具（例如，"添加一个获取最新npm文档的工具 docs").
 				</div>
 
 				<McpEnabledToggle />
@@ -82,7 +79,7 @@ const McpView = ({ onDone }: McpViewProps) => {
 									setEnableMcpServerCreation(e.target.checked)
 									vscode.postMessage({ type: "enableMcpServerCreation", bool: e.target.checked })
 								}}>
-								<span style={{ fontWeight: "500" }}>Enable MCP Server Creation</span>
+								<span style={{ fontWeight: "500" }}>启用MCP服务器创建</span>
 							</VSCodeCheckbox>
 							<p
 								style={{
@@ -90,9 +87,7 @@ const McpView = ({ onDone }: McpViewProps) => {
 									marginTop: "5px",
 									color: "var(--vscode-descriptionForeground)",
 								}}>
-								When enabled, Roo can help you create new MCP servers via commands like "add a new tool
-								to...". If you don't need to create MCP servers you can disable this to reduce Roo's
-								token usage.
+								启用后，Roo可以通过类似"添加新工具到..."这样的命令来帮助你创建新的MCP服务器。如果你不需要创建MCP服务器，可以禁用此功能以减少Roo的令牌使用量。
 							</p>
 						</div>
 
@@ -114,7 +109,7 @@ const McpView = ({ onDone }: McpViewProps) => {
 									vscode.postMessage({ type: "openMcpSettings" })
 								}}>
 								<span className="codicon codicon-edit" style={{ marginRight: "6px" }}></span>
-								Edit MCP Settings
+								编辑MCP设置
 							</VSCodeButton>
 						</div>
 					</>
@@ -137,14 +132,14 @@ const ServerRow = ({ server, alwaysAllowMcp }: { server: McpServer; alwaysAllowM
 	})
 
 	const timeoutOptions = [
-		{ value: 15, label: "15 seconds" },
-		{ value: 30, label: "30 seconds" },
-		{ value: 60, label: "1 minute" },
-		{ value: 300, label: "5 minutes" },
-		{ value: 600, label: "10 minutes" },
-		{ value: 900, label: "15 minutes" },
-		{ value: 1800, label: "30 minutes" },
-		{ value: 3600, label: "60 minutes" },
+		{ value: 15, label: "15秒" },
+		{ value: 30, label: "30秒" },
+		{ value: 60, label: "1分钟" },
+		{ value: 300, label: "5分钟" },
+		{ value: 600, label: "10分钟" },
+		{ value: 900, label: "15分钟" },
+		{ value: 1800, label: "30分钟" },
+		{ value: 3600, label: "60分钟" },
 	]
 
 	const getStatusColor = () => {
@@ -306,7 +301,7 @@ const ServerRow = ({ server, alwaysAllowMcp }: { server: McpServer; alwaysAllowM
 						onClick={handleRestart}
 						disabled={server.status === "connecting"}
 						style={{ width: "calc(100% - 20px)", margin: "0 10px 10px 10px" }}>
-						{server.status === "connecting" ? "Retrying..." : "Retry Connection"}
+						{server.status === "connecting" ? "正在重试..." : "重试连接"}
 					</VSCodeButton>
 				</div>
 			) : (
@@ -319,10 +314,9 @@ const ServerRow = ({ server, alwaysAllowMcp }: { server: McpServer; alwaysAllowM
 							borderRadius: "0 0 4px 4px",
 						}}>
 						<VSCodePanels style={{ marginBottom: "10px" }}>
-							<VSCodePanelTab id="tools">Tools ({server.tools?.length || 0})</VSCodePanelTab>
+							<VSCodePanelTab id="tools">工具 ({server.tools?.length || 0})</VSCodePanelTab>
 							<VSCodePanelTab id="resources">
-								Resources (
-								{[...(server.resourceTemplates || []), ...(server.resources || [])].length || 0})
+								资源 ({[...(server.resourceTemplates || []), ...(server.resources || [])].length || 0})
 							</VSCodePanelTab>
 
 							<VSCodePanelView id="tools-view">
@@ -340,7 +334,7 @@ const ServerRow = ({ server, alwaysAllowMcp }: { server: McpServer; alwaysAllowM
 									</div>
 								) : (
 									<div style={{ padding: "10px 0", color: "var(--vscode-descriptionForeground)" }}>
-										No tools found
+										未找到工具
 									</div>
 								)}
 							</VSCodePanelView>
@@ -361,12 +355,11 @@ const ServerRow = ({ server, alwaysAllowMcp }: { server: McpServer; alwaysAllowM
 									</div>
 								) : (
 									<div style={{ padding: "10px 0", color: "var(--vscode-descriptionForeground)" }}>
-										No resources found
+										未找到资源
 									</div>
 								)}
 							</VSCodePanelView>
 						</VSCodePanels>
-
 						{/* Network Timeout */}
 						<div style={{ padding: "10px 7px" }}>
 							<div
@@ -376,7 +369,7 @@ const ServerRow = ({ server, alwaysAllowMcp }: { server: McpServer; alwaysAllowM
 									gap: "10px",
 									marginBottom: "8px",
 								}}>
-								<span>Network Timeout</span>
+								<span>网络超时</span>
 								<select
 									value={timeoutValue}
 									onChange={handleTimeoutChange}
@@ -403,7 +396,7 @@ const ServerRow = ({ server, alwaysAllowMcp }: { server: McpServer; alwaysAllowM
 									color: "var(--vscode-descriptionForeground)",
 									display: "block",
 								}}>
-								Maximum time to wait for server responses
+								等待服务器响应的最长时间
 							</span>
 						</div>
 					</div>

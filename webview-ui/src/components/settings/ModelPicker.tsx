@@ -74,9 +74,9 @@ export const ModelPicker = ({
 		<>
 			<div className="font-semibold">Model</div>
 			<Combobox type="single" inputValue={inputValue} onInputValueChange={onSelect}>
-				<ComboboxInput placeholder="Search model..." data-testid="model-input" />
+				<ComboboxInput placeholder="搜索模型..." data-testid="model-input" />
 				<ComboboxContent>
-					<ComboboxEmpty>No model found.</ComboboxEmpty>
+					<ComboboxEmpty>未找到模型。</ComboboxEmpty>
 					{modelIds.map((model) => (
 						<ComboboxItem key={model} value={model}>
 							{model}
@@ -98,13 +98,13 @@ export const ModelPicker = ({
 				/>
 			)}
 			<p>
-				The extension automatically fetches the latest list of models available on{" "}
+				扩展会自动获取{" "}
 				<VSCodeLink style={{ display: "inline", fontSize: "inherit" }} href={serviceUrl}>
-					{serviceName}.
+					{serviceName}
 				</VSCodeLink>
-				If you're unsure which model to choose, Roo Code works best with{" "}
-				<VSCodeLink onClick={() => onSelect(defaultModelId)}>{defaultModelId}.</VSCodeLink>
-				You can also try searching "free" for no-cost options currently available.
+				上可用的最新模型列表。如果您不确定选择哪个模型，Roo Code 使用{" "}
+				<VSCodeLink onClick={() => onSelect(defaultModelId)}>{defaultModelId}</VSCodeLink>
+				效果最佳。您也可以搜索"free"来查看当前可用的免费选项。
 			</p>
 		</>
 	)

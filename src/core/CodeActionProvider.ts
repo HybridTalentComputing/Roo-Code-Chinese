@@ -2,32 +2,35 @@ import * as vscode from "vscode"
 import { EditorUtils } from "./EditorUtils"
 
 export const ACTION_NAMES = {
-	EXPLAIN: "Roo Code: Explain Code",
-	FIX: "Roo Code: Fix Code",
-	FIX_LOGIC: "Roo Code: Fix Logic",
-	IMPROVE: "Roo Code: Improve Code",
-	ADD_TO_CONTEXT: "Roo Code: Add to Context",
+	EXPLAIN: "Roo Code: 解释代码",
+	FIX: "Roo Code: 修复代码",
+	FIX_LOGIC: "Roo Code: 修复逻辑",
+	IMPROVE: "Roo Code: 改进代码",
+	ADD_TO_CONTEXT: "Roo Code: 添加到上下文",
 } as const
 
 export const COMMAND_IDS = {
-	EXPLAIN: "roo-cline.explainCode",
-	FIX: "roo-cline.fixCode",
-	IMPROVE: "roo-cline.improveCode",
-	ADD_TO_CONTEXT: "roo-cline.addToContext",
+	EXPLAIN: "roo-cline-chinese.explainCode",
+	FIX: "roo-cline-chinese.fixCode",
+	IMPROVE: "roo-cline-chinese.improveCode",
+	ADD_TO_CONTEXT: "roo-cline-chinese.addToContext",
 } as const
 
 export class CodeActionProvider implements vscode.CodeActionProvider {
+	// 提供的代码操作类型
 	public static readonly providedCodeActionKinds = [
 		vscode.CodeActionKind.QuickFix,
 		vscode.CodeActionKind.RefactorRewrite,
 	]
 
+	// 创建代码操作
 	private createAction(title: string, kind: vscode.CodeActionKind, command: string, args: any[]): vscode.CodeAction {
 		const action = new vscode.CodeAction(title, kind)
 		action.command = { command, title, arguments: args }
 		return action
 	}
 
+	// 创建一对代码操作（新任务和当前任务）
 	private createActionPair(
 		baseTitle: string,
 		kind: vscode.CodeActionKind,
@@ -35,11 +38,12 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
 		args: any[],
 	): vscode.CodeAction[] {
 		return [
-			this.createAction(`${baseTitle} in New Task`, kind, baseCommand, args),
-			this.createAction(`${baseTitle} in Current Task`, kind, `${baseCommand}InCurrentTask`, args),
+			this.createAction(`${baseTitle} 在新任务中`, kind, baseCommand, args),
+			this.createAction(`${baseTitle} 在当前任务中`, kind, `${baseCommand}InCurrentTask`, args),
 		]
 	}
 
+	// 提供代码操作
 	public provideCodeActions(
 		document: vscode.TextDocument,
 		range: vscode.Range | vscode.Selection,
@@ -105,7 +109,7 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
 
 			return actions
 		} catch (error) {
-			console.error("Error providing code actions:", error)
+			console.error("提供代码操作时出错:", error)
 			return []
 		}
 	}

@@ -408,14 +408,14 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 	return (
 		<div className="fixed inset-0 flex flex-col">
 			<div className="flex justify-between items-center px-5 py-2.5">
-				<h3 className="text-vscode-foreground m-0">Prompts</h3>
-				<VSCodeButton onClick={onDone}>Done</VSCodeButton>
+				<h3 className="text-vscode-foreground m-0">提示词</h3>
+				<VSCodeButton onClick={onDone}>完成</VSCodeButton>
 			</div>
 
 			<div className="flex-1 overflow-auto px-5">
 				<div className="pb-5 border-b border-vscode-input-border">
 					<div className="mb-5">
-						<div className="font-bold mb-1">Preferred Language</div>
+						<div className="font-bold mb-1">首选语言</div>
 						<Popover open={open} onOpenChange={setOpen}>
 							<PopoverTrigger asChild>
 								<Button
@@ -423,41 +423,41 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 									role="combobox"
 									aria-expanded={open}
 									className="w-full justify-between">
-									{preferredLanguage ?? "Select language..."}
+									{preferredLanguage ?? "选择语言..."}
 									<CaretSortIcon className="opacity-50" />
 								</Button>
 							</PopoverTrigger>
 							<PopoverContent align="start" className="p-0">
 								<Command>
-									<CommandInput placeholder="Search language..." className="h-9" />
+									<CommandInput placeholder="搜索语言..." className="h-9" />
 									<CommandList>
 										<CommandGroup>
 											{[
-												{ value: "English", label: "English" },
-												{ value: "Arabic", label: "Arabic - العربية" },
+												{ value: "English", label: "英语 - English" },
+												{ value: "Arabic", label: "阿拉伯语 - العربية" },
 												{
 													value: "Brazilian Portuguese",
-													label: "Portuguese - Português (Brasil)",
+													label: "巴西葡萄牙语 - Português (Brasil)",
 												},
-												{ value: "Catalan", label: "Catalan - Català" },
-												{ value: "Czech", label: "Czech - Čeština" },
-												{ value: "French", label: "French - Français" },
-												{ value: "German", label: "German - Deutsch" },
-												{ value: "Hindi", label: "Hindi - हिन्दी" },
-												{ value: "Hungarian", label: "Hungarian - Magyar" },
-												{ value: "Italian", label: "Italian - Italiano" },
-												{ value: "Japanese", label: "Japanese - 日本語" },
-												{ value: "Korean", label: "Korean - 한국어" },
-												{ value: "Polish", label: "Polish - Polski" },
-												{ value: "Portuguese", label: "Portuguese - Português (Portugal)" },
-												{ value: "Russian", label: "Russian - Русский" },
-												{ value: "Simplified Chinese", label: "Simplified Chinese - 简体中文" },
-												{ value: "Spanish", label: "Spanish - Español" },
+												{ value: "Catalan", label: "加泰罗尼亚语 - Català" },
+												{ value: "Czech", label: "捷克语 - Čeština" },
+												{ value: "French", label: "法语 - Français" },
+												{ value: "German", label: "德语 - Deutsch" },
+												{ value: "Hindi", label: "印地语 - हिन्दी" },
+												{ value: "Hungarian", label: "匈牙利语 - Magyar" },
+												{ value: "Italian", label: "意大利语 - Italiano" },
+												{ value: "Japanese", label: "日语 - 日本語" },
+												{ value: "Korean", label: "韩语 - 한국어" },
+												{ value: "Polish", label: "波兰语 - Polski" },
+												{ value: "Portuguese", label: "葡萄牙语 - Português (Portugal)" },
+												{ value: "Russian", label: "俄语 - Русский" },
+												{ value: "Simplified Chinese", label: "简体中文" },
+												{ value: "Spanish", label: "西班牙语 - Español" },
 												{
 													value: "Traditional Chinese",
-													label: "Traditional Chinese - 繁體中文",
+													label: "繁体中文 - 繁體中文",
 												},
-												{ value: "Turkish", label: "Turkish - Türkçe" },
+												{ value: "Turkish", label: "土耳其语 - Türkçe" },
 											].map((language) => (
 												<CommandItem
 													key={language.value}
@@ -491,20 +491,19 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 											setIsCustomLanguage(true)
 											setOpen(false)
 										}}>
-										+ Choose another language
+										+ 选择其他语言
 									</button>
 								</div>
 							</PopoverContent>
 						</Popover>
 						<p className="text-xs mt-1.5 text-vscode-descriptionForeground">
-							Select the language that Roo should use for communication.
+							选择Roo与您交流时使用的语言。
 						</p>
 					</div>
 
-					<div className="font-bold mb-1">Custom Instructions for All Modes</div>
+					<div className="font-bold mb-1">所有模式的自定义指令</div>
 					<div className="text-sm text-vscode-descriptionForeground mb-2">
-						These instructions apply to all modes. They provide a base set of behaviors that can be enhanced
-						by mode-specific instructions below.
+						这些指令适用于所有模式。它们提供了一组基础行为，可以通过下方的模式特定指令进行增强。
 					</div>
 					<VSCodeTextArea
 						value={customInstructions ?? ""}
@@ -524,7 +523,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 						data-testid="global-custom-instructions-textarea"
 					/>
 					<div className="text-xs text-vscode-descriptionForeground mt-1.5 mb-10">
-						Instructions can also be loaded from{" "}
+						指令也可以从工作区的{" "}
 						<span
 							className="text-vscode-textLink-foreground cursor-pointer underline"
 							onClick={() =>
@@ -539,7 +538,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 							}>
 							.clinerules
 						</span>{" "}
-						in your workspace.
+						文件中加载。
 					</div>
 				</div>
 
@@ -547,13 +546,13 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 					<div onClick={(e) => e.stopPropagation()} className="flex justify-between items-center mb-3">
 						<h3 className="text-vscode-foreground m-0">Modes</h3>
 						<div className="flex gap-2">
-							<VSCodeButton appearance="icon" onClick={openCreateModeDialog} title="Create new mode">
+							<VSCodeButton appearance="icon" onClick={openCreateModeDialog} title="创建新模式">
 								<span className="codicon codicon-add"></span>
 							</VSCodeButton>
 							<div className="relative inline-block">
 								<VSCodeButton
 									appearance="icon"
-									title="Edit modes configuration"
+									title="编辑模式配置"
 									className="flex"
 									onClick={(e: React.MouseEvent) => {
 										e.preventDefault()
@@ -581,7 +580,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 												setShowConfigMenu(false)
 											}}
 											onClick={(e) => e.preventDefault()}>
-											Edit Global Modes
+											编辑全局模式
 										</div>
 										<div
 											className="p-2 cursor-pointer text-vscode-foreground text-sm border-t border-vscode-input-border"
@@ -598,7 +597,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 												setShowConfigMenu(false)
 											}}
 											onClick={(e) => e.preventDefault()}>
-											Edit Project Modes (.roomodes)
+											编辑项目模式 (.roomodes)
 										</div>
 									</div>
 								)}
@@ -607,7 +606,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 					</div>
 
 					<div className="text-sm text-vscode-descriptionForeground mb-3">
-						Hit the + to create a new custom mode, or just ask Roo in chat to create one for you!
+						点击 + 创建新的自定义模式，或者直接在聊天中让 Roo 帮你创建！
 					</div>
 
 					<div className="flex gap-2 items-center mb-3 flex-wrap py-1">
@@ -657,7 +656,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 									/>
 									<VSCodeButton
 										appearance="icon"
-										title="Delete mode"
+										title="删除模式"
 										onClick={() => {
 											vscode.postMessage({
 												type: "deleteCustomMode",
@@ -672,7 +671,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 					)}
 					<div style={{ marginBottom: "16px" }}>
 						<div className="flex justify-between items-center mb-1">
-							<div className="font-bold">Role Definition</div>
+							<div className="font-bold">角色定义</div>
 							{!findModeBySlug(mode, customModes) && (
 								<VSCodeButton
 									appearance="icon"
@@ -682,15 +681,14 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 											handleAgentReset(currentMode.slug, "roleDefinition")
 										}
 									}}
-									title="Reset to default"
+									title="重置为默认值"
 									data-testid="role-definition-reset">
 									<span className="codicon codicon-discard"></span>
 								</VSCodeButton>
 							)}
 						</div>
 						<div className="text-sm text-vscode-descriptionForeground mb-2">
-							Define Roo's expertise and personality for this mode. This description shapes how Roo
-							presents itself and approaches tasks.
+							为此模式定义Roo的专业知识和个性。这段描述将塑造Roo如何展现自己以及如何处理任务。
 						</div>
 						<VSCodeTextArea
 							value={(() => {
@@ -726,7 +724,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 					{/* Mode settings */}
 					<>
 						<div style={{ marginBottom: "12px" }}>
-							<div style={{ fontWeight: "bold", marginBottom: "4px" }}>API Configuration</div>
+							<div style={{ fontWeight: "bold", marginBottom: "4px" }}>API 配置</div>
 							<div style={{ marginBottom: "8px" }}>
 								<VSCodeDropdown
 									value={currentApiConfigName || ""}
@@ -745,7 +743,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 									))}
 								</VSCodeDropdown>
 								<div className="text-xs mt-1.5 text-vscode-descriptionForeground">
-									Select which API configuration to use for this mode
+									选择要用于此模式的 API 配置
 								</div>
 							</div>
 						</div>
@@ -753,12 +751,12 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 						{/* Show tools for all modes */}
 						<div className="mb-4">
 							<div className="flex justify-between items-center mb-1">
-								<div className="font-bold">Available Tools</div>
+								<div className="font-bold">可用工具</div>
 								{findModeBySlug(mode, customModes) && (
 									<VSCodeButton
 										appearance="icon"
 										onClick={() => setIsToolsEditMode(!isToolsEditMode)}
-										title={isToolsEditMode ? "Done editing" : "Edit tools"}>
+										title={isToolsEditMode ? "完成编辑" : "编辑工具"}>
 										<span
 											className={`codicon codicon-${isToolsEditMode ? "check" : "edit"}`}></span>
 									</VSCodeButton>
@@ -766,7 +764,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 							</div>
 							{!findModeBySlug(mode, customModes) && (
 								<div className="text-sm text-vscode-descriptionForeground mb-2">
-									Tools for built-in modes cannot be modified
+									内置模式的工具不能被修改
 								</div>
 							)}
 							{isToolsEditMode && findModeBySlug(mode, customModes) ? (
@@ -788,7 +786,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 												{GROUP_DISPLAY_NAMES[group]}
 												{group === "edit" && (
 													<div className="text-xs text-vscode-descriptionForeground mt-0.5">
-														Allowed files:{" "}
+														允许的文件：{" "}
 														{(() => {
 															const currentMode = getCurrentMode()
 															const editGroup = currentMode?.groups?.find(
@@ -797,7 +795,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 																	g[0] === "edit" &&
 																	g[1]?.fileRegex,
 															)
-															if (!Array.isArray(editGroup)) return "all files"
+															if (!Array.isArray(editGroup)) return "所有文件"
 															return (
 																editGroup[1].description ||
 																`/${editGroup[1].fileRegex}/`
@@ -841,7 +839,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								alignItems: "center",
 								marginBottom: "4px",
 							}}>
-							<div style={{ fontWeight: "bold" }}>Mode-specific Custom Instructions (optional)</div>
+							<div style={{ fontWeight: "bold" }}>模式特定自定义指令（可选）</div>
 							{!findModeBySlug(mode, customModes) && (
 								<VSCodeButton
 									appearance="icon"
@@ -851,7 +849,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 											handleAgentReset(currentMode.slug, "customInstructions")
 										}
 									}}
-									title="Reset to default"
+									title="重置为默认值"
 									data-testid="custom-instructions-reset">
 									<span className="codicon codicon-discard"></span>
 								</VSCodeButton>
@@ -863,7 +861,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								color: "var(--vscode-descriptionForeground)",
 								marginBottom: "8px",
 							}}>
-							Add behavioral guidelines specific to {getCurrentMode()?.name || "Code"} mode.
+							添加 {getCurrentMode()?.name || "代码"} 模式的特定行为指导。
 						</div>
 						<VSCodeTextArea
 							value={(() => {
@@ -907,8 +905,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								color: "var(--vscode-descriptionForeground)",
 								marginTop: "5px",
 							}}>
-							Custom instructions specific to {getCurrentMode()?.name || "Code"} mode can also be loaded
-							from{" "}
+							{getCurrentMode()?.name || "代码"} 模式的特定指令也可以从 加载
 							<span
 								style={{
 									color: "var(--vscode-textLink-foreground)",
@@ -931,7 +928,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								}}>
 								.clinerules-{getCurrentMode()?.slug || "code"}
 							</span>{" "}
-							in your workspace.
+							在你的工作区。
 						</div>
 					</div>
 				</div>
@@ -954,11 +951,11 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								}
 							}}
 							data-testid="preview-prompt-button">
-							Preview System Prompt
+							预览系统提示词
 						</VSCodeButton>
 						<VSCodeButton
 							appearance="icon"
-							title="Copy system prompt to clipboard"
+							title="复制系统提示词到剪贴板"
 							onClick={() => {
 								const currentMode = getCurrentMode()
 								if (currentMode) {
@@ -981,13 +978,12 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 							aria-expanded={isSystemPromptDisclosureOpen}>
 							<span
 								className={`codicon codicon-${isSystemPromptDisclosureOpen ? "chevron-down" : "chevron-right"} mr-1`}></span>
-							<span>Advanced: Override System Prompt</span>
+							<span>高级：覆盖系统提示词</span>
 						</button>
 
 						{isSystemPromptDisclosureOpen && (
 							<div className="text-xs text-vscode-descriptionForeground mt-2 ml-5">
-								You can completely replace the system prompt for this mode (aside from the role
-								definition and custom instructions) by creating a file at{" "}
+								您可以通过创建文件来完全替换此模式的系统提示（除了角色定义和自定义指令外） 文件位置：{" "}
 								<span
 									className="text-vscode-textLink-foreground cursor-pointer underline"
 									onClick={() => {
@@ -1004,10 +1000,9 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 											},
 										})
 									}}>
-									.roo/system-prompt-{getCurrentMode()?.slug || "code"}
+									在您的工作区中的 .roo/system-prompt-{getCurrentMode()?.slug || "code"}
 								</span>{" "}
-								in your workspace. This is a very advanced feature that bypasses built-in safeguards and
-								consistency checks (especially around tool usage), so be careful!
+								文件。这是一个高级功能，会绕过内置的安全保护和一致性检查（特别是在工具使用方面），请谨慎使用！
 							</div>
 						)}
 					</div>
@@ -1019,7 +1014,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 						paddingBottom: "60px",
 						borderBottom: "1px solid var(--vscode-input-border)",
 					}}>
-					<h3 style={{ color: "var(--vscode-foreground)", marginBottom: "12px" }}>Support Prompts</h3>
+					<h3 style={{ color: "var(--vscode-foreground)", marginBottom: "12px" }}>辅助提示词</h3>
 					<div
 						style={{
 							display: "flex",
@@ -1107,16 +1102,13 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 										}}></div>
 									<div style={{ marginBottom: "12px" }}>
 										<div style={{ marginBottom: "8px" }}>
-											<div style={{ fontWeight: "bold", marginBottom: "4px" }}>
-												API Configuration
-											</div>
+											<div style={{ fontWeight: "bold", marginBottom: "4px" }}>API 配置</div>
 											<div
 												style={{
 													fontSize: "13px",
 													color: "var(--vscode-descriptionForeground)",
 												}}>
-												You can select an API configuration to always use for enhancing prompts,
-												or just use whatever is currently selected
+												您可以选择一个固定的API配置用于增强提示， 或者使用当前选择的配置
 											</div>
 										</div>
 										<VSCodeDropdown
@@ -1131,9 +1123,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 												})
 											}}
 											style={{ width: "300px" }}>
-											<VSCodeOption value="">
-												Use currently selected API configuration
-											</VSCodeOption>
+											<VSCodeOption value="">使用当前选择的 API 配置</VSCodeOption>
 											{(listApiConfigMeta || []).map((config) => (
 												<VSCodeOption key={config.id} value={config.id}>
 													{config.name}
@@ -1147,7 +1137,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 									<VSCodeTextArea
 										value={testPrompt}
 										onChange={(e) => setTestPrompt((e.target as HTMLTextAreaElement).value)}
-										placeholder="Enter a prompt to test the enhancement"
+										placeholder="输入提示以测试增强功能"
 										rows={3}
 										resize="vertical"
 										style={{ width: "100%" }}
@@ -1165,7 +1155,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 											onClick={handleTestEnhancement}
 											disabled={isEnhancing}
 											appearance="primary">
-											Preview Prompt Enhancement
+											预览提示增强
 										</VSCodeButton>
 									</div>
 								</div>
@@ -1212,9 +1202,9 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								}}>
 								<span className="codicon codicon-close"></span>
 							</VSCodeButton>
-							<h2 style={{ margin: "0 0 16px" }}>Create New Mode</h2>
+							<h2 style={{ margin: "0 0 16px" }}>创建新模式</h2>
 							<div style={{ marginBottom: "16px" }}>
-								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>Name</div>
+								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>名称</div>
 								<VSCodeTextField
 									value={newModeName}
 									onChange={(e: Event | React.FormEvent<HTMLElement>) => {
@@ -1230,7 +1220,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								)}
 							</div>
 							<div style={{ marginBottom: "16px" }}>
-								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>Slug</div>
+								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>标识符</div>
 								<VSCodeTextField
 									value={newModeSlug}
 									onChange={(e: Event | React.FormEvent<HTMLElement>) => {
@@ -1247,18 +1237,16 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 										color: "var(--vscode-descriptionForeground)",
 										marginTop: "4px",
 									}}>
-									The slug is used in URLs and file names. It should be lowercase and contain only
-									letters, numbers, and hyphens.
+									标识符用于 URL 和文件名。应该使用小写字母，只能包含字母、数字和连字符。
 								</div>
 								{slugError && (
 									<div className="text-xs text-vscode-errorForeground mt-1">{slugError}</div>
 								)}
 							</div>
 							<div style={{ marginBottom: "16px" }}>
-								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>Save Location</div>
+								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>保存位置</div>
 								<div className="text-sm text-vscode-descriptionForeground mb-2">
-									Choose where to save this mode. Project-specific modes take precedence over global
-									modes.
+									选择保存此模式的位置。项目特定的模式优先于全局模式。
 								</div>
 								<VSCodeRadioGroup
 									value={newModeSource}
@@ -1268,34 +1256,34 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 										setNewModeSource(target.value as ModeSource)
 									}}>
 									<VSCodeRadio value="global">
-										Global
+										全局
 										<div
 											style={{
 												fontSize: "12px",
 												color: "var(--vscode-descriptionForeground)",
 												marginTop: "2px",
 											}}>
-											Available in all workspaces
+											在所有工作区中可用
 										</div>
 									</VSCodeRadio>
 									<VSCodeRadio value="project">
-										Project-specific (.roomodes)
+										项目特定 (.roomodes)
 										<div className="text-xs text-vscode-descriptionForeground mt-0.5">
-											Only available in this workspace, takes precedence over global
+											仅在此工作区可用，优先于全局设置
 										</div>
 									</VSCodeRadio>
 								</VSCodeRadioGroup>
 							</div>
 
 							<div style={{ marginBottom: "16px" }}>
-								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>Role Definition</div>
+								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>角色定义</div>
 								<div
 									style={{
 										fontSize: "13px",
 										color: "var(--vscode-descriptionForeground)",
 										marginBottom: "8px",
 									}}>
-									Define Roo's expertise and personality for this mode.
+									为此模式定义 Roo 的专业知识和个性。
 								</div>
 								<VSCodeTextArea
 									value={newModeRoleDefinition}
@@ -1316,14 +1304,14 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								)}
 							</div>
 							<div style={{ marginBottom: "16px" }}>
-								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>Available Tools</div>
+								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>可用工具</div>
 								<div
 									style={{
 										fontSize: "13px",
 										color: "var(--vscode-descriptionForeground)",
 										marginBottom: "8px",
 									}}>
-									Select which tools this mode can use.
+									选择此模式可以使用的工具。
 								</div>
 								<div
 									style={{
@@ -1356,16 +1344,14 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								)}
 							</div>
 							<div style={{ marginBottom: "16px" }}>
-								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>
-									Custom Instructions (optional)
-								</div>
+								<div style={{ fontWeight: "bold", marginBottom: "4px" }}>自定义指令（可选）</div>
 								<div
 									style={{
 										fontSize: "13px",
 										color: "var(--vscode-descriptionForeground)",
 										marginBottom: "8px",
 									}}>
-									Add behavioral guidelines specific to this mode.
+									添加此模式特有的行为指导。
 								</div>
 								<VSCodeTextArea
 									value={newModeCustomInstructions}
@@ -1390,9 +1376,9 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								borderTop: "1px solid var(--vscode-editor-lineHighlightBorder)",
 								backgroundColor: "var(--vscode-editor-background)",
 							}}>
-							<VSCodeButton onClick={() => setIsCreateModeDialogOpen(false)}>Cancel</VSCodeButton>
+							<VSCodeButton onClick={() => setIsCreateModeDialogOpen(false)}>取消</VSCodeButton>
 							<VSCodeButton appearance="primary" onClick={handleCreateMode}>
-								Create Mode
+								创建模式
 							</VSCodeButton>
 						</div>
 					</div>
@@ -1460,7 +1446,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 								borderTop: "1px solid var(--vscode-editor-lineHighlightBorder)",
 								backgroundColor: "var(--vscode-editor-background)",
 							}}>
-							<VSCodeButton onClick={() => setIsDialogOpen(false)}>Close</VSCodeButton>
+							<VSCodeButton onClick={() => setIsDialogOpen(false)}>关闭</VSCodeButton>
 						</div>
 					</div>
 				</div>
@@ -1472,13 +1458,13 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 						<input
 							type="text"
 							className="w-full p-2 mb-4 bg-[var(--vscode-input-background)] text-[var(--vscode-input-foreground)] border border-[var(--vscode-input-border)] rounded"
-							placeholder="Enter language name"
+							placeholder="输入语言名称"
 							value={customLanguage}
 							onChange={(e) => setCustomLanguage(e.target.value)}
 						/>
 						<div className="flex justify-end gap-2">
 							<Button variant="secondary" onClick={() => setIsCustomLanguage(false)}>
-								Cancel
+								取消
 							</Button>
 							<Button
 								onClick={() => {
@@ -1493,7 +1479,7 @@ const PromptsView = ({ onDone }: PromptsViewProps) => {
 									}
 								}}
 								disabled={!customLanguage.trim()}>
-								Add
+								添加
 							</Button>
 						</div>
 					</div>

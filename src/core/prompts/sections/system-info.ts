@@ -12,14 +12,14 @@ export function getSystemInfoSection(cwd: string, currentMode: Mode, customModes
 
 	let details = `====
 
-SYSTEM INFORMATION
+系统信息
 
-Operating System: ${osName()}
-Default Shell: ${getShell()}
-Home Directory: ${os.homedir().toPosix()}
-Current Working Directory: ${cwd.toPosix()}
+操作系统：${osName()}
+默认Shell：${getShell()}
+主目录：${os.homedir().toPosix()}
+当前工作目录：${cwd.toPosix()}
 
-When the user initially gives you a task, a recursive list of all filepaths in the current working directory ('/test/path') will be included in environment_details. This provides an overview of the project's file structure, offering key insights into the project from directory/file names (how developers conceptualize and organize their code) and file extensions (the language used). This can also guide decision-making on which files to explore further. If you need to further explore directories such as outside the current working directory, you can use the list_files tool. If you pass 'true' for the recursive parameter, it will list files recursively. Otherwise, it will list files at the top level, which is better suited for generic directories where you don't necessarily need the nested structure, like the Desktop.`
+当用户最初给你一个任务时，当前工作目录（'/test/path'）中所有文件路径的递归列表将包含在environment_details中。这提供了项目文件结构的概览，通过目录/文件名（开发人员如何概念化和组织他们的代码）和文件扩展名（使用的编程语言）提供了项目的关键信息。这也可以指导决定需要进一步探索哪些文件。如果你需要探索当前工作目录之外的目录，你可以使用list_files工具。如果为recursive参数传递'true'，它将递归列出文件。否则，它将只列出顶层文件，这更适合于不一定需要嵌套结构的通用目录，比如桌面。`
 
 	return details
 }

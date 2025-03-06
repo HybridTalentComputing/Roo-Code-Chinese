@@ -8,72 +8,72 @@ export function validateApiConfiguration(apiConfiguration?: ApiConfiguration): s
 	switch (apiConfiguration.apiProvider) {
 		case "openrouter":
 			if (!apiConfiguration.openRouterApiKey) {
-				return "You must provide a valid API key."
+				return "请提供有效的API密钥。"
 			}
 			break
 		case "glama":
 			if (!apiConfiguration.glamaApiKey) {
-				return "You must provide a valid API key."
+				return "请提供有效的API密钥。"
 			}
 			break
 		case "unbound":
 			if (!apiConfiguration.unboundApiKey) {
-				return "You must provide a valid API key."
+				return "请提供有效的API密钥。"
 			}
 			break
 		case "requesty":
 			if (!apiConfiguration.requestyApiKey) {
-				return "You must provide a valid API key."
+				return "请提供有效的API密钥。"
 			}
 			break
 		case "anthropic":
 			if (!apiConfiguration.apiKey) {
-				return "You must provide a valid API key."
+				return "请提供有效的API密钥。"
 			}
 			break
 		case "bedrock":
 			if (!apiConfiguration.awsRegion) {
-				return "You must choose a region to use with AWS Bedrock."
+				return "请选择AWS Bedrock要使用的区域。"
 			}
 			break
 		case "vertex":
 			if (!apiConfiguration.vertexProjectId || !apiConfiguration.vertexRegion) {
-				return "You must provide a valid Google Cloud Project ID and Region."
+				return "请提供有效的Google Cloud项目ID和区域。"
 			}
 			break
 		case "gemini":
 			if (!apiConfiguration.geminiApiKey) {
-				return "You must provide a valid API key."
+				return "请提供有效的API密钥。"
 			}
 			break
 		case "openai-native":
 			if (!apiConfiguration.openAiNativeApiKey) {
-				return "You must provide a valid API key."
+				return "请提供有效的API密钥。"
 			}
 			break
 		case "mistral":
 			if (!apiConfiguration.mistralApiKey) {
-				return "You must provide a valid API key."
+				return "请提供有效的API密钥。"
 			}
 			break
 		case "openai":
 			if (!apiConfiguration.openAiBaseUrl || !apiConfiguration.openAiApiKey || !apiConfiguration.openAiModelId) {
-				return "You must provide a valid base URL, API key, and model ID."
+				return "请提供有效的基础URL、API密钥和模型ID。"
 			}
 			break
 		case "ollama":
 			if (!apiConfiguration.ollamaModelId) {
-				return "You must provide a valid model ID."
+				return "请提供有效的模型ID。"
 			}
 			break
 		case "lmstudio":
 			if (!apiConfiguration.lmStudioModelId) {
-				return "You must provide a valid model ID."
+				return "请提供有效的模型ID。"
 			}
 			break
 		case "vscode-lm":
 			if (!apiConfiguration.vsCodeLmModelSelector) {
-				return "You must provide a valid model selector."
+				return "请提供有效的模型选择器。"
 			}
 			break
 	}
@@ -97,7 +97,7 @@ export function validateModelId(
 			const modelId = apiConfiguration.openRouterModelId
 
 			if (!modelId) {
-				return "You must provide a model ID."
+				return "请提供模型ID。"
 			}
 
 			if (
@@ -105,7 +105,7 @@ export function validateModelId(
 				Object.keys(openRouterModels).length > 1 &&
 				!Object.keys(openRouterModels).includes(modelId)
 			) {
-				return `The model ID (${modelId}) you provided is not available. Please choose a different model.`
+				return `您提供的模型ID (${modelId}) 不可用。请选择其他模型。`
 			}
 
 			break
@@ -114,7 +114,7 @@ export function validateModelId(
 			const glamaModelId = apiConfiguration.glamaModelId
 
 			if (!glamaModelId) {
-				return "You must provide a model ID."
+				return "请提供模型ID。"
 			}
 
 			if (
@@ -122,7 +122,7 @@ export function validateModelId(
 				Object.keys(glamaModels).length > 1 &&
 				!Object.keys(glamaModels).includes(glamaModelId)
 			) {
-				return `The model ID (${glamaModelId}) you provided is not available. Please choose a different model.`
+				return `您提供的模型ID (${glamaModelId}) 不可用。请选择其他模型。`
 			}
 
 			break
@@ -131,7 +131,7 @@ export function validateModelId(
 			const unboundModelId = apiConfiguration.unboundModelId
 
 			if (!unboundModelId) {
-				return "You must provide a model ID."
+				return "请提供模型ID。"
 			}
 
 			if (
@@ -139,7 +139,7 @@ export function validateModelId(
 				Object.keys(unboundModels).length > 1 &&
 				!Object.keys(unboundModels).includes(unboundModelId)
 			) {
-				return `The model ID (${unboundModelId}) you provided is not available. Please choose a different model.`
+				return `您提供的模型ID (${unboundModelId}) 不可用。请选择其他模型。`
 			}
 
 			break
@@ -148,7 +148,7 @@ export function validateModelId(
 			const requestyModelId = apiConfiguration.requestyModelId
 
 			if (!requestyModelId) {
-				return "You must provide a model ID."
+				return "请提供模型ID。"
 			}
 
 			if (
@@ -156,7 +156,7 @@ export function validateModelId(
 				Object.keys(requestyModels).length > 1 &&
 				!Object.keys(requestyModels).includes(requestyModelId)
 			) {
-				return `The model ID (${requestyModelId}) you provided is not available. Please choose a different model.`
+				return `您提供的模型ID (${requestyModelId}) 不可用。请选择其他模型。`
 			}
 
 			break

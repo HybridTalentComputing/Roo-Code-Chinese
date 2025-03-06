@@ -18,8 +18,7 @@ import { McpHub } from "../../../services/mcp/McpHub"
 import { Mode, ModeConfig, getModeConfig, isToolAllowedForMode, getGroupName } from "../../../shared/modes"
 import { ToolName, TOOL_GROUPS, ALWAYS_AVAILABLE_TOOLS } from "../../../shared/tool-groups"
 import { ToolArgs } from "./types"
-
-// Map of tool names to their description functions
+// 工具名称到其描述函数的映射
 const toolDescriptionMap: Record<string, (args: ToolArgs) => string | undefined> = {
 	execute_command: (args) => getExecuteCommandDescription(args),
 	read_file: (args) => getReadFileDescription(args),
@@ -61,7 +60,7 @@ export function getToolDescriptionsForMode(
 
 	const tools = new Set<string>()
 
-	// Add tools from mode's groups
+	// 从模式的组中添加工具
 	config.groups.forEach((groupEntry) => {
 		const groupName = getGroupName(groupEntry)
 		const toolGroup = TOOL_GROUPS[groupName]
@@ -74,10 +73,10 @@ export function getToolDescriptionsForMode(
 		}
 	})
 
-	// Add always available tools
+	// 添加始终可用的工具
 	ALWAYS_AVAILABLE_TOOLS.forEach((tool) => tools.add(tool))
 
-	// Map tool descriptions for allowed tools
+	// 映射允许工具的描述
 	const descriptions = Array.from(tools).map((toolName) => {
 		const descriptionFn = toolDescriptionMap[toolName]
 		if (!descriptionFn) {
@@ -86,7 +85,7 @@ export function getToolDescriptionsForMode(
 
 		return descriptionFn({
 			...args,
-			toolOptions: undefined, // No tool options in group-based approach
+			toolOptions: undefined, // 基于组的方法中没有工具选项
 		})
 	})
 

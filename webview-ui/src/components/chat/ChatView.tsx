@@ -113,16 +113,16 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 							setTextAreaDisabled(true)
 							setClineAsk("api_req_failed")
 							setEnableButtons(true)
-							setPrimaryButtonText("Retry")
-							setSecondaryButtonText("Start New Task")
+							setPrimaryButtonText("重试")
+							setSecondaryButtonText("开始新任务")
 							break
 						case "mistake_limit_reached":
 							playSound("progress_loop")
 							setTextAreaDisabled(false)
 							setClineAsk("mistake_limit_reached")
 							setEnableButtons(true)
-							setPrimaryButtonText("Proceed Anyways")
-							setSecondaryButtonText("Start New Task")
+							setPrimaryButtonText("仍然继续")
+							setSecondaryButtonText("开始新任务")
 							break
 						case "followup":
 							setTextAreaDisabled(isPartial)
@@ -143,12 +143,12 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 								case "editedExistingFile":
 								case "appliedDiff":
 								case "newFileCreated":
-									setPrimaryButtonText("Save")
-									setSecondaryButtonText("Reject")
+									setPrimaryButtonText("保存")
+									setSecondaryButtonText("拒绝")
 									break
 								default:
-									setPrimaryButtonText("Approve")
-									setSecondaryButtonText("Reject")
+									setPrimaryButtonText("批准")
+									setSecondaryButtonText("拒绝")
 									break
 							}
 							break
@@ -169,22 +169,22 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 							setTextAreaDisabled(isPartial)
 							setClineAsk("command")
 							setEnableButtons(!isPartial)
-							setPrimaryButtonText("Run Command")
-							setSecondaryButtonText("Reject")
+							setPrimaryButtonText("运行命令")
+							setSecondaryButtonText("拒绝")
 							break
 						case "command_output":
 							setTextAreaDisabled(false)
 							setClineAsk("command_output")
 							setEnableButtons(true)
-							setPrimaryButtonText("Proceed While Running")
+							setPrimaryButtonText("继续执行")
 							setSecondaryButtonText(undefined)
 							break
 						case "use_mcp_server":
 							setTextAreaDisabled(isPartial)
 							setClineAsk("use_mcp_server")
 							setEnableButtons(!isPartial)
-							setPrimaryButtonText("Approve")
-							setSecondaryButtonText("Reject")
+							setPrimaryButtonText("批准")
+							setSecondaryButtonText("拒绝")
 							break
 						case "completion_result":
 							// extension waiting for feedback. but we can just present a new task button
@@ -192,22 +192,22 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 							setTextAreaDisabled(isPartial)
 							setClineAsk("completion_result")
 							setEnableButtons(!isPartial)
-							setPrimaryButtonText("Start New Task")
+							setPrimaryButtonText("开始新任务")
 							setSecondaryButtonText(undefined)
 							break
 						case "resume_task":
 							setTextAreaDisabled(false)
 							setClineAsk("resume_task")
 							setEnableButtons(true)
-							setPrimaryButtonText("Resume Task")
-							setSecondaryButtonText("Terminate")
+							setPrimaryButtonText("继续任务")
+							setSecondaryButtonText("终止")
 							setDidClickCancel(false) // special case where we reset the cancel button state
 							break
 						case "resume_completed_task":
 							setTextAreaDisabled(false)
 							setClineAsk("resume_completed_task")
 							setEnableButtons(true)
-							setPrimaryButtonText("Start New Task")
+							setPrimaryButtonText("开始新任务")
 							setSecondaryButtonText(undefined)
 							setDidClickCancel(false)
 							break
@@ -908,7 +908,7 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 			<div className="flex items-center p-3 my-3 bg-vscode-inputValidation-warningBackground border border-vscode-inputValidation-warningBorder rounded">
 				<span className="codicon codicon-loading codicon-modifier-spin mr-2" />
 				<span className="text-vscode-foreground">
-					Still initializing checkpoint... If this takes too long, you can{" "}
+					正在初始化检查点...如果时间太长，您可以{" "}
 					<VSCodeLink
 						href="#"
 						onClick={(e) => {
@@ -916,9 +916,9 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 							window.postMessage({ type: "action", action: "settingsButtonClicked" }, "*")
 						}}
 						className="inline px-0.5">
-						disable checkpoints in settings
+						在设置中禁用检查点
 					</VSCodeLink>{" "}
-					and restart your task.
+					并重新开始你的任务。
 				</span>
 			</div>
 		),
@@ -926,9 +926,9 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 	)
 
 	const placeholderText = useMemo(() => {
-		const baseText = task ? "Type a message..." : "Type your task here..."
-		const contextText = "(@ to add context, / to switch modes"
-		const imageText = shouldDisableImages ? ", hold shift to drag in files" : ", hold shift to drag in files/images"
+		const baseText = task ? "输入消息..." : "在此输入您的任务..."
+		const contextText = "(@ 添加上下文, / 切换模式"
+		const imageText = shouldDisableImages ? ", 按住 Shift 拖入文件" : ", 按住 Shift 拖入文件/图片"
 		return baseText + `\n${contextText}${imageText})`
 	}, [task, shouldDisableImages])
 
@@ -1089,13 +1089,9 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 					}}>
 					{showAnnouncement && <Announcement version={version} hideAnnouncement={hideAnnouncement} />}
 					<div style={{ padding: "0 20px", flexShrink: 0 }}>
-						<h2>What can Roo do for you?</h2>
+						<h2>Roo能为您做什么？</h2>
 						<p>
-							Thanks to the latest breakthroughs in agentic coding capabilities, I can handle complex
-							software development tasks step-by-step. With tools that let me create & edit files, explore
-							complex projects, use the browser, and execute terminal commands (after you grant
-							permission), I can assist you in ways that go beyond code completion or tech support. I can
-							even use MCP to create new tools and extend my own capabilities.
+							得益于最新的智能编程技术突破，我可以一步步处理复杂的软件开发任务。通过创建和编辑文件、探索复杂项目、使用浏览器以及执行终端命令（在您授权后）等工具，我能够提供超越代码补全和技术支持的帮助。我甚至可以使用MCP创建新工具，扩展自己的能力。
 						</p>
 					</div>
 					{taskHistory.length > 0 && <HistoryPreview showHistoryView={showHistoryView} />}
@@ -1194,21 +1190,21 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 									}}
 									title={
 										primaryButtonText === "Retry"
-											? "Try the operation again"
+											? "重新尝试该操作"
 											: primaryButtonText === "Save"
-												? "Save the file changes"
+												? "保存文件更改"
 												: primaryButtonText === "Approve"
-													? "Approve this action"
+													? "批准此操作"
 													: primaryButtonText === "Run Command"
-														? "Execute this command"
+														? "执行此命令"
 														: primaryButtonText === "Start New Task"
-															? "Begin a new task"
+															? "开始新任务"
 															: primaryButtonText === "Resume Task"
-																? "Continue the current task"
+																? "继续当前任务"
 																: primaryButtonText === "Proceed Anyways"
-																	? "Continue despite warnings"
+																	? "忽略警告继续"
 																	: primaryButtonText === "Proceed While Running"
-																		? "Continue while command executes"
+																		? "在命令执行时继续"
 																		: undefined
 									}
 									onClick={(e) => handlePrimaryButtonClick(inputValue, selectedImages)}>
@@ -1225,13 +1221,13 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 									}}
 									title={
 										isStreaming
-											? "Cancel the current operation"
+											? "取消当前操作"
 											: secondaryButtonText === "Start New Task"
-												? "Begin a new task"
+												? "开始新任务"
 												: secondaryButtonText === "Reject"
-													? "Reject this action"
+													? "拒绝此操作"
 													: secondaryButtonText === "Terminate"
-														? "End the current task"
+														? "结束当前任务"
 														: undefined
 									}
 									onClick={(e) => handleSecondaryButtonClick(inputValue, selectedImages)}>

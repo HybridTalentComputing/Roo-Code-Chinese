@@ -252,16 +252,16 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 					<Button
 						appearance={isSettingValid ? "primary" : "secondary"}
 						className={!isSettingValid ? "!border-vscode-errorForeground" : ""}
-						title={!isSettingValid ? errorMessage : isChangeDetected ? "Save changes" : "Nothing changed"}
+						title={!isSettingValid ? "设置无效" : isChangeDetected ? "保存更改" : "无更改"}
 						onClick={handleSubmit}
 						disabled={!isChangeDetected || !isSettingValid}>
-						Save
+						保存
 					</Button>
 					<VSCodeButton
 						appearance="secondary"
-						title="Discard unsaved changes and close settings panel"
+						title="放弃未保存的更改并关闭设置面板"
 						onClick={() => checkUnsaveChanges(onDone)}>
-						Done
+						完成
 					</VSCodeButton>
 				</div>
 			</div>
@@ -314,18 +314,17 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 				</div>
 
 				<div style={{ marginBottom: 40 }}>
-					<h3 style={{ color: "var(--vscode-foreground)", margin: "0 0 15px 0" }}>Auto-Approve Settings</h3>
+					<h3 style={{ color: "var(--vscode-foreground)", margin: "0 0 15px 0" }}>自动批准设置</h3>
 					<p style={{ fontSize: "12px", marginBottom: 15, color: "var(--vscode-descriptionForeground)" }}>
-						The following settings allow Roo to automatically perform operations without requiring approval.
-						Enable these settings only if you fully trust the AI and understand the associated security
-						risks.
+						以下设置允许 Roo 在无需批准的情况下自动执行操作。 请仅在您完全信任 AI
+						并了解相关安全风险的情况下启用这些设置。
 					</p>
 
 					<div style={{ marginBottom: 15 }}>
 						<VSCodeCheckbox
 							checked={alwaysAllowReadOnly}
 							onChange={(e: any) => setCachedStateField("alwaysAllowReadOnly", e.target.checked)}>
-							<span style={{ fontWeight: "500" }}>Always approve read-only operations</span>
+							<span style={{ fontWeight: "500" }}>自动批准只读操作</span>
 						</VSCodeCheckbox>
 						<p
 							style={{
@@ -333,8 +332,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 								marginTop: "5px",
 								color: "var(--vscode-descriptionForeground)",
 							}}>
-							When enabled, Roo will automatically view directory contents and read files without
-							requiring you to click the Approve button.
+							启用后，Roo 将自动查看目录内容和读取文件，无需您点击批准按钮。
 						</p>
 					</div>
 
@@ -342,10 +340,10 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 						<VSCodeCheckbox
 							checked={alwaysAllowWrite}
 							onChange={(e: any) => setCachedStateField("alwaysAllowWrite", e.target.checked)}>
-							<span style={{ fontWeight: "500" }}>Always approve write operations</span>
+							<span style={{ fontWeight: "500" }}>自动批准写入操作</span>
 						</VSCodeCheckbox>
 						<p style={{ fontSize: "12px", marginTop: "5px", color: "var(--vscode-descriptionForeground)" }}>
-							Automatically create and edit files without requiring approval
+							自动创建和编辑文件，无需批准
 						</p>
 						{alwaysAllowWrite && (
 							<div
@@ -372,7 +370,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 										marginTop: "5px",
 										color: "var(--vscode-descriptionForeground)",
 									}}>
-									Delay after writes to allow diagnostics to detect potential problems
+									写入后延迟以允许诊断功能检测潜在问题
 								</p>
 							</div>
 						)}
@@ -427,7 +425,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 										marginTop: "5px",
 										color: "var(--vscode-descriptionForeground)",
 									}}>
-									Delay before retrying the request
+									重试请求前的延迟时间
 								</p>
 							</div>
 						)}
@@ -437,11 +435,10 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 						<VSCodeCheckbox
 							checked={alwaysAllowMcp}
 							onChange={(e: any) => setCachedStateField("alwaysAllowMcp", e.target.checked)}>
-							<span style={{ fontWeight: "500" }}>Always approve MCP tools</span>
+							<span style={{ fontWeight: "500" }}>自动批准 MCP 工具</span>
 						</VSCodeCheckbox>
 						<p style={{ fontSize: "12px", marginTop: "5px", color: "var(--vscode-descriptionForeground)" }}>
-							Enable auto-approval of individual MCP tools in the MCP Servers view (requires both this
-							setting and the tool's individual "Always allow" checkbox)
+							在 MCP 服务器视图中启用单个 MCP 工具的自动批准（需要同时启用此设置和工具各自的"自动允许
 						</p>
 					</div>
 
@@ -449,11 +446,10 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 						<VSCodeCheckbox
 							checked={alwaysAllowModeSwitch}
 							onChange={(e: any) => setCachedStateField("alwaysAllowModeSwitch", e.target.checked)}>
-							<span style={{ fontWeight: "500" }}>Always approve mode switching & task creation</span>
+							<span style={{ fontWeight: "500" }}>自动批准模式切换和任务创建</span>
 						</VSCodeCheckbox>
 						<p style={{ fontSize: "12px", marginTop: "5px", color: "var(--vscode-descriptionForeground)" }}>
-							Automatically switch between different AI modes and create new tasks without requiring
-							approval
+							无需批准即可自动在不同的 AI 模式之间切换并创建新任务
 						</p>
 					</div>
 
@@ -461,10 +457,10 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 						<VSCodeCheckbox
 							checked={alwaysAllowExecute}
 							onChange={(e: any) => setCachedStateField("alwaysAllowExecute", e.target.checked)}>
-							<span style={{ fontWeight: "500" }}>Always approve allowed execute operations</span>
+							<span style={{ fontWeight: "500" }}>自动批准允许的执行操作</span>
 						</VSCodeCheckbox>
 						<p style={{ fontSize: "12px", marginTop: "5px", color: "var(--vscode-descriptionForeground)" }}>
-							Automatically execute allowed terminal commands without requiring approval
+							无需批准即可自动执行允许的终端命令
 						</p>
 
 						{alwaysAllowExecute && (
@@ -474,15 +470,14 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 									paddingLeft: 10,
 									borderLeft: "2px solid var(--vscode-button-background)",
 								}}>
-								<span style={{ fontWeight: "500" }}>Allowed Auto-Execute Commands</span>
+								<span style={{ fontWeight: "500" }}>允许自动执行的命令</span>
 								<p
 									style={{
 										fontSize: "12px",
 										marginTop: "5px",
 										color: "var(--vscode-descriptionForeground)",
 									}}>
-									Command prefixes that can be auto-executed when "Always approve execute operations"
-									is enabled. Add * to allow all commands (use with caution).
+									启用"自动批准执行操作"时可以自动执行的命令前缀。添加 * 允许所有命令（请谨慎使用）。
 								</p>
 
 								<div style={{ display: "flex", gap: "5px", marginTop: "10px" }}>
@@ -495,10 +490,10 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 												handleAddCommand()
 											}
 										}}
-										placeholder="Enter command prefix (e.g., 'git ')"
+										placeholder="输入命令前缀（例如：'git '）"
 										style={{ flexGrow: 1 }}
 									/>
-									<VSCodeButton onClick={handleAddCommand}>Add</VSCodeButton>
+									<VSCodeButton onClick={handleAddCommand}>添加</VSCodeButton>
 								</div>
 
 								<div
@@ -545,8 +540,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 							<span style={{ fontWeight: "500" }}>Enable browser tool</span>
 						</VSCodeCheckbox>
 						<p style={{ fontSize: "12px", marginTop: "5px", color: "var(--vscode-descriptionForeground)" }}>
-							When enabled, Roo can use a browser to interact with websites when using models that support
-							computer use.
+							启用后，Roo 可以在使用支持计算机操作的模型时通过浏览器与网站进行交互。
 						</p>
 					</div>
 					{browserToolEnabled && (
@@ -557,9 +551,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 								borderLeft: "2px solid var(--vscode-button-background)",
 							}}>
 							<div style={{ marginBottom: 15 }}>
-								<label style={{ fontWeight: "500", display: "block", marginBottom: 5 }}>
-									Viewport size
-								</label>
+								<label style={{ fontWeight: "500", display: "block", marginBottom: 5 }}>视口大小</label>
 								<div className="dropdown-container">
 									<Dropdown
 										value={browserViewportSize}
@@ -568,10 +560,10 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 										}}
 										style={{ width: "100%" }}
 										options={[
-											{ value: "1280x800", label: "Large Desktop (1280x800)" },
-											{ value: "900x600", label: "Small Desktop (900x600)" },
-											{ value: "768x1024", label: "Tablet (768x1024)" },
-											{ value: "360x640", label: "Mobile (360x640)" },
+											{ value: "1280x800", label: "大桌面 (1280x800)" },
+											{ value: "900x600", label: "小桌面 (900x600)" },
+											{ value: "768x1024", label: "平板 (768x1024)" },
+											{ value: "360x640", label: "手机 (360x640)" },
 										]}
 									/>
 								</div>
@@ -581,14 +573,13 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 										marginTop: "5px",
 										color: "var(--vscode-descriptionForeground)",
 									}}>
-									Select the viewport size for browser interactions. This affects how websites are
-									displayed and interacted with.
+									选择浏览器交互的视口大小。这将影响网站的显示和交互方式。
 								</p>
 							</div>
 
 							<div style={{ marginBottom: 15 }}>
 								<div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-									<span style={{ fontWeight: "500" }}>Screenshot quality</span>
+									<span style={{ fontWeight: "500" }}>截图质量</span>
 									<div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
 										<input
 											type="range"
@@ -610,8 +601,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 										marginTop: "5px",
 										color: "var(--vscode-descriptionForeground)",
 									}}>
-									Adjust the WebP quality of browser screenshots. Higher values provide clearer
-									screenshots but increase token usage.
+									调整浏览器截图的 WebP 质量。更高的值会提供更清晰的截图，但会增加令牌使用量。
 								</p>
 							</div>
 						</div>
@@ -643,7 +633,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 								borderLeft: "2px solid var(--vscode-button-background)",
 							}}>
 							<div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-								<span style={{ fontWeight: "500", minWidth: "100px" }}>Volume</span>
+								<span style={{ fontWeight: "500", minWidth: "100px" }}>音量</span>
 								<input
 									type="range"
 									min="0"
@@ -652,7 +642,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 									value={soundVolume ?? 0.5}
 									onChange={(e) => setCachedStateField("soundVolume", parseFloat(e.target.value))}
 									className="h-2 focus:outline-0 w-4/5 accent-vscode-button-background"
-									aria-label="Volume"
+									aria-label="音量"
 								/>
 								<span style={{ minWidth: "35px", textAlign: "left" }}>
 									{((soundVolume ?? 0.5) * 100).toFixed(0)}%
@@ -663,10 +653,10 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 				</div>
 
 				<div style={{ marginBottom: 40 }}>
-					<h3 style={{ color: "var(--vscode-foreground)", margin: "0 0 15px 0" }}>Advanced Settings</h3>
+					<h3 style={{ color: "var(--vscode-foreground)", margin: "0 0 15px 0" }}>高级设置</h3>
 					<div style={{ marginBottom: 15 }}>
 						<div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-							<span style={{ fontWeight: "500" }}>Rate limit</span>
+							<span style={{ fontWeight: "500" }}>速率限制</span>
 							<div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
 								<input
 									type="range"
@@ -677,16 +667,16 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 									onChange={(e) => setCachedStateField("rateLimitSeconds", parseInt(e.target.value))}
 									className="h-2 focus:outline-0 w-4/5 accent-vscode-button-background"
 								/>
-								<span style={{ ...sliderLabelStyle }}>{rateLimitSeconds}s</span>
+								<span style={{ ...sliderLabelStyle }}>{rateLimitSeconds}秒</span>
 							</div>
 						</div>
 						<p style={{ fontSize: "12px", marginTop: "5px", color: "var(--vscode-descriptionForeground)" }}>
-							Minimum time between API requests.
+							最小时间间隔。
 						</p>
 					</div>
 					<div style={{ marginBottom: 15 }}>
 						<div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-							<span style={{ fontWeight: "500" }}>Terminal output limit</span>
+							<span style={{ fontWeight: "500" }}>终端输出限制</span>
 							<div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
 								<input
 									type="range"
@@ -703,14 +693,13 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 							</div>
 						</div>
 						<p style={{ fontSize: "12px", marginTop: "5px", color: "var(--vscode-descriptionForeground)" }}>
-							Maximum number of lines to include in terminal output when executing commands. When exceeded
-							lines will be removed from the middle, saving tokens.
+							执行命令时包含在终端输出中的最大行数。超过限制时，将从中间删除行以节省令牌。
 						</p>
 					</div>
 
 					<div style={{ marginBottom: 15 }}>
 						<div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-							<span style={{ fontWeight: "500" }}>Open tabs context limit</span>
+							<span style={{ fontWeight: "500" }}>打开标签页上下文限制</span>
 							<div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
 								<input
 									type="range"
@@ -727,8 +716,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 							</div>
 						</div>
 						<p style={{ fontSize: "12px", marginTop: "5px", color: "var(--vscode-descriptionForeground)" }}>
-							Maximum number of VSCode open tabs to include in context. Higher values provide more context
-							but increase token usage.
+							包含在上下文中的 VSCode 打开标签页的最大数量。更高的值提供更多上下文，但会增加令牌使用量。
 						</p>
 					</div>
 
@@ -746,11 +734,9 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 								marginTop: "5px",
 								color: "var(--vscode-descriptionForeground)",
 							}}>
-							When enabled, Roo will automatically create checkpoints during task execution, making it
-							easy to review changes or revert to earlier states.
+							启用后，Roo 将在任务执行过程中自动创建检查点，方便您查看更改或恢复到之前的状态。
 						</p>
 					</div>
-
 					<div style={{ marginBottom: 15 }}>
 						<VSCodeCheckbox
 							checked={diffEnabled}
@@ -761,7 +747,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 									setExperimentEnabled(EXPERIMENT_IDS.DIFF_STRATEGY, false)
 								}
 							}}>
-							<span style={{ fontWeight: "500" }}>Enable editing through diffs</span>
+							<span style={{ fontWeight: "500" }}>启用差异编辑</span>
 						</VSCodeCheckbox>
 						<p
 							style={{
@@ -769,10 +755,9 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 								marginTop: "5px",
 								color: "var(--vscode-descriptionForeground)",
 							}}>
-							When enabled, Roo will be able to edit files more quickly and will automatically reject
-							truncated full-file writes. Works best with the latest Claude 3.7 Sonnet model.
+							启用后，Roo 将能够更快地编辑文件，并自动拒绝截断的全文件写入。最适合与最新的 Claude 3.7
+							Sonnet 模型配合使用。
 						</p>
-
 						{diffEnabled && (
 							<div style={{ marginTop: 10 }}>
 								<div
@@ -785,7 +770,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 										paddingLeft: "10px",
 										borderLeft: "2px solid var(--vscode-button-background)",
 									}}>
-									<span style={{ fontWeight: "500" }}>Match precision</span>
+									<span style={{ fontWeight: "500" }}>匹配精度</span>
 									<div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
 										<input
 											type="range"
@@ -808,9 +793,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 											marginTop: "5px",
 											color: "var(--vscode-descriptionForeground)",
 										}}>
-										This slider controls how precisely code sections must match when applying diffs.
-										Lower values allow more flexible matching but increase the risk of incorrect
-										replacements. Use values below 100% with extreme caution.
+										此滑块控制应用差异时代码段必须匹配的精确度。较低的值允许更灵活的匹配，但会增加错误替换的风险。请谨慎使用低于100%的值。
 									</p>
 									<ExperimentalFeature
 										key={EXPERIMENT_IDS.DIFF_STRATEGY}
@@ -854,14 +837,13 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 						padding: "10px 8px 15px 0px",
 					}}>
 					<p style={{ wordWrap: "break-word", margin: 0, padding: 0 }}>
-						If you have any questions or feedback, feel free to open an issue at{" "}
-						<VSCodeLink href="https://github.com/RooVetGit/Roo-Code" style={{ display: "inline" }}>
-							github.com/RooVetGit/Roo-Code
+						如果您有任何问题或反馈，欢迎在{" "}
+						<VSCodeLink
+							href="https://github.com/HybridTalentComputing/Roo-Code-Chinese"
+							style={{ display: "inline" }}>
+							https://github.com/HybridTalentComputing/Roo-Code-Chinese
 						</VSCodeLink>{" "}
-						or join{" "}
-						<VSCodeLink href="https://www.reddit.com/r/RooCode/" style={{ display: "inline" }}>
-							reddit.com/r/RooCode
-						</VSCodeLink>
+						提出问题
 					</p>
 					<p style={{ fontStyle: "italic", margin: "10px 0 0 0", padding: 0, marginBottom: 100 }}>
 						v{extensionState.version}
@@ -873,7 +855,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone },
 							marginTop: "5px",
 							color: "var(--vscode-descriptionForeground)",
 						}}>
-						This will reset all global state and secret storage in the extension.
+						这将重置扩展中的所有全局状态和密钥存储。
 					</p>
 
 					<VSCodeButton

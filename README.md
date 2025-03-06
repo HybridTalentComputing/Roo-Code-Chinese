@@ -14,6 +14,7 @@ https://github.com/HybridTalentComputing/roo-code-chinese
 欢迎大家star，fork，提出issue，贡献代码，一起完善这个项目。
 
 ## 功能展示
+
 <video width="100%" controls src="https://github.com/user-attachments/assets/7b94f919-8c17-4038-87d9-9b1428e0cf31"></video>
 
 > 演示视频使用 DeepSeek-R1-Distill-Qwen-14B 模型，展示了 Roo Code 中文汉化版的主要功能和使用效果，视频没有加速，推理速度快到飞起。
@@ -50,18 +51,17 @@ Roo Code Chinese已发布到VSCode插件市场，欢迎感兴趣的小伙伴们�
 
 <div align="center" style="display: flex; justify-content: center; gap: 20px;">
 
-<a href="![AliPay](https://github.com/user-attachments/assets/f01e4514-e8ec-48de-883a-9f6fbd05c2a0)">
+<a href="https://github.com/user-attachments/assets/f01e4514-e8ec-48de-883a-9f6fbd05c2a0">
   <img src="https://img.shields.io/badge/支付宝赞赏-1677FF?style=for-the-badge&logo=alipay&logoColor=white" alt="支付宝赞赏" width="200" />
 </a>
 
-<a href="![WechatPay](https://github.com/user-attachments/assets/f4ee93ba-2960-46be-96a7-faaff3a0c38c)">
+<a href="https://github.com/user-attachments/assets/f4ee93ba-2960-46be-96a7-faaff3a0c38c">
   <img src="https://img.shields.io/badge/微信赞赏-07C160?style=for-the-badge&logo=wechat&logoColor=white" alt="微信赞赏" width="180" />
 </a>
 
 </div>
 
 ## 欢迎关注我的自媒体账号
-
 
 欢迎关注我的自媒体账号，获取更多AI开发和技术分享：
 

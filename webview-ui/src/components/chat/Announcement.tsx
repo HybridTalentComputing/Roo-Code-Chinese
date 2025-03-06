@@ -22,32 +22,30 @@ const Announcement = ({ version, hideAnnouncement }: AnnouncementProps) => {
 			<VSCodeButton
 				appearance="icon"
 				onClick={hideAnnouncement}
-				title="Hide announcement"
+				title="隐藏公告"
 				style={{ position: "absolute", top: "8px", right: "8px" }}>
 				<span className="codicon codicon-close"></span>
 			</VSCodeButton>
-			<h2 style={{ margin: "0 0 8px" }}>🎉{"  "}Automatic Checkpoints Now Enabled</h2>
+			<h2 style={{ margin: "0 0 8px" }}>🎉{"  "}自动检查点功能现已启用</h2>
 
 			<p style={{ margin: "5px 0px" }}>
-				We're thrilled to announce that our experimental Checkpoints feature is now enabled by default for all
-				users. This powerful feature automatically tracks your project changes during a task, allowing you to
-				quickly review or revert to earlier states if needed.
+				我们很高兴地宣布，实验性的检查点功能现已默认为所有用户启用。这个强大的功能可以在任务执行期间自动追踪您的项目更改，让您能够快速查看或恢复到之前的状态。
 			</p>
 
-			<h3 style={{ margin: "12px 0 8px" }}>What's New</h3>
+			<h3 style={{ margin: "12px 0 8px" }}>新功能介绍</h3>
 			<p style={{ margin: "5px 0px" }}>
-				Automatic Checkpoints provide you with:
+				自动检查点为您提供：
 				<ul style={{ margin: "4px 0 6px 20px", padding: 0 }}>
-					<li>Peace of mind when making significant changes</li>
-					<li>Ability to visually inspect changes between steps</li>
-					<li>Easy rollback if you're not satisfied with certain code modifications</li>
-					<li>Improved navigation through complex task execution</li>
+					<li>在进行重大更改时提供安全保障</li>
+					<li>可视化检查各步骤之间的更改</li>
+					<li>如果对某些代码修改不满意，可以轻松回滚</li>
+					<li>改进复杂任务执行过程的导航体验</li>
 				</ul>
 			</p>
 
-			<h3 style={{ margin: "12px 0 8px" }}>Customize Your Experience</h3>
+			<h3 style={{ margin: "12px 0 8px" }}>自定义您的体验</h3>
 			<p style={{ margin: "5px 0px" }}>
-				While we recommend keeping this feature enabled, you can disable it if needed.{" "}
+				虽然我们建议保持此功能启用，但您可以根据需要禁用它。{" "}
 				<VSCodeLink
 					href="#"
 					onClick={(e) => {
@@ -55,9 +53,9 @@ const Announcement = ({ version, hideAnnouncement }: AnnouncementProps) => {
 						window.postMessage({ type: "action", action: "settingsButtonClicked" }, "*")
 					}}
 					style={{ display: "inline", padding: "0 2px" }}>
-					Open Settings
+					打开设置
 				</VSCodeLink>{" "}
-				and look for the "Enable automatic checkpoints" option in the Advanced Settings section.
+				在高级设置部分查找"启用自动检查点
 			</p>
 		</div>
 	)

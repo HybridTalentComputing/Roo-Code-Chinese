@@ -17,7 +17,7 @@ https://github.com/HybridTalentComputing/roo-code-chinese
 
 <video width="100%" controls src="https://github.com/user-attachments/assets/7b94f919-8c17-4038-87d9-9b1428e0cf31"></video>
 
-> 演示视频使用 DeepSeek-R1-Distill-Qwen-14B 模型，展示了 Roo Code 中文汉化版的主要功能和使用效果，视频没有加速，推理速度快到飞起。
+> 演示视频使用 DeepSeek-R1-Distill-Qwen-14B 模型，展示了 Roo Code 中文汉化版的主要功能和使用效果，视频没有加速。
 
 ## 安装使用
 
@@ -65,12 +65,11 @@ Roo Code Chinese已发布到VSCode插件市场，欢迎感兴趣的小伙伴们�
 
 欢迎关注我的自媒体账号，获取更多AI开发和技术分享：
 
+- 公众号：Leo的AI世界
 - 知乎：[Leo聊AI](https://www.zhihu.com/people/HTCMAX)
 - B站：[Leo的AI世界](https://space.bilibili.com/23409884?spm_id_from=333.1007.0.0)
 - 头条号：Leo的AI世界
 - 小红书：Leo的AI世界
-
-- 公众号：Leo的AI世界
 
 ## 免责声明
 

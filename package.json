@@ -54,7 +54,7 @@
 			"activitybar": [
 				{
 					"id": "roo-cline-chinese-ActivityBar",
-					"title": "Roo Code",
+					"title": "Roo Code Chinese",
 					"icon": "$(rocket)"
 				}
 			]
@@ -239,7 +239,7 @@
 			]
 		},
 		"configuration": {
-			"title": "Roo Code",
+			"title": "Roo Code Chinese",
 			"properties": {
 				"roo-cline-chinese.allowedCommands": {
 					"type": "array",

@@ -17,8 +17,8 @@ export class RequestyHandler extends OpenAiHandler {
 			openAiBaseUrl: "https://router.requesty.ai/v1",
 			openAiCustomModelInfo: options.requestyModelInfo ?? requestyModelInfoSaneDefaults,
 			defaultHeaders: {
-				"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
-				"X-Title": "Roo Code",
+				"HTTP-Referer": "https://github.com/HybridTalentComputing/Roo-Code-Chinese",
+				"X-Title": "Roo Code Chinese",
 			},
 		})
 	}

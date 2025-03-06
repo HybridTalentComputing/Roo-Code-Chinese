@@ -79,7 +79,7 @@ export class ShadowCheckpointService extends CheckpointEventEmitter implements C
 			await this.git.init()
 			await this.git.addConfig("core.worktree", this.workspaceDir) // Sets the working tree to the current workspace.
 			await this.git.addConfig("commit.gpgSign", "false") // Disable commit signing for shadow repo.
-			await this.git.addConfig("user.name", "Roo Code")
+			await this.git.addConfig("user.name", "Roo Code Chinese")
 			await this.git.addConfig("user.email", "noreply@example.com")
 
 			let lfsPatterns: string[] = [] // Get LFS patterns from workspace if they exist.

@@ -4,7 +4,7 @@
 
 <p align="center">
 
-[![Version](https://img.shields.io/visual-studio-marketplace/v/HybridTalentComputing.roo-code-chinese)](https://marketplace.visualstudio.com/items?itemName=HybridTalentComputing.roo-code-chinese) [![Downloads](https://img.shields.io/visual-studio-marketplace/d/HybridTalentComputing.roo-code-chinese)](https://marketplace.visualstudio.com/items?itemName=HybridTalentComputing.roo-code-chinese) [![Rating](https://img.shields.io/visual-studio-marketplace/r/HybridTalentComputing.roo-code-chinese)](https://marketplace.visualstudio.com/items?itemName=HybridTalentComputing.roo-code-chinese)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/HybridTalentComputing.roo-cline-chinese)](https://marketplace.visualstudio.com/items?itemName=HybridTalentComputing.roo-cline-chinese) [![Downloads](https://img.shields.io/visual-studio-marketplace/d/HybridTalentComputing.roo-cline-chinese)](https://marketplace.visualstudio.com/items?itemName=HybridTalentComputing.roo-cline-chinese) [![Rating](https://img.shields.io/visual-studio-marketplace/r/HybridTalentComputing.roo-cline-chinese)](https://marketplace.visualstudio.com/items?itemName=HybridTalentComputing.roo-cline-chinese)
 
 </p>
 

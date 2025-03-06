@@ -2,15 +2,15 @@ import { ToolArgs } from "./types"
 
 export function getListCodeDefinitionNamesDescription(args: ToolArgs): string {
 	return `## list_code_definition_names
-Description: Request to list definition names (classes, functions, methods, etc.) used in source code files at the top level of the specified directory. This tool provides insights into the codebase structure and important constructs, encapsulating high-level concepts and relationships that are crucial for understanding the overall architecture.
+Description: 请求列出指定目录中源代码文件顶层的定义名称（类、函数、方法等）。该工具提供代码库结构和重要构造的洞察，封装了对理解整体架构至关重要的高层概念和关系。
 Parameters:
-- path: (required) The path of the directory (relative to the current working directory ${args.cwd}) to list top level source code definitions for.
+- path: (必需) 要列出顶层源代码定义的目录路径（相对于当前工作目录 ${args.cwd}）。
 Usage:
 <list_code_definition_names>
-<path>Directory path here</path>
+<path>在此处填写目录路径</path>
 </list_code_definition_names>
 
-Example: Requesting to list all top level source code definitions in the current directory
+Example: 请求列出当前目录中所有顶层源代码定义
 <list_code_definition_names>
 <path>.</path>
 </list_code_definition_names>`

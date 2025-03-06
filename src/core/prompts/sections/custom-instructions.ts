@@ -1,6 +1,9 @@
 import fs from "fs/promises"
 import path from "path"
 
+/**
+ * 安全地读取文件内容，如果文件不存在则返回空字符串
+ */
 async function safeReadFile(filePath: string): Promise<string> {
 	try {
 		const content = await fs.readFile(filePath, "utf-8")
@@ -14,6 +17,9 @@ async function safeReadFile(filePath: string): Promise<string> {
 	}
 }
 
+/**
+ * 加载规则文件
+ */
 export async function loadRuleFiles(cwd: string): Promise<string> {
 	const ruleFiles = [".clinerules", ".cursorrules", ".windsurfrules"]
 	let combinedRules = ""
@@ -21,13 +27,16 @@ export async function loadRuleFiles(cwd: string): Promise<string> {
 	for (const file of ruleFiles) {
 		const content = await safeReadFile(path.join(cwd, file))
 		if (content) {
-			combinedRules += `\n# Rules from ${file}:\n${content}\n`
+			combinedRules += `\n# 来自 ${file} 的规则:\n${content}\n`
 		}
 	}
 
 	return combinedRules
 }
 
+/**
+ * 添加自定义指令
+ */
 export async function addCustomInstructions(
 	modeCustomInstructions: string,
 	globalCustomInstructions: string,
@@ -37,47 +46,45 @@ export async function addCustomInstructions(
 ): Promise<string> {
 	const sections = []
 
-	// Load mode-specific rules if mode is provided
+	// 如果提供了模式，则加载模式特定的规则
 	let modeRuleContent = ""
 	if (mode) {
 		const modeRuleFile = `.clinerules-${mode}`
 		modeRuleContent = await safeReadFile(path.join(cwd, modeRuleFile))
 	}
 
-	// Add language preference if provided
+	// 如果提供了语言偏好，则添加语言设置
 	if (options.preferredLanguage) {
-		sections.push(
-			`Language Preference:\nYou should always speak and think in the ${options.preferredLanguage} language.`,
-		)
+		sections.push(`语言偏好：\n你应该始终使用 ${options.preferredLanguage} 语言思考和交流。`)
 	}
 
-	// Add global instructions first
+	// 首先添加全局指令
 	if (typeof globalCustomInstructions === "string" && globalCustomInstructions.trim()) {
-		sections.push(`Global Instructions:\n${globalCustomInstructions.trim()}`)
+		sections.push(`全局指令：\n${globalCustomInstructions.trim()}`)
 	}
 
-	// Add mode-specific instructions after
+	// 然后添加模式特定指令
 	if (typeof modeCustomInstructions === "string" && modeCustomInstructions.trim()) {
-		sections.push(`Mode-specific Instructions:\n${modeCustomInstructions.trim()}`)
+		sections.push(`模式特定指令：\n${modeCustomInstructions.trim()}`)
 	}
 
-	// Add rules - include both mode-specific and generic rules if they exist
+	// 添加规则 - 包括模式特定规则和通用规则（如果存在）
 	const rules = []
 
-	// Add mode-specific rules first if they exist
+	// 如果存在模式特定规则，则首先添加
 	if (modeRuleContent && modeRuleContent.trim()) {
 		const modeRuleFile = `.clinerules-${mode}`
-		rules.push(`# Rules from ${modeRuleFile}:\n${modeRuleContent}`)
+		rules.push(`# 来自 ${modeRuleFile} 的规则：\n${modeRuleContent}`)
 	}
 
-	// Add generic rules
+	// 添加通用规则
 	const genericRuleContent = await loadRuleFiles(cwd)
 	if (genericRuleContent && genericRuleContent.trim()) {
 		rules.push(genericRuleContent.trim())
 	}
 
 	if (rules.length > 0) {
-		sections.push(`Rules:\n\n${rules.join("\n\n")}`)
+		sections.push(`规则：\n\n${rules.join("\n\n")}`)
 	}
 
 	const joinedSections = sections.join("\n\n")
@@ -86,9 +93,9 @@ export async function addCustomInstructions(
 		? `
 ====
 
-USER'S CUSTOM INSTRUCTIONS
+用户自定义指令
 
-The following additional instructions are provided by the user, and should be followed to the best of your ability without interfering with the TOOL USE guidelines.
+以下是用户提供的附加指令，你应该在不影响工具使用指南的前提下尽可能地遵循这些指令。
 
 ${joinedSections}`
 		: ""

@@ -1,13 +1,13 @@
 export function getSharedToolUseSection(): string {
 	return `====
 
-TOOL USE
+工具使用
 
-You have access to a set of tools that are executed upon the user's approval. You can use one tool per message, and will receive the result of that tool use in the user's response. You use tools step-by-step to accomplish a given task, with each tool use informed by the result of the previous tool use.
+你可以使用一系列工具，这些工具将在用户批准后执行。每条消息你可以使用一个工具，并且在用户的回复中会收到该工具使用的结果。你需要一步一步地使用工具来完成给定的任务，每次工具的使用都应基于前一次工具使用的结果。
 
-# Tool Use Formatting
+# 工具使用格式
 
-Tool use is formatted using XML-style tags. The tool name is enclosed in opening and closing tags, and each parameter is similarly enclosed within its own set of tags. Here's the structure:
+工具使用采用 XML 风格的标签格式。工具名称包含在开始和结束标签中，每个参数也同样包含在其自己的标签集中。结构如下：
 
 <tool_name>
 <parameter1_name>value1</parameter1_name>
@@ -15,11 +15,11 @@ Tool use is formatted using XML-style tags. The tool name is enclosed in opening
 ...
 </tool_name>
 
-For example:
+例如：
 
 <read_file>
 <path>src/main.js</path>
 </read_file>
 
-Always adhere to this format for the tool use to ensure proper parsing and execution.`
+请始终遵循此格式以确保工具使用能够正确解析和执行。`
 }

@@ -3,37 +3,29 @@ import * as path from "path"
 import * as diff from "diff"
 
 export const formatResponse = {
-	toolDenied: () => `The user denied this operation.`,
-
+	toolDenied: () => `用户拒绝了此操作。`,
 	toolDeniedWithFeedback: (feedback?: string) =>
-		`The user denied this operation and provided the following feedback:\n<feedback>\n${feedback}\n</feedback>`,
-
+		`用户拒绝了此操作并提供了以下反馈：\n<feedback>\n${feedback}\n</feedback>`,
 	toolApprovedWithFeedback: (feedback?: string) =>
-		`The user approved this operation and provided the following context:\n<feedback>\n${feedback}\n</feedback>`,
-
-	toolError: (error?: string) => `The tool execution failed with the following error:\n<error>\n${error}\n</error>`,
-
+		`用户批准了此操作并提供了以下上下文：\n<feedback>\n${feedback}\n</feedback>`,
+	toolError: (error?: string) => `工具执行失败，错误信息如下：\n<error>\n${error}\n</error>`,
 	noToolsUsed: () =>
-		`[ERROR] You did not use a tool in your previous response! Please retry with a tool use.
+		`[错误] 你在上一个响应中没有使用任何工具！请重试并使用工具。
 
 ${toolUseInstructionsReminder}
 
-# Next Steps
+# 下一步
 
-If you have completed the user's task, use the attempt_completion tool. 
-If you require additional information from the user, use the ask_followup_question tool. 
-Otherwise, if you have not completed the task and do not need additional information, then proceed with the next step of the task. 
-(This is an automated message, so do not respond to it conversationally.)`,
-
+如果你已完成用户的任务，请使用 attempt_completion 工具。
+如果你需要用户提供更多信息，请使用 ask_followup_question 工具。
+否则，如果你尚未完成任务且不需要额外信息，请继续执行任务的下一步。
+（这是一条自动消息，请不要用对话方式回应。）`,
 	tooManyMistakes: (feedback?: string) =>
-		`You seem to be having trouble proceeding. The user has provided the following feedback to help guide you:\n<feedback>\n${feedback}\n</feedback>`,
-
+		`看起来你在继续执行时遇到了困难。用户提供了以下反馈来帮助指导你：\n<feedback>\n${feedback}\n</feedback>`,
 	missingToolParameterError: (paramName: string) =>
-		`Missing value for required parameter '${paramName}'. Please retry with complete response.\n\n${toolUseInstructionsReminder}`,
-
+		`缺少必需的参数'${paramName}'。请使用完整的响应重试。\n\n${toolUseInstructionsReminder}`,
 	invalidMcpToolArgumentError: (serverName: string, toolName: string) =>
-		`Invalid JSON argument used with ${serverName} for ${toolName}. Please retry with a properly formatted JSON argument.`,
-
+		`${serverName}的${toolName}使用了无效的JSON参数。请使用正确格式的JSON参数重试。`,
 	toolResult: (
 		text: string,
 		images?: string[],
@@ -41,58 +33,53 @@ Otherwise, if you have not completed the task and do not need additional informa
 		if (images && images.length > 0) {
 			const textBlock: Anthropic.TextBlockParam = { type: "text", text }
 			const imageBlocks: Anthropic.ImageBlockParam[] = formatImagesIntoBlocks(images)
-			// Placing images after text leads to better results
+			// 将图片放在文本后面可以获得更好的结果
 			return [textBlock, ...imageBlocks]
 		} else {
 			return text
 		}
 	},
-
 	imageBlocks: (images?: string[]): Anthropic.ImageBlockParam[] => {
 		return formatImagesIntoBlocks(images)
 	},
-
 	formatFilesList: (absolutePath: string, files: string[], didHitLimit: boolean): string => {
 		const sorted = files
 			.map((file) => {
-				// convert absolute path to relative path
+				// 将绝对路径转换为相对路径
 				const relativePath = path.relative(absolutePath, file).toPosix()
 				return file.endsWith("/") ? relativePath + "/" : relativePath
 			})
-			// Sort so files are listed under their respective directories to make it clear what files are children of what directories. Since we build file list top down, even if file list is truncated it will show directories that cline can then explore further.
+			// 对文件进行排序，使文件列在其各自目录下，清晰显示文件是哪些目录的子文件。由于我们自上而下构建文件列表，即使文件列表被截断，它也会显示可供cline进一步探索的目录。
 			.sort((a, b) => {
-				const aParts = a.split("/") // only works if we use toPosix first
+				const aParts = a.split("/") // 仅在使用toPosix后有效
 				const bParts = b.split("/")
 				for (let i = 0; i < Math.min(aParts.length, bParts.length); i++) {
 					if (aParts[i] !== bParts[i]) {
-						// If one is a directory and the other isn't at this level, sort the directory first
+						// 如果在这一级别上一个是目录而另一个不是，则目录优先
 						if (i + 1 === aParts.length && i + 1 < bParts.length) {
 							return -1
 						}
 						if (i + 1 === bParts.length && i + 1 < aParts.length) {
 							return 1
 						}
-						// Otherwise, sort alphabetically
+						// 否则，按字母顺序排序
 						return aParts[i].localeCompare(bParts[i], undefined, { numeric: true, sensitivity: "base" })
 					}
 				}
-				// If all parts are the same up to the length of the shorter path,
-				// the shorter one comes first
+				// 如果到较短路径的长度为止所有部分都相同，
+				// 较短的路径排在前面
 				return aParts.length - bParts.length
 			})
 		if (didHitLimit) {
-			return `${sorted.join(
-				"\n",
-			)}\n\n(File list truncated. Use list_files on specific subdirectories if you need to explore further.)`
+			return `${sorted.join("\n")}\n\n(文件列表已截断。如需进一步探索，请对特定子目录使用list_files。)`
 		} else if (sorted.length === 0 || (sorted.length === 1 && sorted[0] === "")) {
-			return "No files found."
+			return "未找到文件。"
 		} else {
 			return sorted.join("\n")
 		}
 	},
-
 	createPrettyPatch: (filename = "file", oldStr?: string, newStr?: string) => {
-		// strings cannot be undefined or diff throws exception
+		// 字符串不能为undefined，否则diff会抛出异常
 		const patch = diff.createPatch(filename.toPosix(), oldStr || "", newStr || "")
 		const lines = patch.split("\n")
 		const prettyPatchLines = lines.slice(4)
@@ -100,7 +87,7 @@ Otherwise, if you have not completed the task and do not need additional informa
 	},
 }
 
-// to avoid circular dependency
+// 为避免循环依赖
 const formatImagesIntoBlocks = (images?: string[]): Anthropic.ImageBlockParam[] => {
 	return images
 		? images.map((dataUrl) => {
@@ -115,9 +102,9 @@ const formatImagesIntoBlocks = (images?: string[]): Anthropic.ImageBlockParam[] 
 		: []
 }
 
-const toolUseInstructionsReminder = `# Reminder: Instructions for Tool Use
+const toolUseInstructionsReminder = `# 工具使用说明提醒
 
-Tool uses are formatted using XML-style tags. The tool name is enclosed in opening and closing tags, and each parameter is similarly enclosed within its own set of tags. Here's the structure:
+工具使用需要使用XML风格的标签格式。工具名称需要用开闭标签包围，每个参数也同样需要用其对应的标签包围。结构如下：
 
 <tool_name>
 <parameter1_name>value1</parameter1_name>
@@ -125,12 +112,12 @@ Tool uses are formatted using XML-style tags. The tool name is enclosed in openi
 ...
 </tool_name>
 
-For example:
+示例：
 
 <attempt_completion>
 <result>
-I have completed the task...
+我已完成任务...
 </result>
 </attempt_completion>
 
-Always adhere to this format for all tool uses to ensure proper parsing and execution.`
+请始终遵循此格式以确保正确解析和执行工具使用。`

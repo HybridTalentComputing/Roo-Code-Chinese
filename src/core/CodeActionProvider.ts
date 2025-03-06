@@ -10,10 +10,10 @@ export const ACTION_NAMES = {
 } as const
 
 export const COMMAND_IDS = {
-	EXPLAIN: "roo-cline.explainCode",
-	FIX: "roo-cline.fixCode",
-	IMPROVE: "roo-cline.improveCode",
-	ADD_TO_CONTEXT: "roo-cline.addToContext",
+	EXPLAIN: "roo-cline-chinese.explainCode",
+	FIX: "roo-cline-chinese.fixCode",
+	IMPROVE: "roo-cline-chinese.improveCode",
+	ADD_TO_CONTEXT: "roo-cline-chinese.addToContext",
 } as const
 
 export class CodeActionProvider implements vscode.CodeActionProvider {

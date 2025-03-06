@@ -56,8 +56,8 @@ import { getUri } from "./getUri"
  */
 
 export class ClineProvider implements vscode.WebviewViewProvider {
-	public static readonly sideBarId = "roo-cline.SidebarProvider" // 在package.json中使用的视图ID。由于VSCode基于ID缓存视图的方式，此值不能更改，否则会破坏扩展的现有实例。
-	public static readonly tabPanelId = "roo-cline.TabPanelProvider"
+	public static readonly sideBarId = "roo-cline-chinese.SidebarProvider" // 在package.json中使用的视图ID。由于VSCode基于ID缓存视图的方式，此值不能更改，否则会破坏扩展的现有实例。
+	public static readonly tabPanelId = "roo-cline-chinese.TabPanelProvider"
 	private static activeInstances: Set<ClineProvider> = new Set() // 活动实例集合
 	private disposables: vscode.Disposable[] = [] // 可释放资源数组
 	private view?: vscode.WebviewView | vscode.WebviewPanel // 视图实例
@@ -131,7 +131,7 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 
 		// 如果没有可见的provider，尝试显示侧边栏视图
 		if (!visibleProvider) {
-			await vscode.commands.executeCommand("roo-cline.SidebarProvider.focus")
+			await vscode.commands.executeCommand("roo-cline-chinese.SidebarProvider.focus")
 			// 短暂等待视图变为可见
 			await delay(100)
 			visibleProvider = ClineProvider.getVisibleInstance()

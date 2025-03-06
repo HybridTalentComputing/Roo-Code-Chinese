@@ -1,8 +1,8 @@
 {
-	"name": "roo-cline",
-	"displayName": "Roo Code (原名 Roo Cline)",
-	"description": "在您的编辑器中拥有一个完整的AI开发团队。",
-	"publisher": "RooVeterinaryInc",
+	"name": "roo-cline-chinese",
+	"displayName": "Roo Code Chinese",
+	"description": "Roo Code中文汉化版，在您的编辑器中拥有一个完整的AI开发团队。",
+	"publisher": "HybridTalentComputing",
 	"version": "3.7.12",
 	"icon": "assets/icons/rocket.png",
 	"galleryBanner": {
@@ -13,13 +13,13 @@
 		"vscode": "^1.84.0"
 	},
 	"author": {
-		"name": "Roo Vet"
+		"name": "HybridTalentComputing"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/RooVetGit/Roo-Code"
+		"url": "https://github.com/HybridTalentComputing/Roo-Code-Chinese"
 	},
-	"homepage": "https://github.com/RooVetGit/Roo-Code",
+	"homepage": "https://github.com/HybridTalentComputing/Roo-Code-Chinese",
 	"categories": [
 		"AI",
 		"Chat",
@@ -53,104 +53,104 @@
 		"viewsContainers": {
 			"activitybar": [
 				{
-					"id": "roo-cline-ActivityBar",
+					"id": "roo-cline-chinese-ActivityBar",
 					"title": "Roo Code",
 					"icon": "$(rocket)"
 				}
 			]
 		},
 		"views": {
-			"roo-cline-ActivityBar": [
+			"roo-cline-chinese-ActivityBar": [
 				{
 					"type": "webview",
-					"id": "roo-cline.SidebarProvider",
+					"id": "roo-cline-chinese.SidebarProvider",
 					"name": ""
 				}
 			]
 		},
 		"commands": [
 			{
-				"command": "roo-cline.plusButtonClicked",
+				"command": "roo-cline-chinese.plusButtonClicked",
 				"title": "新建任务",
 				"icon": "$(add)"
 			},
 			{
-				"command": "roo-cline.mcpButtonClicked",
+				"command": "roo-cline-chinese.mcpButtonClicked",
 				"title": "MCP 服务器",
 				"icon": "$(server)"
 			},
 			{
-				"command": "roo-cline.promptsButtonClicked",
+				"command": "roo-cline-chinese.promptsButtonClicked",
 				"title": "提示词",
 				"icon": "$(notebook)"
 			},
 			{
-				"command": "roo-cline.historyButtonClicked",
+				"command": "roo-cline-chinese.historyButtonClicked",
 				"title": "历史记录",
 				"icon": "$(history)"
 			},
 			{
-				"command": "roo-cline.popoutButtonClicked",
+				"command": "roo-cline-chinese.popoutButtonClicked",
 				"title": "在编辑器中打开",
 				"icon": "$(link-external)"
 			},
 			{
-				"command": "roo-cline.settingsButtonClicked",
+				"command": "roo-cline-chinese.settingsButtonClicked",
 				"title": "设置",
 				"icon": "$(settings-gear)"
 			},
 			{
-				"command": "roo-cline.helpButtonClicked",
+				"command": "roo-cline-chinese.helpButtonClicked",
 				"title": "文档",
 				"icon": "$(question)"
 			},
 			{
-				"command": "roo-cline.openInNewTab",
+				"command": "roo-cline-chinese.openInNewTab",
 				"title": "在新标签页中打开",
 				"category": "Roo Code"
 			},
 			{
-				"command": "roo-cline.explainCode",
+				"command": "roo-cline-chinese.explainCode",
 				"title": "Roo Code: 解释代码",
 				"category": "Roo Code"
 			},
 			{
-				"command": "roo-cline.fixCode",
+				"command": "roo-cline-chinese.fixCode",
 				"title": "Roo Code: 修复代码",
 				"category": "Roo Code"
 			},
 			{
-				"command": "roo-cline.improveCode",
+				"command": "roo-cline-chinese.improveCode",
 				"title": "Roo Code: 改进代码",
 				"category": "Roo Code"
 			},
 			{
-				"command": "roo-cline.addToContext",
+				"command": "roo-cline-chinese.addToContext",
 				"title": "Roo Code: 添加到上下文",
 				"category": "Roo Code"
 			},
 			{
-				"command": "roo-cline.terminalAddToContext",
+				"command": "roo-cline-chinese.terminalAddToContext",
 				"title": "Roo Code: 添加终端内容到上下文",
 				"category": "终端"
 			},
 			{
-				"command": "roo-cline.terminalFixCommand",
+				"command": "roo-cline-chinese.terminalFixCommand",
 				"title": "Roo Code: 修复此命令",
 				"category": "终端"
 			},
 			{
-				"command": "roo-cline.terminalExplainCommand",
+				"command": "roo-cline-chinese.terminalExplainCommand",
 				"title": "Roo Code: 解释此命令",
 				"category": "终端"
 			},
 			{
-				"command": "roo-cline.terminalFixCommandInCurrentTask",
+				"command": "roo-cline-chinese.terminalFixCommandInCurrentTask",
 				"title": "Roo Code: 修复此命令（当前任务）",
 				"category": "终端"
 			},
 			{
-				"command": "roo-cline.terminalExplainCommandInCurrentTask",
+				"command": "roo-cline-chinese.terminalExplainCommandInCurrentTask",
 				"title": "Roo Code: 解释此命令（当前任务）",
 				"category": "终端"
 			}
@@ -158,90 +158,90 @@
 		"menus": {
 			"editor/context": [
 				{
-					"command": "roo-cline.explainCode",
+					"command": "roo-cline-chinese.explainCode",
 					"when": "editorHasSelection",
 					"group": "Roo Code@1"
 				},
 				{
-					"command": "roo-cline.fixCode",
+					"command": "roo-cline-chinese.fixCode",
 					"when": "editorHasSelection",
 					"group": "Roo Code@2"
 				},
 				{
-					"command": "roo-cline.improveCode",
+					"command": "roo-cline-chinese.improveCode",
 					"when": "editorHasSelection",
 					"group": "Roo Code@3"
 				},
 				{
-					"command": "roo-cline.addToContext",
+					"command": "roo-cline-chinese.addToContext",
 					"when": "editorHasSelection",
 					"group": "Roo Code@4"
 				}
 			],
 			"terminal/context": [
 				{
-					"command": "roo-cline.terminalAddToContext",
+					"command": "roo-cline-chinese.terminalAddToContext",
 					"group": "Roo Code@1"
 				},
 				{
-					"command": "roo-cline.terminalFixCommand",
+					"command": "roo-cline-chinese.terminalFixCommand",
 					"group": "Roo Code@2"
 				},
 				{
-					"command": "roo-cline.terminalExplainCommand",
+					"command": "roo-cline-chinese.terminalExplainCommand",
 					"group": "Roo Code@3"
 				},
 				{
-					"command": "roo-cline.terminalFixCommandInCurrentTask",
+					"command": "roo-cline-chinese.terminalFixCommandInCurrentTask",
 					"group": "Roo Code@5"
 				},
 				{
-					"command": "roo-cline.terminalExplainCommandInCurrentTask",
+					"command": "roo-cline-chinese.terminalExplainCommandInCurrentTask",
 					"group": "Roo Code@6"
 				}
 			],
 			"view/title": [
 				{
-					"command": "roo-cline.plusButtonClicked",
+					"command": "roo-cline-chinese.plusButtonClicked",
 					"group": "navigation@1",
-					"when": "view == roo-cline.SidebarProvider"
+					"when": "view == roo-cline-chinese.SidebarProvider"
 				},
 				{
-					"command": "roo-cline.promptsButtonClicked",
+					"command": "roo-cline-chinese.promptsButtonClicked",
 					"group": "navigation@2",
-					"when": "view == roo-cline.SidebarProvider"
+					"when": "view == roo-cline-chinese.SidebarProvider"
 				},
 				{
-					"command": "roo-cline.mcpButtonClicked",
+					"command": "roo-cline-chinese.mcpButtonClicked",
 					"group": "navigation@3",
-					"when": "view == roo-cline.SidebarProvider"
+					"when": "view == roo-cline-chinese.SidebarProvider"
 				},
 				{
-					"command": "roo-cline.historyButtonClicked",
+					"command": "roo-cline-chinese.historyButtonClicked",
 					"group": "navigation@4",
-					"when": "view == roo-cline.SidebarProvider"
+					"when": "view == roo-cline-chinese.SidebarProvider"
 				},
 				{
-					"command": "roo-cline.popoutButtonClicked",
+					"command": "roo-cline-chinese.popoutButtonClicked",
 					"group": "navigation@5",
-					"when": "view == roo-cline.SidebarProvider"
+					"when": "view == roo-cline-chinese.SidebarProvider"
 				},
 				{
-					"command": "roo-cline.settingsButtonClicked",
+					"command": "roo-cline-chinese.settingsButtonClicked",
 					"group": "navigation@6",
-					"when": "view == roo-cline.SidebarProvider"
+					"when": "view == roo-cline-chinese.SidebarProvider"
 				},
 				{
-					"command": "roo-cline.helpButtonClicked",
+					"command": "roo-cline-chinese.helpButtonClicked",
 					"group": "navigation@7",
-					"when": "view == roo-cline.SidebarProvider"
+					"when": "view == roo-cline-chinese.SidebarProvider"
 				}
 			]
 		},
 		"configuration": {
 			"title": "Roo Code",
 			"properties": {
-				"roo-cline.allowedCommands": {
+				"roo-cline-chinese.allowedCommands": {
 					"type": "array",
 					"items": {
 						"type": "string"
@@ -256,7 +256,7 @@
 					],
 					"description": "当启用\"始终批准执行操作\"时可以自动执行的命令"
 				},
-				"roo-cline.vsCodeLmModelSelector": {
+				"roo-cline-chinese.vsCodeLmModelSelector": {
 					"type": "object",
 					"properties": {
 						"vendor": {

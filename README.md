@@ -45,22 +45,6 @@ Roo Code Chinese已发布到VSCode插件市场，欢迎感兴趣的小伙伴们�
 
 1. Roo code chinese首个版本发布，合入Roo Code最新更新（2024.03.04），详情请查看CHANGELOG.md
 
-## 赞赏支持
-
-如果您觉得这个项目对您有帮助，欢迎赞赏支持，您的支持是我持续开发的动力 ☕
-
-<div align="center" style="display: flex; justify-content: center; gap: 20px;">
-
-<a href="https://github.com/user-attachments/assets/f01e4514-e8ec-48de-883a-9f6fbd05c2a0">
-  <img src="https://img.shields.io/badge/支付宝赞赏-1677FF?style=for-the-badge&logo=alipay&logoColor=white" alt="支付宝赞赏" width="200" />
-</a>
-
-<a href="https://github.com/user-attachments/assets/f4ee93ba-2960-46be-96a7-faaff3a0c38c">
-  <img src="https://img.shields.io/badge/微信赞赏-07C160?style=for-the-badge&logo=wechat&logoColor=white" alt="微信赞赏" width="180" />
-</a>
-
-</div>
-
 ## 欢迎关注我的自媒体账号
 
 欢迎关注我的自媒体账号，获取更多AI开发和技术分享：
@@ -70,6 +54,27 @@ Roo Code Chinese已发布到VSCode插件市场，欢迎感兴趣的小伙伴们�
 - B站：[Leo的AI世界](https://space.bilibili.com/23409884?spm_id_from=333.1007.0.0)
 - 头条号：Leo的AI世界
 - 小红书：Leo的AI世界
+
+
+## 加入社群
+
+感兴趣的可以扫码加入微信社群，一起交流学习AI：
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/9593bf2e-d852-4e1c-93c7-ec3e669adeda" alt="微信群二维码" width="250" />
+  
+</div>
+
+## 赞赏支持
+
+如果您觉得这个项目对您有帮助，欢迎赞赏支持，您的支持是我持续开发的动力 ☕
+
+<div align="center" style="display: flex; justify-content: center; gap: 20px;">
+
+  <img src="https://github.com/user-attachments/assets/f01e4514-e8ec-48de-883a-9f6fbd05c2a0" alt="支付宝赞赏" width="250" />
+  <img src="https://github.com/user-attachments/assets/f4ee93ba-2960-46be-96a7-faaff3a0c38c" alt="微信赞赏" width="250" />
+
+</div>
 
 ## 免责声明
 

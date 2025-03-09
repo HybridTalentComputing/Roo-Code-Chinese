@@ -19,6 +19,8 @@ https://github.com/HybridTalentComputing/roo-code-chinese
 
 > 演示视频使用 DeepSeek-R1-Distill-Qwen-14B 模型，展示了 Roo Code 中文汉化版的主要功能和使用效果，视频没有加速。
 
+> 日常开发时，我使用的是某基某动的白嫖额度的模型API，如果您尚未注册，欢迎通过我的邀请链接：https://cloud.siliconflow.cn/i/BKtAlqbk ，或者注册的时候填写邀请码：BKtAlqbk，注册后双方均可获得2000万tokens的免费额度。我是Leo, 某基某动注册一下，帮助我白嫖token,我向你salute啊.
+
 ## 安装使用
 
 Roo Code Chinese已发布到VSCode插件市场，欢迎感兴趣的小伙伴们下载体验。
@@ -54,7 +56,6 @@ Roo Code Chinese已发布到VSCode插件市场，欢迎感兴趣的小伙伴们�
 - B站：[Leo的AI世界](https://space.bilibili.com/23409884?spm_id_from=333.1007.0.0)
 - 头条号：Leo的AI世界
 - 小红书：Leo的AI世界
-
 
 ## 加入社群
 

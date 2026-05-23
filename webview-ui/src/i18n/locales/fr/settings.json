@@ -40,7 +40,7 @@
 		"ui": "UI",
 		"experimental": "Expérimental",
 		"language": "Langue",
-		"about": "À propos de Roo Code",
+		"about": "À propos de Roo Code Chinese",
 		"skills": "Skills"
 	},
 	"about": {
@@ -451,7 +451,7 @@
 			"draftModelDesc": "Le modèle brouillon doit être de la même famille de modèles pour que le décodage spéculatif fonctionne correctement.",
 			"selectDraftModel": "Sélectionner le modèle brouillon",
 			"noModelsFound": "Aucun modèle brouillon trouvé. Veuillez vous assurer que LM Studio est en cours d'exécution avec le mode serveur activé.",
-			"description": "LM Studio vous permet d'exécuter des modèles localement sur votre ordinateur. Pour obtenir des instructions sur la mise en route, consultez leur <a>guide de démarrage rapide</a>. Vous devrez également démarrer la fonction <b>serveur local</b> de LM Studio pour l'utiliser avec cette extension. <span>Remarque :</span> Roo Code utilise des prompts complexes et fonctionne mieux avec les modèles Claude. Les modèles moins performants peuvent ne pas fonctionner comme prévu."
+			"description": "LM Studio vous permet d'exécuter des modèles localement sur votre ordinateur. Pour obtenir des instructions sur la mise en route, consultez leur <a>guide de démarrage rapide</a>. Vous devrez également démarrer la fonction <b>serveur local</b> de LM Studio pour l'utiliser avec cette extension. <span>Remarque :</span> Roo Code Chinese utilise des prompts complexes et fonctionne mieux avec les modèles Claude. Les modèles moins performants peuvent ne pas fonctionner comme prévu."
 		},
 		"ollama": {
 			"baseUrl": "URL de base (optionnel)",
@@ -461,7 +461,7 @@
 			"numCtx": "Taille de la fenêtre de contexte (num_ctx)",
 			"numCtxHelp": "Remplace la taille de la fenêtre de contexte par défaut du modèle. Laissez vide pour utiliser la configuration du Modelfile du modèle. La valeur minimale est 128.",
 			"description": "Ollama vous permet d'exécuter des modèles localement sur votre ordinateur. Pour obtenir des instructions sur la mise en route, consultez le guide de démarrage rapide.",
-			"warning": "Remarque : Roo Code utilise des prompts complexes et fonctionne mieux avec les modèles Claude. Les modèles moins performants peuvent ne pas fonctionner comme prévu."
+			"warning": "Remarque : Roo Code Chinese utilise des prompts complexes et fonctionne mieux avec les modèles Claude. Les modèles moins performants peuvent ne pas fonctionner comme prévu."
 		},
 		"openRouter": {
 			"providerRouting": {
@@ -471,7 +471,7 @@
 			}
 		},
 		"customModel": {
-			"capabilities": "Configurez les capacités et les prix pour votre modèle personnalisé compatible OpenAI. Soyez prudent lors de la spécification des capacités du modèle, car elles peuvent affecter le fonctionnement de Roo Code.",
+			"capabilities": "Configurez les capacités et les prix pour votre modèle personnalisé compatible OpenAI. Soyez prudent lors de la spécification des capacités du modèle, car elles peuvent affecter le fonctionnement de Roo Code Chinese.",
 			"maxTokens": {
 				"label": "Tokens de sortie maximum",
 				"description": "Nombre maximum de tokens que le modèle peut générer dans une réponse. (Spécifiez -1 pour permettre au serveur de définir les tokens maximum.)"
@@ -546,7 +546,7 @@
 			"maxTokensLabel": "Jetons de sortie max",
 			"maxTokensDescription": "Nombre maximum de jetons de sortie pour les réponses de Claude Code. La valeur par défaut est 8000."
 		},
-		"retiredRooProviderMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"retiredRooProviderMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	},
 	"checkpoints": {
 		"timeout": {
@@ -845,7 +845,7 @@
 		}
 	},
 	"modelPicker": {
-		"automaticFetch": "L'extension récupère automatiquement la liste la plus récente des modèles disponibles sur <serviceLink>{{serviceName}}</serviceLink>. Si vous ne savez pas quel modèle choisir, Roo Code fonctionne mieux avec <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Vous pouvez également rechercher \"free\" pour les options gratuites actuellement disponibles.",
+		"automaticFetch": "L'extension récupère automatiquement la liste la plus récente des modèles disponibles sur <serviceLink>{{serviceName}}</serviceLink>. Si vous ne savez pas quel modèle choisir, Roo Code Chinese fonctionne mieux avec <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Vous pouvez également rechercher \"free\" pour les options gratuites actuellement disponibles.",
 		"label": "Modèle",
 		"searchPlaceholder": "Rechercher",
 		"noMatchFound": "Aucune correspondance trouvée",

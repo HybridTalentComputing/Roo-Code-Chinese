@@ -40,7 +40,7 @@
 		"ui": "UI",
 		"experimental": "实验性",
 		"language": "语言",
-		"about": "关于 Roo Code",
+		"about": "关于 Roo Code Chinese",
 		"skills": "Skills"
 	},
 	"about": {
@@ -451,7 +451,7 @@
 			"draftModelDesc": "草稿模型必须来自相同的模型系列，推测性解码才能正常工作。",
 			"selectDraftModel": "选择草稿模型",
 			"noModelsFound": "未找到草稿模型。请确保 LM Studio 已启用服务器模式运行。",
-			"description": "LM Studio 允许您在本地计算机上运行模型。要了解如何开始，请参阅他们的 <a>快速入门指南</a>。您还需要启动 LM Studio 的 <b>本地服务器</b> 功能，以便与此扩展一起使用。<span>注意：</span>Roo Code 使用复杂的提示，并且在 Claude 模型上效果最佳。功能较弱的模型可能无法正常工作。"
+			"description": "LM Studio 允许您在本地计算机上运行模型。要了解如何开始，请参阅他们的 <a>快速入门指南</a>。您还需要启动 LM Studio 的 <b>本地服务器</b> 功能，以便与此扩展一起使用。<span>注意：</span>Roo Code Chinese 使用复杂的提示，并且在 Claude 模型上效果最佳。功能较弱的模型可能无法正常工作。"
 		},
 		"ollama": {
 			"baseUrl": "基础 URL（可选）",
@@ -461,7 +461,7 @@
 			"numCtx": "上下文窗口大小 (num_ctx)",
 			"numCtxHelp": "覆盖模型的默认上下文窗口大小。留空以使用模型的 Modelfile 配置。最小值为 128。",
 			"description": "Ollama 允许您在本地计算机上运行模型。有关如何开始使用的说明，请参阅其快速入门指南。",
-			"warning": "注意：Roo Code 使用复杂的提示，与 Claude 模型配合最佳。功能较弱的模型可能无法按预期工作。"
+			"warning": "注意：Roo Code Chinese 使用复杂的提示，与 Claude 模型配合最佳。功能较弱的模型可能无法按预期工作。"
 		},
 		"openRouter": {
 			"providerRouting": {
@@ -546,7 +546,7 @@
 			"maxTokensLabel": "最大输出 Token",
 			"maxTokensDescription": "Claude Code 响应的最大输出 Token 数量。默认为 8000。"
 		},
-		"retiredRooProviderMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"retiredRooProviderMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	},
 	"checkpoints": {
 		"timeout": {
@@ -845,7 +845,7 @@
 		}
 	},
 	"modelPicker": {
-		"automaticFetch": "自动获取 <serviceLink>{{serviceName}}</serviceLink> 上可用的最新模型列表。如果您不确定选择哪个模型，Roo Code 与 <defaultModelLink>{{defaultModelId}}</defaultModelLink> 配合最佳。您还可以搜索\"free\"以查找当前可用的免费选项。",
+		"automaticFetch": "自动获取 <serviceLink>{{serviceName}}</serviceLink> 上可用的最新模型列表。如果您不确定选择哪个模型，Roo Code Chinese 与 <defaultModelLink>{{defaultModelId}}</defaultModelLink> 配合最佳。您还可以搜索\"free\"以查找当前可用的免费选项。",
 		"label": "模型",
 		"searchPlaceholder": "搜索",
 		"noMatchFound": "未找到匹配项",

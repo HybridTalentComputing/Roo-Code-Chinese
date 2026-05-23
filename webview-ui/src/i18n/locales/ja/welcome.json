@@ -9,8 +9,8 @@
 		}
 	},
 	"landing": {
-		"greeting": "Roo Codeへようこそ！",
-		"introduction": "組み込みおよび拡張可能なモードを備えたRoo Codeは、計画、アーキテクチャ設計、コーディング、デバッグ、そして今までにない生産性向上を可能にします。",
+		"greeting": "Roo Code Chineseへようこそ！",
+		"introduction": "組み込みおよび拡張可能なモードを備えたRoo Code Chineseは、計画、アーキテクチャ設計、コーディング、デバッグ、そして今までにない生産性向上を可能にします。",
 		"getStarted": "Get Started"
 	},
 	"providerSignup": {

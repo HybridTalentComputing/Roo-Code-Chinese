@@ -189,7 +189,7 @@ export const ExtensionStateContextProvider: React.FC<{ children: React.ReactNode
 		ttsSpeed: 1.0,
 		enableCheckpoints: true,
 		checkpointTimeout: DEFAULT_CHECKPOINT_TIMEOUT_SECONDS, // Default to 15 seconds
-		language: "en", // Default language code
+		language: "zh-CN", // Default language code
 		writeDelayMs: 1000,
 		terminalShellIntegrationTimeout: 4000,
 		mcpEnabled: true,

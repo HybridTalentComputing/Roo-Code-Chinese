@@ -1,5 +1,5 @@
 {
-	"greeting": "Welcome to Roo Code!",
+	"greeting": "Welcome to Roo Code Chinese!",
 	"task": {
 		"title": "Task",
 		"expand": "Expand task",
@@ -348,18 +348,18 @@
 		"triggerLabelAll": "BRRR"
 	},
 	"announcement": {
-		"title": "Roo Code {{version}} Released",
-		"support": "Please support Roo Code by starring us on <githubLink>GitHub</githubLink>.",
+		"title": "Roo Code Chinese {{version}} Released",
+		"support": "Please support Roo Code Chinese by starring us on <githubLink>GitHub</githubLink>.",
 		"finalRelease": {
-			"title": "The last Roo Code release",
-			"intro": "This is the last Roo Code release. <announcementLink>As we announced a few weeks ago</announcementLink>, we've decided to shift our focus to <roomoteLink>Roomote</roomoteLink>, our cloud agent platform, which we believe to be the future of software development. Thank you so much for your support throughout the past year or so.",
+			"title": "The last Roo Code Chinese release",
+			"intro": "This is the last Roo Code Chinese release. <announcementLink>As we announced a few weeks ago</announcementLink>, we've decided to shift our focus to <roomoteLink>Roomote</roomoteLink>, our cloud agent platform, which we believe to be the future of software development. Thank you so much for your support throughout the past year or so.",
 			"continuity": "This extension should continue to work indefinitely, but it won't receive bug fixes, new features, or model updates.",
-			"alternatives": "If you want to use an extension, we recommend checking out <zooCodeLink>ZooCode</zooCodeLink> (a Roo Code fork by the community) and <clineLink>Cline</clineLink> (where Roo Code originally started).",
+			"alternatives": "If you want to use an extension, we recommend checking out <zooCodeLink>ZooCode</zooCodeLink> (a Roo Code Chinese fork by the community) and <clineLink>Cline</clineLink> (where Roo Code Chinese originally started).",
 			"signoff": "Happy coding!"
 		},
 		"release": {
 			"heading": "What's New:",
-			"gpt55": "GPT-5.5 via OpenAI Codex: Added GPT-5.5 support in the OpenAI Codex provider so you can use the latest model straight from Roo Code.",
+			"gpt55": "GPT-5.5 via OpenAI Codex: Added GPT-5.5 support in the OpenAI Codex provider so you can use the latest model straight from Roo Code Chinese.",
 			"claudeOpus47": "Claude Opus 4.7 on Vertex AI: Added Claude Opus 4.7 to the Vertex AI provider for Anthropic's newest flagship reasoning model.",
 			"checkpointNav": "Previous Checkpoint Navigation: Added controls in chat to jump back through prior checkpoints, with full i18n support."
 		},
@@ -393,7 +393,7 @@
 	"profileViolationWarning": "The current profile isn't compatible with your organization's settings",
 	"shellIntegration": {
 		"title": "Command Execution Warning",
-		"description": "Your command is being executed without VSCode terminal shell integration. To suppress this warning you can disable shell integration in the <strong>Terminal</strong> section of the <settingsLink>Roo Code settings</settingsLink> or troubleshoot VSCode terminal integration using the link below.",
+		"description": "Your command is being executed without VSCode terminal shell integration. To suppress this warning you can disable shell integration in the <strong>Terminal</strong> section of the <settingsLink>Roo Code Chinese settings</settingsLink> or troubleshoot VSCode terminal integration using the link below.",
 		"troubleshooting": "Click here for shell integration documentation."
 	},
 	"ask": {
@@ -479,6 +479,6 @@
 		"title": "Provider no longer supported",
 		"message": "This provider is no longer supported. Please select a different provider in your API profile settings.",
 		"openSettings": "Open Settings",
-		"rooMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"rooMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	}
 }

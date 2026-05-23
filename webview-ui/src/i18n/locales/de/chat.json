@@ -1,5 +1,5 @@
 {
-	"greeting": "Willkommen bei Roo Code",
+	"greeting": "Willkommen bei Roo Code Chinese",
 	"task": {
 		"title": "Aufgabe",
 		"expand": "Aufgabe erweitern",
@@ -90,7 +90,7 @@
 	"enqueueMessage": "Nachricht zur Warteschlange hinzufügen (wird nach Abschluss der aktuellen Aufgabe gesendet)",
 	"scrollToBottom": "Zum Chat-Ende scrollen",
 	"scrollToLatestCheckpoint": "Zum vorherigen Checkpoint scrollen",
-	"about": "Roo Code ist ein ganzes KI-Entwicklerteam in deinem Editor.",
+	"about": "Roo Code Chinese ist ein ganzes KI-Entwicklerteam in deinem Editor.",
 	"docs": "Schau in unsere <DocsLink>Dokumentation</DocsLink>, um mehr zu erfahren.",
 	"onboarding": "Deine Aufgabenliste in diesem Arbeitsbereich ist leer.",
 	"rooTips": {
@@ -329,18 +329,18 @@
 		"timerPrefix": "Automatische Genehmigung aktiviert. Wähle in {{seconds}}s…"
 	},
 	"announcement": {
-		"title": "Roo Code {{version}} veröffentlicht",
-		"support": "Bitte unterstütze Roo Code, indem du uns auf <githubLink>GitHub</githubLink> einen Stern gibst.",
+		"title": "Roo Code Chinese {{version}} veröffentlicht",
+		"support": "Bitte unterstütze Roo Code Chinese, indem du uns auf <githubLink>GitHub</githubLink> einen Stern gibst.",
 		"finalRelease": {
-			"title": "Die letzte Roo Code-Version",
-			"intro": "Dies ist die letzte Roo Code-Version. <announcementLink>Wie wir vor ein paar Wochen angekündigt haben</announcementLink>, haben wir beschlossen, unseren Fokus auf <roomoteLink>Roomote</roomoteLink> zu verlagern, unsere Cloud-Agent-Plattform, von der wir glauben, dass sie die Zukunft der Softwareentwicklung ist. Vielen Dank für deine Unterstützung im vergangenen Jahr oder so.",
+			"title": "Die letzte Roo Code Chinese-Version",
+			"intro": "Dies ist die letzte Roo Code Chinese-Version. <announcementLink>Wie wir vor ein paar Wochen angekündigt haben</announcementLink>, haben wir beschlossen, unseren Fokus auf <roomoteLink>Roomote</roomoteLink> zu verlagern, unsere Cloud-Agent-Plattform, von der wir glauben, dass sie die Zukunft der Softwareentwicklung ist. Vielen Dank für deine Unterstützung im vergangenen Jahr oder so.",
 			"continuity": "Diese Erweiterung sollte auf unbestimmte Zeit weiter funktionieren, erhält aber keine Fehlerbehebungen, neuen Funktionen oder Modellaktualisierungen mehr.",
-			"alternatives": "Wenn du eine Erweiterung verwenden möchtest, empfehlen wir dir <zooCodeLink>ZooCode</zooCodeLink> (einen Community-Fork von Roo Code) und <clineLink>Cline</clineLink> (wo Roo Code ursprünglich begann).",
+			"alternatives": "Wenn du eine Erweiterung verwenden möchtest, empfehlen wir dir <zooCodeLink>ZooCode</zooCodeLink> (einen Community-Fork von Roo Code Chinese) und <clineLink>Cline</clineLink> (wo Roo Code Chinese ursprünglich begann).",
 			"signoff": "Viel Spaß beim Programmieren!"
 		},
 		"release": {
 			"heading": "Was ist neu:",
-			"gpt55": "GPT-5.5 via OpenAI Codex: GPT-5.5-Unterstützung im OpenAI Codex-Provider hinzugefügt, damit du das neueste Modell direkt aus Roo Code heraus nutzen kannst.",
+			"gpt55": "GPT-5.5 via OpenAI Codex: GPT-5.5-Unterstützung im OpenAI Codex-Provider hinzugefügt, damit du das neueste Modell direkt aus Roo Code Chinese heraus nutzen kannst.",
 			"claudeOpus47": "Claude Opus 4.7 auf Vertex AI: Claude Opus 4.7 zum Vertex AI-Provider hinzugefügt – Anthropics neuestes Flaggschiff-Reasoning-Modell.",
 			"checkpointNav": "Navigation zu vorherigen Checkpoints: Neue Steuerelemente im Chat, um durch frühere Checkpoints zurückzuspringen, mit vollständiger i18n-Unterstützung."
 		},
@@ -366,7 +366,7 @@
 	"profileViolationWarning": "Das aktuelle Profil ist nicht kompatibel mit den Einstellungen deiner Organisation",
 	"shellIntegration": {
 		"title": "Befehlsausführungswarnung",
-		"description": "Dein Befehl wird ohne VSCode Terminal-Shell-Integration ausgeführt. Um diese Warnung zu unterdrücken, kannst du die Shell-Integration im Abschnitt <strong>Terminal</strong> der <settingsLink>Roo Code Einstellungen</settingsLink> deaktivieren oder die VSCode Terminal-Integration mit dem Link unten beheben.",
+		"description": "Dein Befehl wird ohne VSCode Terminal-Shell-Integration ausgeführt. Um diese Warnung zu unterdrücken, kannst du die Shell-Integration im Abschnitt <strong>Terminal</strong> der <settingsLink>Roo Code Chinese Einstellungen</settingsLink> deaktivieren oder die VSCode Terminal-Integration mit dem Link unten beheben.",
 		"troubleshooting": "Klicke hier für die Shell-Integrationsdokumentation."
 	},
 	"ask": {
@@ -486,6 +486,6 @@
 		"title": "Anbieter wird nicht mehr unterstützt",
 		"message": "This provider is no longer supported. Please select a different provider in your API profile settings.",
 		"openSettings": "Einstellungen öffnen",
-		"rooMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"rooMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	}
 }

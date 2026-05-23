@@ -40,7 +40,7 @@
 		"ui": "UI",
 		"experimental": "Experimenteel",
 		"language": "Taal",
-		"about": "Over Roo Code",
+		"about": "Over Roo Code Chinese",
 		"skills": "Skills"
 	},
 	"about": {
@@ -451,7 +451,7 @@
 			"draftModelDesc": "Draft-model moet uit dezelfde modelfamilie komen voor correcte speculatieve decodering.",
 			"selectDraftModel": "Selecteer draft-model",
 			"noModelsFound": "Geen draft-modellen gevonden. Zorg dat LM Studio draait met Server Mode ingeschakeld.",
-			"description": "LM Studio laat je modellen lokaal op je computer draaien. Zie hun <a>quickstart-gids</a> voor instructies. Je moet ook de <b>lokale server</b>-functie van LM Studio starten om het met deze extensie te gebruiken. <span>Let op:</span> Roo Code gebruikt complexe prompts en werkt het beste met Claude-modellen. Minder krachtige modellen werken mogelijk niet zoals verwacht."
+			"description": "LM Studio laat je modellen lokaal op je computer draaien. Zie hun <a>quickstart-gids</a> voor instructies. Je moet ook de <b>lokale server</b>-functie van LM Studio starten om het met deze extensie te gebruiken. <span>Let op:</span> Roo Code Chinese gebruikt complexe prompts en werkt het beste met Claude-modellen. Minder krachtige modellen werken mogelijk niet zoals verwacht."
 		},
 		"ollama": {
 			"baseUrl": "Basis-URL (optioneel)",
@@ -461,7 +461,7 @@
 			"numCtx": "Contextvenstergrootte (num_ctx)",
 			"numCtxHelp": "Overschrijft de standaard contextvenstergrootte van het model. Laat leeg om de Modelfile-configuratie van het model te gebruiken. De minimumwaarde is 128.",
 			"description": "Ollama laat je modellen lokaal op je computer draaien. Zie hun quickstart-gids voor instructies.",
-			"warning": "Let op: Roo Code gebruikt complexe prompts en werkt het beste met Claude-modellen. Minder krachtige modellen werken mogelijk niet zoals verwacht."
+			"warning": "Let op: Roo Code Chinese gebruikt complexe prompts en werkt het beste met Claude-modellen. Minder krachtige modellen werken mogelijk niet zoals verwacht."
 		},
 		"openRouter": {
 			"providerRouting": {
@@ -471,7 +471,7 @@
 			}
 		},
 		"customModel": {
-			"capabilities": "Stel de mogelijkheden en prijzen in voor je aangepaste OpenAI-compatibele model. Wees voorzichtig met het opgeven van de modelmogelijkheden, want deze kunnen de prestaties van Roo Code beïnvloeden.",
+			"capabilities": "Stel de mogelijkheden en prijzen in voor je aangepaste OpenAI-compatibele model. Wees voorzichtig met het opgeven van de modelmogelijkheden, want deze kunnen de prestaties van Roo Code Chinese beïnvloeden.",
 			"maxTokens": {
 				"label": "Maximaal aantal outputtokens",
 				"description": "Maximaal aantal tokens dat het model in een antwoord kan genereren. (Geef -1 op om de server het maximum te laten bepalen.)"
@@ -546,7 +546,7 @@
 			"maxTokensLabel": "Max Output Tokens",
 			"maxTokensDescription": "Maximaal aantal output-tokens voor Claude Code-reacties. Standaard is 8000."
 		},
-		"retiredRooProviderMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"retiredRooProviderMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	},
 	"checkpoints": {
 		"timeout": {
@@ -845,7 +845,7 @@
 		}
 	},
 	"modelPicker": {
-		"automaticFetch": "De extensie haalt automatisch de nieuwste lijst met modellen op van <serviceLink>{{serviceName}}</serviceLink>. Weet je niet welk model je moet kiezen? Roo Code werkt het beste met <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Je kunt ook zoeken op 'free' voor gratis opties die nu beschikbaar zijn.",
+		"automaticFetch": "De extensie haalt automatisch de nieuwste lijst met modellen op van <serviceLink>{{serviceName}}</serviceLink>. Weet je niet welk model je moet kiezen? Roo Code Chinese werkt het beste met <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Je kunt ook zoeken op 'free' voor gratis opties die nu beschikbaar zijn.",
 		"label": "Model",
 		"searchPlaceholder": "Zoeken",
 		"noMatchFound": "Geen overeenkomsten gevonden",

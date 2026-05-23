@@ -1,5 +1,5 @@
 {
-	"greeting": "Bem-vindo ao Roo Code",
+	"greeting": "Bem-vindo ao Roo Code Chinese",
 	"task": {
 		"title": "Tarefa",
 		"expand": "Expandir tarefa",
@@ -90,7 +90,7 @@
 	"enqueueMessage": "Adicionar mensagem à fila (será enviada após a conclusão da tarefa atual)",
 	"scrollToBottom": "Rolar para o final do chat",
 	"scrollToLatestCheckpoint": "Rolar para o checkpoint anterior",
-	"about": "Roo Code é uma equipe inteira de desenvolvimento de IA em seu editor.",
+	"about": "Roo Code Chinese é uma equipe inteira de desenvolvimento de IA em seu editor.",
 	"docs": "Confira nossa <DocsLink>documentação</DocsLink> para saber mais.",
 	"onboarding": "Sua lista de tarefas neste espaço de trabalho está vazia.",
 	"rooTips": {
@@ -329,18 +329,18 @@
 		"timerPrefix": "Aprovação automática ativada. Selecionando em {{seconds}}s…"
 	},
 	"announcement": {
-		"title": "Roo Code {{version}} Lançado",
-		"support": "Apoie o Roo Code nos dando uma estrela no <githubLink>GitHub</githubLink>.",
+		"title": "Roo Code Chinese {{version}} Lançado",
+		"support": "Apoie o Roo Code Chinese nos dando uma estrela no <githubLink>GitHub</githubLink>.",
 		"finalRelease": {
-			"title": "A última versão do Roo Code",
-			"intro": "Esta é a última versão do Roo Code. <announcementLink>Como anunciamos há algumas semanas</announcementLink>, decidimos focar no <roomoteLink>Roomote</roomoteLink>, nossa plataforma de agentes na nuvem, que acreditamos ser o futuro do desenvolvimento de software. Muito obrigado pelo seu apoio ao longo deste último ano, mais ou menos.",
+			"title": "A última versão do Roo Code Chinese",
+			"intro": "Esta é a última versão do Roo Code Chinese. <announcementLink>Como anunciamos há algumas semanas</announcementLink>, decidimos focar no <roomoteLink>Roomote</roomoteLink>, nossa plataforma de agentes na nuvem, que acreditamos ser o futuro do desenvolvimento de software. Muito obrigado pelo seu apoio ao longo deste último ano, mais ou menos.",
 			"continuity": "Esta extensão deve continuar funcionando indefinidamente, mas não receberá correções de bugs, novos recursos ou atualizações de modelos.",
-			"alternatives": "Se você quiser usar uma extensão, recomendamos conferir o <zooCodeLink>ZooCode</zooCodeLink> (um fork do Roo Code feito pela comunidade) e o <clineLink>Cline</clineLink> (de onde o Roo Code começou originalmente).",
+			"alternatives": "Se você quiser usar uma extensão, recomendamos conferir o <zooCodeLink>ZooCode</zooCodeLink> (um fork do Roo Code Chinese feito pela comunidade) e o <clineLink>Cline</clineLink> (de onde o Roo Code Chinese começou originalmente).",
 			"signoff": "Bom código!"
 		},
 		"release": {
 			"heading": "Novidades:",
-			"gpt55": "GPT-5.5 via OpenAI Codex: Adicionado suporte ao GPT-5.5 no provedor OpenAI Codex para você usar o modelo mais recente diretamente do Roo Code.",
+			"gpt55": "GPT-5.5 via OpenAI Codex: Adicionado suporte ao GPT-5.5 no provedor OpenAI Codex para você usar o modelo mais recente diretamente do Roo Code Chinese.",
 			"claudeOpus47": "Claude Opus 4.7 no Vertex AI: Adicionado o Claude Opus 4.7 ao provedor Vertex AI, o mais novo modelo de raciocínio flagship da Anthropic.",
 			"checkpointNav": "Navegação por checkpoints anteriores: Adicionados controles no chat para voltar por checkpoints anteriores, com suporte completo a i18n."
 		},
@@ -366,7 +366,7 @@
 	"profileViolationWarning": "O perfil atual não é compatível com as configurações da sua organização",
 	"shellIntegration": {
 		"title": "Aviso de execução de comando",
-		"description": "Seu comando está sendo executado sem a integração de shell do terminal VSCode. Para suprimir este aviso, você pode desativar a integração de shell na seção <strong>Terminal</strong> das <settingsLink>configurações do Roo Code</settingsLink> ou solucionar problemas de integração do terminal VSCode usando o link abaixo.",
+		"description": "Seu comando está sendo executado sem a integração de shell do terminal VSCode. Para suprimir este aviso, você pode desativar a integração de shell na seção <strong>Terminal</strong> das <settingsLink>configurações do Roo Code Chinese</settingsLink> ou solucionar problemas de integração do terminal VSCode usando o link abaixo.",
 		"troubleshooting": "Clique aqui para a documentação de integração de shell."
 	},
 	"ask": {
@@ -486,6 +486,6 @@
 		"title": "Provedor não é mais suportado",
 		"message": "This provider is no longer supported. Please select a different provider in your API profile settings.",
 		"openSettings": "Abrir configurações",
-		"rooMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"rooMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	}
 }

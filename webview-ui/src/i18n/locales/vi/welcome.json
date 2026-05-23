@@ -9,8 +9,8 @@
 		}
 	},
 	"landing": {
-		"greeting": "Chào mừng đến với Roo Code!",
-		"introduction": "Với nhiều Chế độ tích hợp và có thể mở rộng, Roo Code cho phép bạn lập kế hoạch, thiết kế kiến trúc, viết mã, gỡ lỗi và tăng năng suất như chưa từng có trước đây.",
+		"greeting": "Chào mừng đến với Roo Code Chinese!",
+		"introduction": "Với nhiều Chế độ tích hợp và có thể mở rộng, Roo Code Chinese cho phép bạn lập kế hoạch, thiết kế kiến trúc, viết mã, gỡ lỗi và tăng năng suất như chưa từng có trước đây.",
 		"getStarted": "Tạo tài khoản Roo"
 	},
 	"providerSignup": {

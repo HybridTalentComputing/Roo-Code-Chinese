@@ -451,7 +451,7 @@
 			"draftModelDesc": "Mô hình nháp phải từ cùng một họ mô hình để giải mã suy đoán hoạt động chính xác.",
 			"selectDraftModel": "Chọn mô hình nháp",
 			"noModelsFound": "Không tìm thấy mô hình nháp nào. Vui lòng đảm bảo LM Studio đang chạy với chế độ máy chủ được bật.",
-			"description": "LM Studio cho phép bạn chạy các mô hình cục bộ trên máy tính của bạn. Để biết hướng dẫn về cách bắt đầu, xem <a>hướng dẫn nhanh</a> của họ. Bạn cũng sẽ cần khởi động tính năng <b>máy chủ cục bộ</b> của LM Studio để sử dụng nó với tiện ích mở rộng này. <span>Lưu ý:</span> Roo Code sử dụng các lời nhắc phức tạp và hoạt động tốt nhất với các mô hình Claude. Các mô hình kém mạnh hơn có thể không hoạt động như mong đợi."
+			"description": "LM Studio cho phép bạn chạy các mô hình cục bộ trên máy tính của bạn. Để biết hướng dẫn về cách bắt đầu, xem <a>hướng dẫn nhanh</a> của họ. Bạn cũng sẽ cần khởi động tính năng <b>máy chủ cục bộ</b> của LM Studio để sử dụng nó với tiện ích mở rộng này. <span>Lưu ý:</span> Roo Code Chinese sử dụng các lời nhắc phức tạp và hoạt động tốt nhất với các mô hình Claude. Các mô hình kém mạnh hơn có thể không hoạt động như mong đợi."
 		},
 		"ollama": {
 			"baseUrl": "URL cơ sở (tùy chọn)",
@@ -461,7 +461,7 @@
 			"numCtx": "Kích thước cửa sổ ngữ cảnh (num_ctx)",
 			"numCtxHelp": "Ghi đè kích thước cửa sổ ngữ cảnh mặc định của mô hình. Để trống để sử dụng cấu hình Modelfile của mô hình. Giá trị tối thiểu là 128.",
 			"description": "Ollama cho phép bạn chạy các mô hình cục bộ trên máy tính của bạn. Để biết hướng dẫn về cách bắt đầu, xem hướng dẫn nhanh của họ.",
-			"warning": "Lưu ý: Roo Code sử dụng các lời nhắc phức tạp và hoạt động tốt nhất với các mô hình Claude. Các mô hình kém mạnh hơn có thể không hoạt động như mong đợi."
+			"warning": "Lưu ý: Roo Code Chinese sử dụng các lời nhắc phức tạp và hoạt động tốt nhất với các mô hình Claude. Các mô hình kém mạnh hơn có thể không hoạt động như mong đợi."
 		},
 		"openRouter": {
 			"providerRouting": {
@@ -471,7 +471,7 @@
 			}
 		},
 		"customModel": {
-			"capabilities": "Cấu hình các khả năng và giá cả cho mô hình tương thích OpenAI tùy chỉnh của bạn. Hãy cẩn thận khi chỉ định khả năng của mô hình, vì chúng có thể ảnh hưởng đến cách Roo Code hoạt động.",
+			"capabilities": "Cấu hình các khả năng và giá cả cho mô hình tương thích OpenAI tùy chỉnh của bạn. Hãy cẩn thận khi chỉ định khả năng của mô hình, vì chúng có thể ảnh hưởng đến cách Roo Code Chinese hoạt động.",
 			"maxTokens": {
 				"label": "Số token đầu ra tối đa",
 				"description": "Số lượng token tối đa mà mô hình có thể tạo ra trong một phản hồi. (Chỉ định -1 để cho phép máy chủ đặt số token tối đa.)"
@@ -546,7 +546,7 @@
 			"maxTokensLabel": "Số token đầu ra tối đa",
 			"maxTokensDescription": "Số lượng token đầu ra tối đa cho các phản hồi của Claude Code. Mặc định là 8000."
 		},
-		"retiredRooProviderMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"retiredRooProviderMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	},
 	"checkpoints": {
 		"timeout": {
@@ -845,7 +845,7 @@
 		}
 	},
 	"modelPicker": {
-		"automaticFetch": "Tiện ích mở rộng tự động lấy danh sách mới nhất các mô hình có sẵn trên <serviceLink>{{serviceName}}</serviceLink>. Nếu bạn không chắc chắn nên chọn mô hình nào, Roo Code hoạt động tốt nhất với <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Bạn cũng có thể thử tìm kiếm \"free\" cho các tùy chọn miễn phí hiện có.",
+		"automaticFetch": "Tiện ích mở rộng tự động lấy danh sách mới nhất các mô hình có sẵn trên <serviceLink>{{serviceName}}</serviceLink>. Nếu bạn không chắc chắn nên chọn mô hình nào, Roo Code Chinese hoạt động tốt nhất với <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Bạn cũng có thể thử tìm kiếm \"free\" cho các tùy chọn miễn phí hiện có.",
 		"label": "Mô hình",
 		"searchPlaceholder": "Tìm kiếm",
 		"noMatchFound": "Không tìm thấy kết quả",

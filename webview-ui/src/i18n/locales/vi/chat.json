@@ -1,5 +1,5 @@
 {
-	"greeting": "Chào mừng đến với Roo Code",
+	"greeting": "Chào mừng đến với Roo Code Chinese",
 	"task": {
 		"title": "Nhiệm vụ",
 		"expand": "Mở rộng nhiệm vụ",
@@ -90,7 +90,7 @@
 	"enqueueMessage": "Thêm tin nhắn vào hàng đợi (sẽ gửi sau khi nhiệm vụ hiện tại hoàn tất)",
 	"scrollToBottom": "Cuộn xuống cuối cuộc trò chuyện",
 	"scrollToLatestCheckpoint": "Cuộn đến checkpoint trước đó",
-	"about": "Roo Code là một đội ngũ phát triển AI đầy đủ trong trình chỉnh sửa của bạn.",
+	"about": "Roo Code Chinese là một đội ngũ phát triển AI đầy đủ trong trình chỉnh sửa của bạn.",
 	"docs": "Kiểm tra <DocsLink>tài liệu</DocsLink> của chúng tôi để tìm hiểu thêm.",
 	"onboarding": "Danh sách nhiệm vụ của bạn trong không gian làm việc này đang trống.",
 	"rooTips": {
@@ -330,18 +330,18 @@
 		"timerPrefix": "Phê duyệt tự động được bật. Chọn trong {{seconds}}s…"
 	},
 	"announcement": {
-		"title": "Roo Code {{version}} Đã phát hành",
-		"support": "Hãy ủng hộ Roo Code bằng cách gắn sao cho chúng tôi trên <githubLink>GitHub</githubLink>.",
+		"title": "Roo Code Chinese {{version}} Đã phát hành",
+		"support": "Hãy ủng hộ Roo Code Chinese bằng cách gắn sao cho chúng tôi trên <githubLink>GitHub</githubLink>.",
 		"finalRelease": {
-			"title": "Bản phát hành Roo Code cuối cùng",
-			"intro": "Đây là bản phát hành Roo Code cuối cùng. <announcementLink>Như chúng tôi đã thông báo vài tuần trước</announcementLink>, chúng tôi đã quyết định chuyển trọng tâm sang <roomoteLink>Roomote</roomoteLink>, nền tảng tác nhân đám mây của chúng tôi, thứ mà chúng tôi tin là tương lai của phát triển phần mềm. Cảm ơn bạn rất nhiều vì đã ủng hộ trong khoảng một năm vừa qua.",
+			"title": "Bản phát hành Roo Code Chinese cuối cùng",
+			"intro": "Đây là bản phát hành Roo Code Chinese cuối cùng. <announcementLink>Như chúng tôi đã thông báo vài tuần trước</announcementLink>, chúng tôi đã quyết định chuyển trọng tâm sang <roomoteLink>Roomote</roomoteLink>, nền tảng tác nhân đám mây của chúng tôi, thứ mà chúng tôi tin là tương lai của phát triển phần mềm. Cảm ơn bạn rất nhiều vì đã ủng hộ trong khoảng một năm vừa qua.",
 			"continuity": "Tiện ích mở rộng này sẽ tiếp tục hoạt động vô thời hạn, nhưng sẽ không nhận bản sửa lỗi, tính năng mới hoặc cập nhật mô hình.",
-			"alternatives": "Nếu bạn muốn sử dụng một tiện ích mở rộng, chúng tôi khuyên bạn nên xem <zooCodeLink>ZooCode</zooCodeLink> (một fork Roo Code do cộng đồng phát triển) và <clineLink>Cline</clineLink> (nơi Roo Code ban đầu bắt đầu).",
+			"alternatives": "Nếu bạn muốn sử dụng một tiện ích mở rộng, chúng tôi khuyên bạn nên xem <zooCodeLink>ZooCode</zooCodeLink> (một fork Roo Code Chinese do cộng đồng phát triển) và <clineLink>Cline</clineLink> (nơi Roo Code Chinese ban đầu bắt đầu).",
 			"signoff": "Chúc lập trình vui vẻ!"
 		},
 		"release": {
 			"heading": "Tính năng mới:",
-			"gpt55": "GPT-5.5 qua OpenAI Codex: Đã thêm hỗ trợ GPT-5.5 trong nhà cung cấp OpenAI Codex để bạn có thể sử dụng model mới nhất trực tiếp từ Roo Code.",
+			"gpt55": "GPT-5.5 qua OpenAI Codex: Đã thêm hỗ trợ GPT-5.5 trong nhà cung cấp OpenAI Codex để bạn có thể sử dụng model mới nhất trực tiếp từ Roo Code Chinese.",
 			"claudeOpus47": "Claude Opus 4.7 trên Vertex AI: Đã thêm Claude Opus 4.7 vào nhà cung cấp Vertex AI - model reasoning flagship mới nhất của Anthropic.",
 			"checkpointNav": "Điều hướng Checkpoint trước đó: Đã thêm các điều khiển trong chat để quay lại các checkpoint trước, với hỗ trợ i18n đầy đủ."
 		},
@@ -367,7 +367,7 @@
 	"profileViolationWarning": "Hồ sơ hiện tại không tương thích với cài đặt của tổ chức của bạn",
 	"shellIntegration": {
 		"title": "Cảnh báo thực thi lệnh",
-		"description": "Lệnh của bạn đang được thực thi mà không có tích hợp shell terminal VSCode. Để ẩn cảnh báo này, bạn có thể vô hiệu hóa tích hợp shell trong phần <strong>Terminal</strong> của <settingsLink>cài đặt Roo Code</settingsLink> hoặc khắc phục sự cố tích hợp terminal VSCode bằng liên kết bên dưới.",
+		"description": "Lệnh của bạn đang được thực thi mà không có tích hợp shell terminal VSCode. Để ẩn cảnh báo này, bạn có thể vô hiệu hóa tích hợp shell trong phần <strong>Terminal</strong> của <settingsLink>cài đặt Roo Code Chinese</settingsLink> hoặc khắc phục sự cố tích hợp terminal VSCode bằng liên kết bên dưới.",
 		"troubleshooting": "Nhấp vào đây để xem tài liệu tích hợp shell."
 	},
 	"ask": {
@@ -487,6 +487,6 @@
 		"title": "Nhà cung cấp không còn được hỗ trợ",
 		"message": "This provider is no longer supported. Please select a different provider in your API profile settings.",
 		"openSettings": "Mở cài đặt",
-		"rooMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"rooMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	}
 }

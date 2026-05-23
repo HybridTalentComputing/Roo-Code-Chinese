@@ -90,7 +90,7 @@ async function checkWorktreeAutoOpen(
 			// Open the Roo Code sidebar with a slight delay to ensure UI is ready
 			setTimeout(async () => {
 				try {
-					await vscode.commands.executeCommand("roo-cline.plusButtonClicked")
+					await vscode.commands.executeCommand(`${Package.name}.plusButtonClicked`)
 				} catch (error) {
 					outputChannel.appendLine(
 						`[Worktree] Error auto-opening sidebar: ${error instanceof Error ? error.message : String(error)}`,
@@ -125,7 +125,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	await migrateSettings(context, outputChannel)
 
 	// Initialize i18n for internationalization support.
-	initializeI18n(context.globalState.get("language") ?? formatLanguage(vscode.env.language))
+	initializeI18n(context.globalState.get("language") ?? "zh-CN")
 
 	// Initialize terminal shell execution handlers.
 	TerminalRegistry.initialize()

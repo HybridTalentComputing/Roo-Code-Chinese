@@ -41,7 +41,7 @@
 		"ui": "UI",
 		"experimental": "Experimental",
 		"language": "Language",
-		"about": "About Roo Code"
+		"about": "About Roo Code Chinese"
 	},
 	"about": {
 		"bugReport": {
@@ -513,7 +513,7 @@
 			"draftModelDesc": "Draft model must be from the same model family for speculative decoding to work correctly.",
 			"selectDraftModel": "Select Draft Model",
 			"noModelsFound": "No draft models found. Please ensure LM Studio is running with Server Mode enabled.",
-			"description": "LM Studio allows you to run models locally on your computer. For instructions on how to get started, see their <a>quickstart guide</a>. You will also need to start LM Studio's <b>local server</b> feature to use it with this extension. <span>Note:</span> Roo Code uses complex prompts and works best with Claude models. Less capable models may not work as expected."
+			"description": "LM Studio allows you to run models locally on your computer. For instructions on how to get started, see their <a>quickstart guide</a>. You will also need to start LM Studio's <b>local server</b> feature to use it with this extension. <span>Note:</span> Roo Code Chinese uses complex prompts and works best with Claude models. Less capable models may not work as expected."
 		},
 		"ollama": {
 			"baseUrl": "Base URL (optional)",
@@ -523,7 +523,7 @@
 			"numCtx": "Context Window Size (num_ctx)",
 			"numCtxHelp": "Override the model's default context window size. Leave empty to use the model's Modelfile configuration. Minimum value is 128.",
 			"description": "Ollama allows you to run models locally on your computer. For instructions on how to get started, see their quickstart guide.",
-			"warning": "Note: Roo Code uses complex prompts and works best with Claude models. Less capable models may not work as expected."
+			"warning": "Note: Roo Code Chinese uses complex prompts and works best with Claude models. Less capable models may not work as expected."
 		},
 		"openRouter": {
 			"providerRouting": {
@@ -533,7 +533,7 @@
 			}
 		},
 		"customModel": {
-			"capabilities": "Configure the capabilities and pricing for your custom OpenAI-compatible model. Be careful when specifying the model capabilities, as they can affect how Roo Code performs.",
+			"capabilities": "Configure the capabilities and pricing for your custom OpenAI-compatible model. Be careful when specifying the model capabilities, as they can affect how Roo Code Chinese performs.",
 			"maxTokens": {
 				"label": "Max Output Tokens",
 				"description": "Maximum number of tokens the model can generate in a response. (Specify -1 to allow the server to set the max tokens.)"
@@ -608,7 +608,7 @@
 			"maxTokensLabel": "Max Output Tokens",
 			"maxTokensDescription": "Maximum number of output tokens for Claude Code responses. Default is 8000."
 		},
-		"retiredRooProviderMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"retiredRooProviderMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	},
 	"checkpoints": {
 		"timeout": {
@@ -907,7 +907,7 @@
 		}
 	},
 	"modelPicker": {
-		"automaticFetch": "The extension automatically fetches the latest list of models available on <serviceLink>{{serviceName}}</serviceLink>. If you're unsure which model to choose, Roo Code works best with <defaultModelLink>{{defaultModelId}}</defaultModelLink>. You can also try searching \"free\" for no-cost options currently available.",
+		"automaticFetch": "The extension automatically fetches the latest list of models available on <serviceLink>{{serviceName}}</serviceLink>. If you're unsure which model to choose, Roo Code Chinese works best with <defaultModelLink>{{defaultModelId}}</defaultModelLink>. You can also try searching \"free\" for no-cost options currently available.",
 		"label": "Model",
 		"searchPlaceholder": "Search",
 		"noMatchFound": "No match found",

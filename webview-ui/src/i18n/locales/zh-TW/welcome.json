@@ -9,8 +9,8 @@
 		}
 	},
 	"landing": {
-		"greeting": "歡迎使用 Roo Code！",
-		"introduction": "Roo Code 提供一系列內建和可擴充的模式，讓您以前所未有的方式規劃專案、設計架構、編寫程式碼、除錯並提升工作效率。",
+		"greeting": "歡迎使用 Roo Code Chinese！",
+		"introduction": "Roo Code Chinese 提供一系列內建和可擴充的模式，讓您以前所未有的方式規劃專案、設計架構、編寫程式碼、除錯並提升工作效率。",
 		"getStarted": "Get Started"
 	},
 	"providerSignup": {

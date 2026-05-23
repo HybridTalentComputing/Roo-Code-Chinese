@@ -1,5 +1,5 @@
 {
-	"greeting": "Welkom bij Roo Code",
+	"greeting": "Welkom bij Roo Code Chinese",
 	"task": {
 		"title": "Taak",
 		"expand": "Taak uitvouwen",
@@ -90,7 +90,7 @@
 	"enqueueMessage": "Bericht aan de wachtrij toevoegen (wordt verzonden nadat de huidige taak is voltooid)",
 	"scrollToBottom": "Scroll naar onderaan de chat",
 	"scrollToLatestCheckpoint": "Scroll naar het vorige checkpoint",
-	"about": "Roo Code is een heel AI-ontwikkelteam in je editor.",
+	"about": "Roo Code Chinese is een heel AI-ontwikkelteam in je editor.",
 	"docs": "Bekijk onze <DocsLink>documentatie</DocsLink> voor meer informatie.",
 	"onboarding": "Je takenlijst in deze werkruimte is leeg.",
 	"rooTips": {
@@ -302,18 +302,18 @@
 		"triggerLabelAll": "BRRR"
 	},
 	"announcement": {
-		"title": "Roo Code {{version}} uitgebracht",
-		"support": "Steun Roo Code door ons een ster te geven op <githubLink>GitHub</githubLink>.",
+		"title": "Roo Code Chinese {{version}} uitgebracht",
+		"support": "Steun Roo Code Chinese door ons een ster te geven op <githubLink>GitHub</githubLink>.",
 		"finalRelease": {
-			"title": "De laatste Roo Code-release",
-			"intro": "Dit is de laatste Roo Code-release. <announcementLink>Zoals we een paar weken geleden hebben aangekondigd</announcementLink>, hebben we besloten onze focus te verleggen naar <roomoteLink>Roomote</roomoteLink>, ons cloud-agentplatform, waarvan we geloven dat het de toekomst van softwareontwikkeling is. Heel erg bedankt voor je steun in het afgelopen jaar of daaromtrent.",
+			"title": "De laatste Roo Code Chinese-release",
+			"intro": "Dit is de laatste Roo Code Chinese-release. <announcementLink>Zoals we een paar weken geleden hebben aangekondigd</announcementLink>, hebben we besloten onze focus te verleggen naar <roomoteLink>Roomote</roomoteLink>, ons cloud-agentplatform, waarvan we geloven dat het de toekomst van softwareontwikkeling is. Heel erg bedankt voor je steun in het afgelopen jaar of daaromtrent.",
 			"continuity": "Deze extensie zou voor onbepaalde tijd moeten blijven werken, maar ontvangt geen bugfixes, nieuwe functies of modelupdates meer.",
-			"alternatives": "Als je een extensie wilt gebruiken, raden we aan om <zooCodeLink>ZooCode</zooCodeLink> (een Roo Code-fork door de community) en <clineLink>Cline</clineLink> (waar Roo Code oorspronkelijk begon) te bekijken.",
+			"alternatives": "Als je een extensie wilt gebruiken, raden we aan om <zooCodeLink>ZooCode</zooCodeLink> (een Roo Code Chinese-fork door de community) en <clineLink>Cline</clineLink> (waar Roo Code Chinese oorspronkelijk begon) te bekijken.",
 			"signoff": "Veel codeerplezier!"
 		},
 		"release": {
 			"heading": "Wat is er nieuw:",
-			"gpt55": "GPT-5.5 via OpenAI Codex: GPT-5.5-ondersteuning toegevoegd in de OpenAI Codex-provider, zodat je het nieuwste model direct vanuit Roo Code kunt gebruiken.",
+			"gpt55": "GPT-5.5 via OpenAI Codex: GPT-5.5-ondersteuning toegevoegd in de OpenAI Codex-provider, zodat je het nieuwste model direct vanuit Roo Code Chinese kunt gebruiken.",
 			"claudeOpus47": "Claude Opus 4.7 op Vertex AI: Claude Opus 4.7 toegevoegd aan de Vertex AI-provider voor Anthropic's nieuwste vlaggenschip-reasoningmodel.",
 			"checkpointNav": "Navigatie naar vorige checkpoints: Bediening toegevoegd in de chat om terug te springen door eerdere checkpoints, met volledige i18n-ondersteuning."
 		},
@@ -366,7 +366,7 @@
 	"profileViolationWarning": "Het huidige profiel is niet compatibel met de instellingen van uw organisatie",
 	"shellIntegration": {
 		"title": "Waarschuwing commando-uitvoering",
-		"description": "Je commando wordt uitgevoerd zonder VSCode-terminal shell-integratie. Om deze waarschuwing te onderdrukken kun je shell-integratie uitschakelen in het gedeelte <strong>Terminal</strong> van de <settingsLink>Roo Code-instellingen</settingsLink> of de VSCode-terminalintegratie oplossen via de onderstaande link.",
+		"description": "Je commando wordt uitgevoerd zonder VSCode-terminal shell-integratie. Om deze waarschuwing te onderdrukken kun je shell-integratie uitschakelen in het gedeelte <strong>Terminal</strong> van de <settingsLink>Roo Code Chinese-instellingen</settingsLink> of de VSCode-terminalintegratie oplossen via de onderstaande link.",
 		"troubleshooting": "Klik hier voor shell-integratie documentatie."
 	},
 	"ask": {
@@ -486,6 +486,6 @@
 		"title": "Provider wordt niet meer ondersteund",
 		"message": "This provider is no longer supported. Please select a different provider in your API profile settings.",
 		"openSettings": "Instellingen openen",
-		"rooMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"rooMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	}
 }

@@ -1,5 +1,5 @@
 {
-	"greeting": "Selamat datang di Roo Code",
+	"greeting": "Selamat datang di Roo Code Chinese",
 	"task": {
 		"title": "Tugas",
 		"expand": "Perluas tugas",
@@ -120,7 +120,7 @@
 	"enqueueMessage": "Tambahkan pesan ke antrean (akan dikirim setelah tugas saat ini selesai)",
 	"scrollToBottom": "Gulir ke bawah chat",
 	"scrollToLatestCheckpoint": "Gulir ke checkpoint sebelumnya",
-	"about": "Roo Code adalah seluruh tim pengembang AI di editor Anda.",
+	"about": "Roo Code Chinese adalah seluruh tim pengembang AI di editor Anda.",
 	"docs": "Lihat <DocsLink>dokumentasi</DocsLink> kami untuk mempelajari lebih lanjut.",
 	"onboarding": "Daftar tugas Anda di ruang kerja ini kosong.",
 	"rooTips": {
@@ -358,18 +358,18 @@
 		"triggerLabelAll": "BRRR"
 	},
 	"announcement": {
-		"title": "Roo Code {{version}} Dirilis",
-		"support": "Dukung Roo Code dengan memberi kami bintang di <githubLink>GitHub</githubLink>.",
+		"title": "Roo Code Chinese {{version}} Dirilis",
+		"support": "Dukung Roo Code Chinese dengan memberi kami bintang di <githubLink>GitHub</githubLink>.",
 		"finalRelease": {
-			"title": "Rilis Roo Code terakhir",
-			"intro": "Ini adalah rilis Roo Code terakhir. <announcementLink>Seperti yang kami umumkan beberapa minggu lalu</announcementLink>, kami memutuskan untuk mengalihkan fokus ke <roomoteLink>Roomote</roomoteLink>, platform agen cloud kami, yang kami yakini sebagai masa depan pengembangan perangkat lunak. Terima kasih banyak atas dukunganmu selama kira-kira setahun terakhir.",
+			"title": "Rilis Roo Code Chinese terakhir",
+			"intro": "Ini adalah rilis Roo Code Chinese terakhir. <announcementLink>Seperti yang kami umumkan beberapa minggu lalu</announcementLink>, kami memutuskan untuk mengalihkan fokus ke <roomoteLink>Roomote</roomoteLink>, platform agen cloud kami, yang kami yakini sebagai masa depan pengembangan perangkat lunak. Terima kasih banyak atas dukunganmu selama kira-kira setahun terakhir.",
 			"continuity": "Ekstensi ini seharusnya tetap berfungsi tanpa batas waktu, tetapi tidak akan menerima perbaikan bug, fitur baru, atau pembaruan model.",
-			"alternatives": "Jika kamu ingin menggunakan ekstensi, kami merekomendasikan <zooCodeLink>ZooCode</zooCodeLink> (fork Roo Code oleh komunitas) dan <clineLink>Cline</clineLink> (tempat Roo Code awalnya bermula).",
+			"alternatives": "Jika kamu ingin menggunakan ekstensi, kami merekomendasikan <zooCodeLink>ZooCode</zooCodeLink> (fork Roo Code Chinese oleh komunitas) dan <clineLink>Cline</clineLink> (tempat Roo Code Chinese awalnya bermula).",
 			"signoff": "Selamat coding!"
 		},
 		"release": {
 			"heading": "Yang Baru:",
-			"gpt55": "GPT-5.5 via OpenAI Codex: Dukungan GPT-5.5 ditambahkan di provider OpenAI Codex agar kamu bisa menggunakan model terbaru langsung dari Roo Code.",
+			"gpt55": "GPT-5.5 via OpenAI Codex: Dukungan GPT-5.5 ditambahkan di provider OpenAI Codex agar kamu bisa menggunakan model terbaru langsung dari Roo Code Chinese.",
 			"claudeOpus47": "Claude Opus 4.7 di Vertex AI: Claude Opus 4.7 ditambahkan ke provider Vertex AI untuk model reasoning andalan terbaru dari Anthropic.",
 			"checkpointNav": "Navigasi Checkpoint Sebelumnya: Menambahkan kontrol di chat untuk melompat kembali ke checkpoint sebelumnya, dengan dukungan i18n penuh."
 		},
@@ -403,7 +403,7 @@
 	"profileViolationWarning": "Profil saat ini tidak kompatibel dengan pengaturan organisasi kamu",
 	"shellIntegration": {
 		"title": "Peringatan Eksekusi Perintah",
-		"description": "Perintah kamu dijalankan tanpa integrasi shell terminal VSCode. Untuk menekan peringatan ini kamu bisa menonaktifkan integrasi shell di bagian <strong>Terminal</strong> dari <settingsLink>pengaturan Roo Code</settingsLink> atau troubleshoot integrasi terminal VSCode menggunakan link di bawah.",
+		"description": "Perintah kamu dijalankan tanpa integrasi shell terminal VSCode. Untuk menekan peringatan ini kamu bisa menonaktifkan integrasi shell di bagian <strong>Terminal</strong> dari <settingsLink>pengaturan Roo Code Chinese</settingsLink> atau troubleshoot integrasi terminal VSCode menggunakan link di bawah.",
 		"troubleshooting": "Klik di sini untuk dokumentasi integrasi shell."
 	},
 	"ask": {
@@ -492,6 +492,6 @@
 		"title": "Penyedia tidak lagi didukung",
 		"message": "This provider is no longer supported. Please select a different provider in your API profile settings.",
 		"openSettings": "Buka Pengaturan",
-		"rooMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"rooMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	}
 }

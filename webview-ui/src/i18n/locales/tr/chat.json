@@ -1,5 +1,5 @@
 {
-	"greeting": "Roo Code'a Hoş Geldiniz",
+	"greeting": "Roo Code Chinese'a Hoş Geldiniz",
 	"task": {
 		"title": "Görev",
 		"expand": "Görevi genişlet",
@@ -90,7 +90,7 @@
 	"enqueueMessage": "Mesajı kuyruğa ekle (mevcut görev tamamlandıktan sonra gönderilecek)",
 	"scrollToBottom": "Sohbetin altına kaydır",
 	"scrollToLatestCheckpoint": "Önceki checkpoint'e kaydır",
-	"about": "Roo Code, düzenleyicinizdeki bütün bir yapay zeka geliştirme ekibidir.",
+	"about": "Roo Code Chinese, düzenleyicinizdeki bütün bir yapay zeka geliştirme ekibidir.",
 	"docs": "Daha fazla bilgi için <DocsLink>belgelerimize</DocsLink> göz atın.",
 	"onboarding": "Bu çalışma alanındaki görev listeniz boş.",
 	"rooTips": {
@@ -330,18 +330,18 @@
 		"timerPrefix": "Otomatik onay etkinleştirildi. {{seconds}}s içinde seçim yapılıyor…"
 	},
 	"announcement": {
-		"title": "Roo Code {{version}} Yayınlandı",
-		"support": "<githubLink>GitHub</githubLink>'da yıldız vererek Roo Code'u destekle.",
+		"title": "Roo Code Chinese {{version}} Yayınlandı",
+		"support": "<githubLink>GitHub</githubLink>'da yıldız vererek Roo Code Chinese'u destekle.",
 		"finalRelease": {
-			"title": "Son Roo Code sürümü",
-			"intro": "Bu, Roo Code'un son sürümüdür. <announcementLink>Birkaç hafta önce duyurduğumuz gibi</announcementLink>, odağımızı yazılım geliştirmenin geleceği olduğuna inandığımız bulut ajan platformumuz <roomoteLink>Roomote</roomoteLink>'a kaydırmaya karar verdik. Geçtiğimiz yaklaşık bir yıl boyunca verdiğiniz destek için çok teşekkür ederiz.",
+			"title": "Son Roo Code Chinese sürümü",
+			"intro": "Bu, Roo Code Chinese'un son sürümüdür. <announcementLink>Birkaç hafta önce duyurduğumuz gibi</announcementLink>, odağımızı yazılım geliştirmenin geleceği olduğuna inandığımız bulut ajan platformumuz <roomoteLink>Roomote</roomoteLink>'a kaydırmaya karar verdik. Geçtiğimiz yaklaşık bir yıl boyunca verdiğiniz destek için çok teşekkür ederiz.",
 			"continuity": "Bu eklenti süresiz olarak çalışmaya devam etmelidir, ancak hata düzeltmeleri, yeni özellikler veya model güncellemeleri almayacaktır.",
-			"alternatives": "Bir eklenti kullanmak istiyorsanız, topluluk tarafından geliştirilen bir Roo Code fork'u olan <zooCodeLink>ZooCode</zooCodeLink>'a ve Roo Code'un başlangıç noktası olan <clineLink>Cline</clineLink>'a göz atmanızı öneririz.",
+			"alternatives": "Bir eklenti kullanmak istiyorsanız, topluluk tarafından geliştirilen bir Roo Code Chinese fork'u olan <zooCodeLink>ZooCode</zooCodeLink>'a ve Roo Code Chinese'un başlangıç noktası olan <clineLink>Cline</clineLink>'a göz atmanızı öneririz.",
 			"signoff": "Mutlu kodlamalar!"
 		},
 		"release": {
 			"heading": "Yenilikler:",
-			"gpt55": "OpenAI Codex üzerinden GPT-5.5: En son modeli doğrudan Roo Code'dan kullanabilmen için OpenAI Codex sağlayıcısına GPT-5.5 desteği eklendi.",
+			"gpt55": "OpenAI Codex üzerinden GPT-5.5: En son modeli doğrudan Roo Code Chinese'dan kullanabilmen için OpenAI Codex sağlayıcısına GPT-5.5 desteği eklendi.",
 			"claudeOpus47": "Vertex AI'da Claude Opus 4.7: Anthropic'in en yeni amiral gemisi akıl yürütme modeli olan Claude Opus 4.7 Vertex AI sağlayıcısına eklendi.",
 			"checkpointNav": "Önceki Checkpoint Navigasyonu: Sohbetten önceki checkpoint'lere geri atlayabilmen için kontroller eklendi ve tam i18n desteği sunuluyor."
 		},
@@ -367,7 +367,7 @@
 	"profileViolationWarning": "Geçerli profil kuruluşunuzun ayarlarıyla uyumlu değil",
 	"shellIntegration": {
 		"title": "Komut Çalıştırma Uyarısı",
-		"description": "Komutunuz VSCode terminal kabuk entegrasyonu olmadan çalıştırılıyor. Bu uyarıyı gizlemek için <settingsLink>Roo Code ayarları</settingsLink>'nın <strong>Terminal</strong> bölümünden kabuk entegrasyonunu devre dışı bırakabilir veya aşağıdaki bağlantıyı kullanarak VSCode terminal entegrasyonu sorunlarını giderebilirsiniz.",
+		"description": "Komutunuz VSCode terminal kabuk entegrasyonu olmadan çalıştırılıyor. Bu uyarıyı gizlemek için <settingsLink>Roo Code Chinese ayarları</settingsLink>'nın <strong>Terminal</strong> bölümünden kabuk entegrasyonunu devre dışı bırakabilir veya aşağıdaki bağlantıyı kullanarak VSCode terminal entegrasyonu sorunlarını giderebilirsiniz.",
 		"troubleshooting": "Kabuk entegrasyonu belgelerini görmek için buraya tıklayın."
 	},
 	"ask": {
@@ -487,6 +487,6 @@
 		"title": "Sağlayıcı artık desteklenmiyor",
 		"message": "This provider is no longer supported. Please select a different provider in your API profile settings.",
 		"openSettings": "Ayarları aç",
-		"rooMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"rooMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	}
 }

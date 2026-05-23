@@ -902,7 +902,10 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, t
 
 						{/* Language Section */}
 						{renderTab === "language" && (
-							<LanguageSettings language={language || "en"} setCachedStateField={setCachedStateField} />
+							<LanguageSettings
+								language={language || "zh-CN"}
+								setCachedStateField={setCachedStateField}
+							/>
 						)}
 
 						{/* About Section */}

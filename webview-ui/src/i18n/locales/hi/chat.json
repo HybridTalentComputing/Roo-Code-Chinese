@@ -1,5 +1,5 @@
 {
-	"greeting": "Roo Code में आपका स्वागत है",
+	"greeting": "Roo Code Chinese में आपका स्वागत है",
 	"task": {
 		"title": "कार्य",
 		"expand": "कार्य विस्तृत करें",
@@ -90,7 +90,7 @@
 	"enqueueMessage": "संदेश को कतार में जोड़ें (वर्तमान कार्य पूरा होने के बाद भेजा जाएगा)",
 	"scrollToBottom": "चैट के निचले हिस्से तक स्क्रॉल करें",
 	"scrollToLatestCheckpoint": "पिछले चेकपॉइंट तक स्क्रॉल करें",
-	"about": "Roo Code आपके संपादक में एक पूरी AI देव टीम है।",
+	"about": "Roo Code Chinese आपके संपादक में एक पूरी AI देव टीम है।",
 	"docs": "और जानने के लिए हमारे <DocsLink>दस्तावेज़</DocsLink> देखें।",
 	"onboarding": "इस कार्यक्षेत्र में आपकी कार्य सूची खाली है।",
 	"rooTips": {
@@ -329,18 +329,18 @@
 		"timerPrefix": "ऑटो-अनुमोदन सक्षम है। {{seconds}}s में चयन किया जा रहा है…"
 	},
 	"announcement": {
-		"title": "Roo Code {{version}} रिलीज़ हुआ",
-		"support": "कृपया <githubLink>GitHub</githubLink> पर हमें स्टार देकर Roo Code का समर्थन करें।",
+		"title": "Roo Code Chinese {{version}} रिलीज़ हुआ",
+		"support": "कृपया <githubLink>GitHub</githubLink> पर हमें स्टार देकर Roo Code Chinese का समर्थन करें।",
 		"finalRelease": {
-			"title": "Roo Code की आखिरी रिलीज़",
-			"intro": "यह Roo Code की आखिरी रिलीज़ है। <announcementLink>जैसा कि हमने कुछ हफ्ते पहले घोषणा की थी</announcementLink>, हमने अपना ध्यान <roomoteLink>Roomote</roomoteLink> पर केंद्रित करने का निर्णय लिया है, जो हमारा क्लाउड एजेंट प्लेटफ़ॉर्म है और जिसे हम सॉफ़्टवेयर डेवलपमेंट का भविष्य मानते हैं। पिछले लगभग एक साल में आपके समर्थन के लिए बहुत धन्यवाद।",
+			"title": "Roo Code Chinese की आखिरी रिलीज़",
+			"intro": "यह Roo Code Chinese की आखिरी रिलीज़ है। <announcementLink>जैसा कि हमने कुछ हफ्ते पहले घोषणा की थी</announcementLink>, हमने अपना ध्यान <roomoteLink>Roomote</roomoteLink> पर केंद्रित करने का निर्णय लिया है, जो हमारा क्लाउड एजेंट प्लेटफ़ॉर्म है और जिसे हम सॉफ़्टवेयर डेवलपमेंट का भविष्य मानते हैं। पिछले लगभग एक साल में आपके समर्थन के लिए बहुत धन्यवाद।",
 			"continuity": "यह एक्सटेंशन अनिश्चित समय तक काम करता रहना चाहिए, लेकिन इसे बग फ़िक्स, नई सुविधाएँ या मॉडल अपडेट नहीं मिलेंगे।",
-			"alternatives": "यदि आप कोई एक्सटेंशन उपयोग करना चाहते हैं, तो हम <zooCodeLink>ZooCode</zooCodeLink> (समुदाय द्वारा बनाया गया Roo Code fork) और <clineLink>Cline</clineLink> (जहाँ से Roo Code मूल रूप से शुरू हुआ था) देखने की सलाह देते हैं।",
+			"alternatives": "यदि आप कोई एक्सटेंशन उपयोग करना चाहते हैं, तो हम <zooCodeLink>ZooCode</zooCodeLink> (समुदाय द्वारा बनाया गया Roo Code Chinese fork) और <clineLink>Cline</clineLink> (जहाँ से Roo Code Chinese मूल रूप से शुरू हुआ था) देखने की सलाह देते हैं।",
 			"signoff": "हैप्पी कोडिंग!"
 		},
 		"release": {
 			"heading": "नया क्या है:",
-			"gpt55": "OpenAI Codex के माध्यम से GPT-5.5: OpenAI Codex provider में GPT-5.5 सपोर्ट जोड़ा गया, ताकि आप नवीनतम मॉडल का उपयोग सीधे Roo Code से कर सकें।",
+			"gpt55": "OpenAI Codex के माध्यम से GPT-5.5: OpenAI Codex provider में GPT-5.5 सपोर्ट जोड़ा गया, ताकि आप नवीनतम मॉडल का उपयोग सीधे Roo Code Chinese से कर सकें।",
 			"claudeOpus47": "Vertex AI पर Claude Opus 4.7: Anthropic के नवीनतम flagship reasoning मॉडल के लिए Vertex AI provider में Claude Opus 4.7 जोड़ा गया।",
 			"checkpointNav": "पिछले Checkpoint की Navigation: चैट में controls जोड़े गए ताकि आप पिछले checkpoints पर वापस जा सकें, पूर्ण i18n सपोर्ट के साथ।"
 		},
@@ -366,7 +366,7 @@
 	"profileViolationWarning": "वर्तमान प्रोफ़ाइल आपके संगठन की सेटिंग्स के साथ संगत नहीं है",
 	"shellIntegration": {
 		"title": "कमांड निष्पादन चेतावनी",
-		"description": "आपका कमांड VSCode टर्मिनल शेल इंटीग्रेशन के बिना निष्पादित हो रहा है। इस चेतावनी को दबाने के लिए आप <settingsLink>Roo Code सेटिंग्स</settingsLink> के <strong>Terminal</strong> अनुभाग में शेल इंटीग्रेशन को अक्षम कर सकते हैं या नीचे दिए गए लिंक का उपयोग करके VSCode टर्मिनल इंटीग्रेशन की समस्या का समाधान कर सकते हैं।",
+		"description": "आपका कमांड VSCode टर्मिनल शेल इंटीग्रेशन के बिना निष्पादित हो रहा है। इस चेतावनी को दबाने के लिए आप <settingsLink>Roo Code Chinese सेटिंग्स</settingsLink> के <strong>Terminal</strong> अनुभाग में शेल इंटीग्रेशन को अक्षम कर सकते हैं या नीचे दिए गए लिंक का उपयोग करके VSCode टर्मिनल इंटीग्रेशन की समस्या का समाधान कर सकते हैं।",
 		"troubleshooting": "शेल इंटीग्रेशन दस्तावेज़ के लिए यहां क्लिक करें।"
 	},
 	"ask": {
@@ -486,6 +486,6 @@
 		"title": "प्रदाता अब समर्थित नहीं है",
 		"message": "This provider is no longer supported. Please select a different provider in your API profile settings.",
 		"openSettings": "सेटिंग्स खोलें",
-		"rooMessage": "As part of our decision to sunset the Roo Code extension, we also ended the Roo Code Router, which only existed to support the extension. Sorry about the hassle."
+		"rooMessage": "As part of our decision to sunset the Roo Code Chinese extension, we also ended the Roo Code Chinese Router, which only existed to support the extension. Sorry about the hassle."
 	}
 }

@@ -1,6 +1,6 @@
 # Roo Code Chinese (Roo Code中文汉化版) 🌏
 
-> 🎉 2026.05.23：Roo Code Chinese在 vscode 插件市场下载量突破 41k 啦！感谢大家的支持！
+> 🎉 2026.07.14：Roo Code Chinese在 vscode 插件市场下载量突破 46k 啦！感谢大家的支持！
 
 ## 项目地址
 
@@ -43,19 +43,6 @@ Roo Code Chinese已发布到VSCode插件市场，欢迎感兴趣的小伙伴们�
 
 1. Roo code chinese首个版本发布，合入Roo Code最新更新（2024.03.04），详情请查看CHANGELOG.md
 
-## 欢迎关注我的自媒体账号
-
-欢迎关注我的自媒体账号，获取更多AI开发和技术分享：
-
-- 公众号：Leo的AI世界
-
-## 加入社群
-
-感兴趣的可以扫码加入微信社群，一起交流学习AI：
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/cc683557-77bd-422a-b3c3-f9f9629f7223" alt="微信群二维码" width="250" />
-</div>
 
 ## 免责声明
 

@@ -2,6 +2,9 @@
 
 > 🎉 2026.07.14：Roo Code Chinese在 vscode 插件市场下载量突破 46k 啦！感谢大家的支持！
 
+## Roo Code Chinese被胜算云收购啦！
+Roo Code Chinese被胜算云收购啦！后续代码，插件的更新运营均由胜算云完成，请移步新项目地址：https://github.com/SSYCloud/Roo-Code-Chinese
+
 ## 项目地址
 
 https://github.com/HybridTalentComputing/roo-code-chinese
